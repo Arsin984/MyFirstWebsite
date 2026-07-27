@@ -1,229 +1,619 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>News - My City 984</title>
+<title>News - My City 984</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #172033;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    header {
-      background: white;
-      padding: 25px 20px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+/* Header */
+
+header {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 17px;
+}
+
+/* Container */
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 30px auto 60px;
+}
+
+/* Back */
+
+.back {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #ff416c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Search */
+
+.search-box {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 17px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #ff416c;
+}
+
+/* Filters */
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.filter-btn {
+    border: none;
+    background: #ffe9ee;
+    color: #ff416c;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #ff416c;
+    color: white;
+}
+
+/* News Grid */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* News Card */
+
+.news-card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #ffe1e8, #fff0e8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+
+.news-content {
+    padding: 22px;
+}
+
+.news-content h2 {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.category {
+    color: #ff416c;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.date {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.description {
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.read-button {
+    display: inline-block;
+    background: #ff416c;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.read-button:hover {
+    background: #e52e58;
+}
+
+/* No Result */
+
+.no-result {
+    display: none;
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    color: #777;
+}
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    border: none;
+    background: white;
+    color: #ff416c;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.page-btn.active,
+.page-btn:hover {
+    background: #ff416c;
+    color: white;
+}
+
+/* Footer */
+
+footer {
+    background: #172033;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
 
     header h1 {
-      color: #3155ff;
-      margin-bottom: 10px;
+        font-size: 28px;
     }
 
-    header p {
-      color: #666;
+    .news-grid {
+        grid-template-columns: 1fr;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: 30px auto;
-    }
+}
 
-    .back {
-      display: inline-block;
-      margin-bottom: 25px;
-      color: #3155ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+</style>
 
-    .news-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .news-card {
-      background: white;
-      border-radius: 25px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
-
-    .news-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .news-image {
-      height: 180px;
-      background: linear-gradient(135deg, #dfe5ff, #f1eaff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 70px;
-    }
-
-    .news-content {
-      padding: 25px;
-    }
-
-    .news-content h2 {
-      margin-bottom: 12px;
-      color: #172033;
-      line-height: 1.5;
-    }
-
-    .date {
-      color: #3155ff;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-
-    .news-content p {
-      color: #666;
-      line-height: 1.9;
-      margin-bottom: 20px;
-    }
-
-    .button {
-      display: inline-block;
-      background: #3155ff;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .button:hover {
-      background: #203ed1;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      margin-top: 40px;
-      color: #777;
-    }
-  </style>
 </head>
 
 <body>
 
-  <header>
+
+<header>
+
     <h1>News 📰</h1>
-    <p>آخرین اخبار و مطالب جذاب را دنبال کنید</p>
-  </header>
 
-  <div class="container">
+    <p>
+        جدیدترین اخبار و مطالب جذاب را دنبال کنید
+    </p>
 
-    <a href="index.html" class="back">← بازگشت به صفحه اصلی</a>
+</header>
 
-    <div class="news-list">
 
-      <div class="news-card">
-        <div class="news-image">📰</div>
+<div class="container">
 
-        <div class="news-content">
-          <h2>جدیدترین اخبار شهر</h2>
 
-          <div class="date">
-            📅 امروز
-          </div>
+    <a href="index.html" class="back">
+        ← بازگشت به صفحه اصلی
+    </a>
 
-          <p>
-            در این بخش می‌توانید جدیدترین اخبار و اتفاقات مهم شهر را مشاهده کنید.
-          </p>
 
-          <a href="#" class="button">
-            ادامه مطلب
-          </a>
+    <!-- Search & Filters -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔎 جست‌وجوی عنوان یا متن خبر..."
+        >
+
+
+        <div class="filters">
+
+            <button class="filter-btn active" data-category="all">
+                همه
+            </button>
+
+            <button class="filter-btn" data-category="local">
+                اخبار محلی
+            </button>
+
+            <button class="filter-btn" data-category="technology">
+                فناوری
+            </button>
+
+            <button class="filter-btn" data-category="music">
+                موسیقی
+            </button>
+
+            <button class="filter-btn" data-category="events">
+                رویدادها
+            </button>
+
         </div>
-      </div>
-
-
-      <div class="news-card">
-        <div class="news-image">🎉</div>
-
-        <div class="news-content">
-          <h2>رویدادهای جدید</h2>
-
-          <div class="date">
-            📅 این هفته
-          </div>
-
-          <p>
-            با رویدادها و برنامه‌های جذاب و جدیدی که در شهر برگزار می‌شوند آشنا شوید.
-          </p>
-
-          <a href="#" class="button">
-            ادامه مطلب
-          </a>
-        </div>
-      </div>
-
-
-      <div class="news-card">
-        <div class="news-image">🏙️</div>
-
-        <div class="news-content">
-          <h2>اخبار محلی</h2>
-
-          <div class="date">
-            📅 این ماه
-          </div>
-
-          <p>
-            آخرین خبرهای محلی و اتفاقات مهم اطراف خود را در این صفحه دنبال کنید.
-          </p>
-
-          <a href="#" class="button">
-            ادامه مطلب
-          </a>
-        </div>
-      </div>
-
-
-      <div class="news-card">
-        <div class="news-image">⭐</div>
-
-        <div class="news-content">
-          <h2>خبر ویژه</h2>
-
-          <div class="date">
-            📅 جدید
-          </div>
-
-          <p>
-            مهم‌ترین و جذاب‌ترین خبرهای ویژه را در این بخش مشاهده کنید.
-          </p>
-
-          <a href="#" class="button">
-            ادامه مطلب
-          </a>
-        </div>
-      </div>
 
     </div>
 
-  </div>
 
-  <footer>
+    <!-- News Cards -->
+
+    <div class="news-grid" id="newsGrid">
+
+
+        <!-- News 1 -->
+
+        <div class="news-card"
+             data-title="جدیدترین اخبار شهر"
+             data-category="local">
+
+            <div class="news-image">
+                🏙️
+            </div>
+
+            <div class="news-content">
+
+                <div class="category">
+                    اخبار محلی
+                </div>
+
+                <h2>
+                    جدیدترین اخبار شهر
+                </h2>
+
+                <div class="date">
+                    📅 امروز
+                </div>
+
+                <p class="description">
+                    در این بخش می‌توانید جدیدترین اخبار و اتفاقات مهم شهر را مشاهده کنید.
+                </p>
+
+                <a href="#" class="read-button">
+                    ادامه مطلب
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- News 2 -->
+
+        <div class="news-card"
+             data-title="خبر جدید فناوری"
+             data-category="technology">
+
+            <div class="news-image">
+                💻
+            </div>
+
+            <div class="news-content">
+
+                <div class="category">
+                    فناوری
+                </div>
+
+                <h2>
+                    خبر جدید فناوری
+                </h2>
+
+                <div class="date">
+                    📅 امروز
+                </div>
+
+                <p class="description">
+                    جدیدترین اخبار دنیای تکنولوژی و فناوری را در این بخش دنبال کنید.
+                </p>
+
+                <a href="#" class="read-button">
+                    ادامه مطلب
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- News 3 -->
+
+        <div class="news-card"
+             data-title="خبر موسیقی جدید"
+             data-category="music">
+
+            <div class="news-image">
+                🎵
+            </div>
+
+            <div class="news-content">
+
+                <div class="category">
+                    موسیقی
+                </div>
+
+                <h2>
+                    خبر موسیقی جدید
+                </h2>
+
+                <div class="date">
+                    📅 این هفته
+                </div>
+
+                <p class="description">
+                    جدیدترین اخبار موسیقی، هنرمندان و اتفاقات دنیای موسیقی.
+                </p>
+
+                <a href="#" class="read-button">
+                    ادامه مطلب
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- News 4 -->
+
+        <div class="news-card"
+             data-title="رویدادهای جدید شهر"
+             data-category="events">
+
+            <div class="news-image">
+                🎉
+            </div>
+
+            <div class="news-content">
+
+                <div class="category">
+                    رویدادها
+                </div>
+
+                <h2>
+                    رویدادهای جدید شهر
+                </h2>
+
+                <div class="date">
+                    📅 این ماه
+                </div>
+
+                <p class="description">
+                    با رویدادها و برنامه‌های جذاب جدید آشنا شوید.
+                </p>
+
+                <a href="#" class="read-button">
+                    ادامه مطلب
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="no-result" id="noResult">
+        خبری با این مشخصات پیدا نشد.
+    </div>
+
+
+    <!-- Pagination -->
+
+    <div class="pagination">
+
+        <button class="page-btn active">
+            1
+        </button>
+
+        <button class="page-btn">
+            2
+        </button>
+
+        <button class="page-btn">
+            3
+        </button>
+
+        <button class="page-btn">
+            بعدی →
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<footer>
+
     © 2026 My City 984
-  </footer>
+
+</footer>
+
+
+<script>
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const newsCards =
+    document.querySelectorAll(".news-card");
+
+const noResult =
+    document.getElementById("noResult");
+
+let selectedCategory = "all";
+
+
+function filterNews() {
+
+    const searchText =
+        searchInput.value.toLowerCase().trim();
+
+    let visibleCount = 0;
+
+
+    newsCards.forEach(card => {
+
+        const title =
+            card.dataset.title.toLowerCase();
+
+        const category =
+            card.dataset.category;
+
+
+        const description =
+            card.querySelector(".description")
+            .textContent
+            .toLowerCase();
+
+
+        const matchesSearch =
+            title.includes(searchText) ||
+            description.includes(searchText);
+
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            category === selectedCategory;
+
+
+        if (
+            matchesSearch &&
+            matchesCategory
+        ) {
+
+            card.style.display = "block";
+
+            visibleCount++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    if (visibleCount === 0) {
+
+        noResult.style.display = "block";
+
+    } else {
+
+        noResult.style.display = "none";
+
+    }
+
+}
+
+
+searchInput.addEventListener(
+    "input",
+    filterNews
+);
+
+
+filterButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        function() {
+
+            filterButtons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            this.classList.add("active");
+
+
+            selectedCategory =
+                this.dataset.category;
+
+
+            filterNews();
+
+        }
+    );
+
+});
+
+</script>
+
 
 </body>
+
 </html>
