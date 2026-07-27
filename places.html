@@ -1,182 +1,587 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Places - My City 984</title>
+<title>Websites - My City 984</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #172033;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    header {
-      background: white;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+}
+
+header {
+    background: linear-gradient(135deg, #3155ff, #00a8ff);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 17px;
+}
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 30px auto 60px;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #3155ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-box {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 17px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #3155ff;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.filter-btn {
+    border: none;
+    background: #e8edff;
+    color: #3155ff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #3155ff;
+    color: white;
+}
+
+.website-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.website-card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.website-card:hover {
+    transform: translateY(-5px);
+}
+
+.website-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #e1e7ff, #e5f7ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+
+.website-content {
+    padding: 22px;
+}
+
+.website-content h2 {
+    margin-bottom: 10px;
+}
+
+.category {
+    color: #3155ff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.visit-button {
+    display: inline-block;
+    background: #3155ff;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.visit-button:hover {
+    background: #203ed1;
+}
+
+.no-result {
+    display: none;
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    color: #777;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    border: none;
+    background: white;
+    color: #3155ff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.page-btn.active,
+.page-btn:hover {
+    background: #3155ff;
+    color: white;
+}
+
+footer {
+    background: #172033;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+@media (max-width: 600px) {
 
     header h1 {
-      color: #3155ff;
-      margin-bottom: 10px;
+        font-size: 28px;
     }
 
-    header p {
-      color: #666;
+    .website-grid {
+        grid-template-columns: 1fr;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: 30px auto;
-    }
+}
 
-    .back {
-      display: inline-block;
-      margin-bottom: 20px;
-      color: #3155ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+</style>
 
-    .places {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 25px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card-image {
-      height: 180px;
-      background: linear-gradient(135deg, #dfe5ff, #f1eaff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 70px;
-    }
-
-    .card-content {
-      padding: 25px;
-    }
-
-    .card h2 {
-      margin-bottom: 12px;
-      color: #172033;
-    }
-
-    .card p {
-      color: #666;
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    .button {
-      display: inline-block;
-      background: #3155ff;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .button:hover {
-      background: #203ed1;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      margin-top: 40px;
-      color: #777;
-    }
-  </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Places 📍</h1>
-    <p>مکان‌های جذاب و دیدنی را پیدا کنید</p>
-  </header>
+<header>
 
-  <div class="container">
+    <h1>Websites 🌐</h1>
 
-    <a href="index.html" class="back">← بازگشت به صفحه اصلی</a>
+    <p>
+        بهترین سایت‌ها و منابع اینترنتی را پیدا کنید
+    </p>
 
-    <div class="places">
+</header>
 
-      <div class="card">
-        <div class="card-image">🏞️</div>
-        <div class="card-content">
-          <h2>پارک زیبا</h2>
-          <p>
-            یک مکان آرام و زیبا برای تفریح، قدم زدن و گذراندن وقت با دوستان.
-          </p>
-          <a href="#" class="button">مشاهده مکان</a>
+
+<div class="container">
+
+    <a href="index.html" class="back">
+        ← بازگشت به صفحه اصلی
+    </a>
+
+
+    <!-- Search & Filters -->
+
+    <div class="search-box">
+
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="🔎 جست‌وجوی نام سایت یا توضیحات..."
+        >
+
+        <div class="filters">
+
+            <button class="filter-btn active" data-category="all">
+                همه
+            </button>
+
+            <button class="filter-btn" data-category="education">
+                آموزشی
+            </button>
+
+            <button class="filter-btn" data-category="entertainment">
+                سرگرمی
+            </button>
+
+            <button class="filter-btn" data-category="technology">
+                فناوری
+            </button>
+
+            <button class="filter-btn" data-category="social">
+                اجتماعی
+            </button>
+
         </div>
-      </div>
-
-      <div class="card">
-        <div class="card-image">🏛️</div>
-        <div class="card-content">
-          <h2>مکان تاریخی</h2>
-          <p>
-            با مکان‌های تاریخی و جذاب آشنا شوید و اطلاعات بیشتری درباره آن‌ها پیدا کنید.
-          </p>
-          <a href="#" class="button">مشاهده مکان</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-image">🏖️</div>
-        <div class="card-content">
-          <h2>مکان تفریحی</h2>
-          <p>
-            بهترین مکان‌ها برای تفریح و ساختن خاطرات خوب را پیدا کنید.
-          </p>
-          <a href="#" class="button">مشاهده مکان</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-image">🌳</div>
-        <div class="card-content">
-          <h2>طبیعت</h2>
-          <p>
-            مکان‌های طبیعی و سرسبز برای آرامش و لذت بردن از طبیعت.
-          </p>
-          <a href="#" class="button">مشاهده مکان</a>
-        </div>
-      </div>
 
     </div>
-  </div>
 
-  <footer>
+
+    <!-- Website Cards -->
+
+    <div class="website-grid" id="websiteGrid">
+
+
+        <!-- Website 1 -->
+
+        <div class="website-card"
+             data-title="سایت آموزشی نمونه"
+             data-category="education">
+
+            <div class="website-image">
+                📚
+            </div>
+
+            <div class="website-content">
+
+                <div class="category">
+                    آموزشی
+                </div>
+
+                <h2>
+                    سایت آموزشی نمونه
+                </h2>
+
+                <p class="description">
+                    یک سایت مفید برای یادگیری و آموزش مطالب مختلف.
+                </p>
+
+                <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-button"
+                >
+                    ورود به سایت
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Website 2 -->
+
+        <div class="website-card"
+             data-title="سایت سرگرمی نمونه"
+             data-category="entertainment">
+
+            <div class="website-image">
+                🎮
+            </div>
+
+            <div class="website-content">
+
+                <div class="category">
+                    سرگرمی
+                </div>
+
+                <h2>
+                    سایت سرگرمی نمونه
+                </h2>
+
+                <p class="description">
+                    یک سایت جذاب برای سرگرمی و گذراندن اوقات فراغت.
+                </p>
+
+                <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-button"
+                >
+                    ورود به سایت
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Website 3 -->
+
+        <div class="website-card"
+             data-title="سایت فناوری نمونه"
+             data-category="technology">
+
+            <div class="website-image">
+                💻
+            </div>
+
+            <div class="website-content">
+
+                <div class="category">
+                    فناوری
+                </div>
+
+                <h2>
+                    سایت فناوری نمونه
+                </h2>
+
+                <p class="description">
+                    جدیدترین مطالب و اخبار دنیای فناوری و تکنولوژی.
+                </p>
+
+                <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-button"
+                >
+                    ورود به سایت
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Website 4 -->
+
+        <div class="website-card"
+             data-title="شبکه اجتماعی نمونه"
+             data-category="social">
+
+            <div class="website-image">
+                👥
+            </div>
+
+            <div class="website-content">
+
+                <div class="category">
+                    اجتماعی
+                </div>
+
+                <h2>
+                    شبکه اجتماعی نمونه
+                </h2>
+
+                <p class="description">
+                    یک پلتفرم برای ارتباط و تعامل با کاربران دیگر.
+                </p>
+
+                <a
+                    href="https://example.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-button"
+                >
+                    ورود به سایت
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="no-result" id="noResult">
+        سایتی با این مشخصات پیدا نشد.
+    </div>
+
+
+    <!-- Pagination -->
+
+    <div class="pagination">
+
+        <button class="page-btn active">
+            1
+        </button>
+
+        <button class="page-btn">
+            2
+        </button>
+
+        <button class="page-btn">
+            3
+        </button>
+
+        <button class="page-btn">
+            بعدی →
+        </button>
+
+    </div>
+
+</div>
+
+
+<footer>
+
     © 2026 My City 984
-  </footer>
+
+</footer>
+
+
+<script>
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const websiteCards =
+    document.querySelectorAll(".website-card");
+
+const noResult =
+    document.getElementById("noResult");
+
+let selectedCategory = "all";
+
+
+function filterWebsites() {
+
+    const searchText =
+        searchInput.value.toLowerCase().trim();
+
+    let visibleCount = 0;
+
+
+    websiteCards.forEach(card => {
+
+        const title =
+            card.dataset.title.toLowerCase();
+
+        const category =
+            card.dataset.category;
+
+        const description =
+            card.querySelector(".description")
+            .textContent
+            .toLowerCase();
+
+
+        const matchesSearch =
+            title.includes(searchText) ||
+            description.includes(searchText);
+
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            category === selectedCategory;
+
+
+        if (
+            matchesSearch &&
+            matchesCategory
+        ) {
+
+            card.style.display = "block";
+
+            visibleCount++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    if (visibleCount === 0) {
+
+        noResult.style.display = "block";
+
+    } else {
+
+        noResult.style.display = "none";
+
+    }
+
+}
+
+
+searchInput.addEventListener(
+    "input",
+    filterWebsites
+);
+
+
+filterButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        function() {
+
+            filterButtons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            this.classList.add("active");
+
+            selectedCategory =
+                this.dataset.category;
+
+            filterWebsites();
+
+        }
+    );
+
+});
+
+</script>
+
 
 </body>
+
 </html>
