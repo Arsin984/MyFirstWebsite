@@ -27,9 +27,7 @@ body{
     transition:0.3s;
 }
 
-/* =========================
-HEADER
-========================= */
+/* HEADER */
 
 header{
     background:white;
@@ -48,9 +46,7 @@ header{
     margin-bottom:14px;
 }
 
-/* =========================
-HORIZONTAL MENU
-========================= */
+/* HORIZONTAL MENU */
 
 .menu-wrapper{
     width:100%;
@@ -90,13 +86,10 @@ HORIZONTAL MENU
     transform:translateY(-2px);
 }
 
-/* =========================
-HERO
-========================= */
+/* HERO */
 
 .hero{
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #3155ff,
         #743cff
@@ -107,8 +100,7 @@ HERO
     padding:38px 15px 45px;
 }
 
-/* LANGUAGE BUTTON
-بالای Welcome */
+/* LANGUAGE BUTTON */
 
 .language-button{
     display:inline-block;
@@ -142,9 +134,7 @@ HERO
     margin:18px auto 0;
 }
 
-/* =========================
-CARDS
-========================= */
+/* CARDS */
 
 .container{
     width:92%;
@@ -157,25 +147,18 @@ CARDS
     border-radius:28px;
     overflow:hidden;
     margin-bottom:30px;
-    box-shadow:
-    0 10px 35px
-    rgba(25,40,80,0.10);
-
+    box-shadow:0 10px 35px rgba(25,40,80,0.10);
     transition:0.3s;
 }
 
 .card:hover{
     transform:translateY(-5px);
-    box-shadow:
-    0 15px 40px
-    rgba(25,40,80,0.17);
+    box-shadow:0 15px 40px rgba(25,40,80,0.17);
 }
 
 .card-top{
     height:210px;
-
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #e8eaff,
         #f5eaff
@@ -210,11 +193,9 @@ CARDS
     display:inline-block;
     margin-top:20px;
     padding:13px 25px;
-
     border-radius:30px;
 
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #3155ff,
         #633dff
@@ -223,7 +204,6 @@ CARDS
     color:white;
     text-decoration:none;
     font-weight:bold;
-
     transition:0.3s;
 }
 
@@ -231,17 +211,59 @@ CARDS
     transform:scale(1.05);
 }
 
-/* =========================
-CONTACT
-========================= */
+/* MUSIC NET */
+
+.music-net-card .card-top{
+    background:linear-gradient(
+        135deg,
+        #171d55,
+        #743cff
+    );
+}
+
+.music-net-card .card-icon{
+    font-size:95px;
+}
+
+/* MUSIC NET BUTTONS */
+
+.music-net-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.music-net-buttons a{
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:25px;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.recorded-btn{
+    background:#3155ff;
+}
+
+.live-btn{
+    background:#e53935;
+}
+
+.music-net-buttons a:hover{
+    transform:scale(1.05);
+}
+
+/* CONTACT */
 
 .contact{
     width:92%;
     max-width:1100px;
     margin:45px auto;
 
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #172033,
         #3155ff
@@ -250,7 +272,6 @@ CONTACT
     color:white;
     padding:35px 20px;
     text-align:center;
-
     border-radius:28px;
 }
 
@@ -266,21 +287,16 @@ CONTACT
 .phone{
     display:inline-block;
     margin-top:18px;
-
     background:white;
     color:#172033;
-
     padding:13px 25px;
     border-radius:30px;
-
     text-decoration:none;
     font-size:20px;
     font-weight:bold;
 }
 
-/* =========================
-PAGINATION
-========================= */
+/* PAGINATION */
 
 .pagination{
     display:flex;
@@ -299,18 +315,13 @@ PAGINATION
     justify-content:center;
 
     text-decoration:none;
-
     color:#3155ff;
     background:white;
 
     border-radius:50%;
-
     font-weight:bold;
 
-    box-shadow:
-    0 5px 15px
-    rgba(0,0,0,0.08);
-
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
     transition:0.3s;
 }
 
@@ -320,18 +331,13 @@ PAGINATION
     color:white;
 }
 
-/* =========================
-FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     background:#172033;
     color:white;
-
     text-align:center;
-
     padding:32px 15px;
-
     margin-top:50px;
 }
 
@@ -342,14 +348,11 @@ footer p{
 .footer-phone{
     display:inline-block;
     margin-top:10px;
-
     color:white;
     text-decoration:none;
 }
 
-/* =========================
-PERSIAN MODE
-========================= */
+/* PERSIAN MODE */
 
 body.persian{
     direction:rtl;
@@ -364,9 +367,7 @@ body.persian .hero h1{
     font-size:25px;
 }
 
-/* =========================
-MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:600px){
 
@@ -425,16 +426,13 @@ MOBILE
 <body>
 
 
-<!-- =========================
-HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
 <div class="logo">
     arsin984
 </div>
-
 
 <div class="menu-wrapper">
 
@@ -471,14 +469,9 @@ HEADER
 </header>
 
 
-<!-- =========================
-WELCOME
-========================= -->
+<!-- WELCOME -->
 
 <section class="hero">
-
-
-<!-- دکمه فارسی دقیقاً بالای Welcome -->
 
 <button
 class="language-button"
@@ -491,25 +484,18 @@ onclick="toggleLanguage()">
 
 
 <h1 id="welcomeTitle">
-
 Welcome to My City 984
-
 </h1>
 
 
 <p id="welcomeText">
-
 Discover the best places, websites, music, news and communities you love.
-
 </p>
-
 
 </section>
 
 
-<!-- =========================
-CARDS
-========================= -->
+<!-- MAIN CONTENT -->
 
 <main class="container">
 
@@ -610,7 +596,7 @@ Explore Places
 </div>
 
 
-<!-- CAFE AND RESTAURANT -->
+<!-- CAFE -->
 
 <div class="card">
 
@@ -636,6 +622,53 @@ data-en="Explore Cafe & Restaurant">
 Explore Cafe & Restaurant
 
 </a>
+
+</div>
+
+</div>
+
+
+<!-- MUSIC NET -->
+
+<div class="card music-net-card">
+
+<div class="card-top">
+    <div class="card-icon">🎼🎤</div>
+</div>
+
+<div class="card-content">
+
+<h2 data-en="Music Net">
+Music Net
+</h2>
+
+<p data-en="Learn music with me, watch recorded lessons and join live sessions.">
+Learn music with me, watch recorded lessons and join live sessions.
+</p>
+
+
+<div class="music-net-buttons">
+
+<a
+href="music-recorded.html"
+class="recorded-btn"
+data-en="🎬 Recorded Lessons">
+
+🎬 Recorded Lessons
+
+</a>
+
+
+<a
+href="music-live.html"
+class="live-btn"
+data-en="🔴 Live">
+
+🔴 Live
+
+</a>
+
+</div>
 
 </div>
 
@@ -709,9 +742,7 @@ Read News
 </main>
 
 
-<!-- =========================
-CONTACT
-========================= -->
+<!-- CONTACT -->
 
 <section class="contact">
 
@@ -734,9 +765,7 @@ href="tel:09931936926">
 </section>
 
 
-<!-- =========================
-PAGINATION
-========================= -->
+<!-- PAGINATION -->
 
 <div class="pagination">
 
@@ -765,9 +794,7 @@ href="index.html">
 </div>
 
 
-<!-- =========================
-FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -786,9 +813,7 @@ href="tel:09931936926">
 </footer>
 
 
-<!-- =========================
-LANGUAGE SCRIPT
-========================= -->
+<!-- LANGUAGE SCRIPT -->
 
 <script>
 
@@ -837,6 +862,19 @@ const translations = {
 "مشاهده کافه و رستوران",
 
 
+"Music Net":
+"نت موسیقی",
+
+"Learn music with me, watch recorded lessons and join live sessions.":
+"با من موسیقی یاد بگیرید، فیلم‌های ضبط‌شده را ببینید و در جلسات لایو شرکت کنید.",
+
+"🎬 Recorded Lessons":
+"🎬 فیلم‌های ضبط‌شده",
+
+"🔴 Live":
+"🔴 لایو",
+
+
 "Community":
 "انجمن",
 
@@ -861,7 +899,10 @@ const translations = {
 "تماس با ما",
 
 "For more information, contact us by phone.":
-"برای اطلاعات بیشتر از طریق تلفن با ما تماس بگیرید."
+"برای اطلاعات بیشتر از طریق تلفن با ما تماس بگیرید.",
+
+"© 2026 arsin984 - My City 984":
+"© 2026 arsin984 - My City 984"
 
 };
 
@@ -880,8 +921,6 @@ document.getElementById("welcomeText");
 
 if(!isPersian){
 
-/* Persian */
-
 document.body.classList.add("persian");
 
 document.documentElement.lang = "fa";
@@ -890,7 +929,7 @@ welcomeTitle.innerText =
 "به My City 984 خوش آمدید";
 
 welcomeText.innerText =
-"بهترین مکان‌ها، وب‌سایت‌ها، موسیقی، اخبار و انجمن‌های مورد علاقه‌تان را پیدا کنید.";
+"بهترین مکان‌ها، وب‌سایت‌ها، موسیقی، اخبار و انجمن‌های مورد علاقه‌تان را پیدا کنید";
 
 
 document.querySelectorAll("[data-en]")
@@ -917,8 +956,6 @@ isPersian = true;
 
 
 }else{
-
-/* English */
 
 document.body.classList.remove("persian");
 
