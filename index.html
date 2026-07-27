@@ -1,335 +1,337 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My City 984</title>
+    <title>My City 984</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
-    color: #172033;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+        }
 
-header {
-    background: linear-gradient(135deg, #3155ff, #7b2cff);
-    color: white;
-    padding: 35px 20px;
-    text-align: center;
-}
+        header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
 
-header h1 {
-    font-size: 34px;
-    margin-bottom: 10px;
-}
+        header h1 {
+            color: #3155ff;
+            margin-bottom: 15px;
+        }
 
-header p {
-    font-size: 17px;
-    opacity: 0.9;
-}
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
 
-nav {
-    background: white;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    overflow-x: auto;
-}
+        nav a {
+            text-decoration: none;
+            color: #172033;
+            font-weight: bold;
+            font-size: 18px;
+        }
 
-nav a {
-    text-decoration: none;
-    color: #172033;
-    font-weight: bold;
-    padding: 10px 16px;
-    border-radius: 10px;
-    white-space: nowrap;
-}
+        nav a:hover {
+            color: #3155ff;
+        }
 
-nav a:hover {
-    background: #eef1ff;
-    color: #3155ff;
-}
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #3155ff, #7c4dff);
+            color: white;
+        }
 
-.hero {
-    text-align: center;
-    padding: 60px 20px 35px;
-}
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
 
-.hero h2 {
-    font-size: 32px;
-    margin-bottom: 18px;
-}
+        .hero p {
+            font-size: 18px;
+            line-height: 2;
+        }
 
-.hero p {
-    max-width: 700px;
-    margin: auto;
-    line-height: 2;
-    color: #657085;
-    font-size: 17px;
-}
+        .cards {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
 
-.cards {
-    max-width: 1100px;
-    margin: 20px auto 70px;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
+        .card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
 
-.card {
-    background: white;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
+        .card:hover {
+            transform: translateY(-8px);
+        }
 
-.card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.13);
-}
+        .card-image {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e5e7ff, #f0e7ff);
+            font-size: 80px;
+        }
 
-.card-image {
-    height: 190px;
-    background: linear-gradient(135deg, #dfe5ff, #f1e5ff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 70px;
-}
+        .card-content {
+            padding: 25px;
+            text-align: right;
+        }
 
-.card-content {
-    padding: 25px;
-}
+        .card-content h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
 
-.card h3 {
-    font-size: 25px;
-    margin-bottom: 12px;
-}
+        .card-content p {
+            color: #666;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
 
-.card p {
-    color: #657085;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
+        .button {
+            display: inline-block;
+            background: #3155ff;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
 
-.button {
-    display: inline-block;
-    background: #3155ff;
-    color: white;
-    text-decoration: none;
-    padding: 13px 22px;
-    border-radius: 12px;
-    font-weight: bold;
-}
+        .button:hover {
+            background: #1d3edb;
+        }
 
-.button:hover {
-    background: #1e3fe0;
-}
+        footer {
+            background: #172033;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
 
-footer {
-    background: #10172d;
-    color: #aeb7ce;
-    text-align: center;
-    padding: 30px 20px;
-    line-height: 2;
-}
+        .phone {
+            margin-bottom: 20px;
+            line-height: 2;
+        }
 
-footer strong {
-    color: white;
-}
+        .phone a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
 
-.phone {
-    margin-bottom: 10px;
-    font-size: 17px;
-}
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 28px;
+            }
 
-.phone a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
+            nav {
+                gap: 15px;
+            }
 
-.phone a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 27px;
-    }
-
-    .hero h2 {
-        font-size: 27px;
-    }
-
-    .cards {
-        padding: 15px;
-    }
-}
-</style>
+            nav a {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h1>My City 984</h1>
-    <p>Discover, Explore, Enjoy</p>
-</header>
+    <header>
+        <h1>My City 984</h1>
 
-<nav>
-    <a href="#home">🏠 Home</a>
-    <a href="#cafes">☕ Cafes</a>
-    <a href="#music">🎵 Music</a>
-    <a href="#websites">🌐 Websites</a>
-    <a href="#places">📍 Places</a>
-    <a href="#news">📰 News</a>
-    <a href="#community">👥 Community</a>
-</nav>
+        <nav>
+            <a href="index.html">Home 🏠</a>
+            <a href="places.html">Places 📍</a>
+            <a href="websites.html">Websites 🌐</a>
+            <a href="music.html">Music 🎵</a>
+            <a href="news.html">News 📰</a>
+            <a href="community.html">Community 👥</a>
+        </nav>
+    </header>
 
-<section class="hero" id="home">
-    <h2>Discover My City</h2>
 
-    <p>
-        به شهر من خوش آمدید.
-        اینجا می‌توانید مکان‌های جالب، کافه‌ها، موسیقی،
-        اخبار و مطالب مختلف را پیدا کنید.
-    </p>
-</section>
+    <section class="hero">
+        <h2>به My City 984 خوش آمدید</h2>
 
-<section class="cards">
+        <p>
+            بهترین مکان‌ها، سایت‌ها، موسیقی، اخبار و انجمن‌های مورد علاقه‌تان را پیدا کنید.
+        </p>
+    </section>
 
-    <div class="card" id="cafes">
-        <div class="card-image">☕</div>
 
-        <div class="card-content">
-            <h3>Cafes</h3>
+    <section class="cards">
 
-            <p>
-                بهترین کافه‌ها و مکان‌های جذاب شهر را پیدا کنید.
-            </p>
+        <!-- Music -->
+        <div class="card" id="music">
 
-            <a class="button" href="cafes.html">
-                Explore Cafes
+            <div class="card-image">
+                🎵
+            </div>
+
+            <div class="card-content">
+
+                <h3>Music</h3>
+
+                <p>
+                    هنرمندان و محتوای موسیقی مورد علاقه خود را پیدا کنید.
+                </p>
+
+                <a href="music.html" class="button">
+                    Explore Music
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Websites -->
+        <div class="card" id="websites">
+
+            <div class="card-image">
+                🌐
+            </div>
+
+            <div class="card-content">
+
+                <h3>Websites</h3>
+
+                <p>
+                    مجموعه‌ای از سایت‌های مفید و جذاب را مشاهده کنید.
+                </p>
+
+                <a href="websites.html" class="button">
+                    Explore Websites
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Places -->
+        <div class="card" id="places">
+
+            <div class="card-image">
+                📍
+            </div>
+
+            <div class="card-content">
+
+                <h3>Places</h3>
+
+                <p>
+                    مکان‌های دیدنی و جذاب را پیدا کنید و با آن‌ها آشنا شوید.
+                </p>
+
+                <a href="places.html" class="button">
+                    Explore Places
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- News -->
+        <div class="card" id="news">
+
+            <div class="card-image">
+                📰
+            </div>
+
+            <div class="card-content">
+
+                <h3>News</h3>
+
+                <p>
+                    مطالب جدید و اخبار اختصاصی را در یک صفحه دنبال کنید.
+                </p>
+
+                <a href="news.html" class="button">
+                    Read News
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Community -->
+        <div class="card" id="community">
+
+            <div class="card-image">
+                👥
+            </div>
+
+            <div class="card-content">
+
+                <h3>Community</h3>
+
+                <p>
+                    با کاربران ارتباط برقرار کنید و ایده‌های جدید پیدا کنید.
+                </p>
+
+                <a href="community.html" class="button">
+                    Explore Community
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <div class="phone">
+            📞 تماس با ما:
+            <br>
+
+            <a href="tel:09931936926">
+                09931936926
             </a>
         </div>
-    </div>
 
-
-    <div class="card" id="music">
-        <div class="card-image">🎵</div>
-
-        <div class="card-content">
-            <h3>Music</h3>
-
-            <p>
-                آهنگ‌ها، هنرمندان و محتوای موسیقی مورد علاقه خود را پیدا کنید.
-            </p>
-
-            <a class="button" href="music.html">
-                Explore Music
-            </a>
+        <div>
+            © 2026
+            <strong>My City 984</strong>
+            - All Rights Reserved
         </div>
-    </div>
 
-
-    <div class="card" id="websites">
-        <div class="card-image">🌐</div>
-
-        <div class="card-content">
-            <h3>Websites</h3>
-
-            <p>
-                مجموعه‌ای از سایت‌های مفید و جالب را مشاهده کنید.
-            </p>
-
-            <a class="button" href="websites.html">
-                Explore Websites
-            </a>
-        </div>
-    </div>
-
-
-    <div class="card" id="places">
-        <div class="card-image">📍</div>
-
-        <div class="card-content">
-            <h3>Places</h3>
-
-            <p>
-                مکان‌های دیدنی و جذاب را کشف کنید.
-            </p>
-
-            <a class="button" href="places.html">
-                Explore Places
-            </a>
-        </div>
-    </div>
-
-
-    <div class="card" id="news">
-        <div class="card-image">📰</div>
-
-        <div class="card-content">
-            <h3>News</h3>
-
-            <p>
-                اخبار و مطالب جدید را در یک صفحه اختصاصی دنبال کنید.
-            </p>
-
-            <a class="button" href="news.html">
-                Read News
-            </a>
-        </div>
-    </div>
-
-
-    <div class="card" id="community">
-        <div class="card-image">👥</div>
-
-        <div class="card-content">
-            <h3>Community</h3>
-
-            <p>
-                با جامعه کاربران ارتباط برقرار کنید و ایده‌های جدید پیدا کنید.
-            </p>
-
-            <a class="button" href="community.html">
-                Explore Community
-            </a>
-        </div>
-    </div>
-
-</section>
-
-<footer>
-
-    <div class="phone">
-        📞 تماس با ما:
-        <a href="tel:09931936926">
-            09931936926
-        </a>
-    </div>
-
-    <div>
-        © 2026 <strong>My City 984</strong> — All Rights Reserved
-    </div>
-
-</footer>
+    </footer>
 
 </body>
 </html>
