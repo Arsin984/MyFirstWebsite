@@ -1,646 +1,1271 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>My City 984 | Arsin984</title>
+<meta charset="UTF-8">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    html {
-      scroll-behavior: smooth;
-    }
+<title>
+My City 984 | Arsin984
+</title>
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7ff;
-      color: #172033;
-      overflow-x: hidden;
-    }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+<style>
 
-    /* =========================
-       TOP HEADER
-    ========================== */
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
-    .top-header {
-      background: rgba(255,255,255,0.96);
-      padding: 18px 15px 14px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-      backdrop-filter: blur(12px);
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    .site-title {
-      text-align: center;
-      font-size: 34px;
-      font-weight: 800;
-      color: #3155e7;
-      margin-bottom: 15px;
-    }
+body{
 
-    /* کشویی افقی */
+font-family:
+Arial,
+Helvetica,
+sans-serif;
 
-    .nav-scroll {
-      display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      padding: 5px 5px 10px;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x proximity;
-    }
+background:#f5f7ff;
 
-    .nav-scroll::-webkit-scrollbar {
-      display: none;
-    }
+color:#172033;
 
-    .nav-item {
-      flex: 0 0 auto;
-      min-width: 125px;
-      padding: 13px 17px;
-      border-radius: 18px;
-      background: #f1f4ff;
-      color: #172033;
-      font-weight: 700;
-      text-align: center;
-      transition: 0.25s;
-      scroll-snap-align: center;
-      border: 1px solid #e2e7ff;
-    }
+overflow-x:hidden;
 
-    .nav-item:hover {
-      background: #3155e7;
-      color: white;
-      transform: translateY(-2px);
-    }
+}
 
-    /* =========================
-       HERO
-    ========================== */
+a{
+text-decoration:none;
+color:inherit;
+}
 
-    .hero {
-      min-height: 420px;
-      padding: 80px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 35%),
-        linear-gradient(135deg, #3155e7, #7048f5);
-    }
 
-    .hero-content {
-      max-width: 850px;
-    }
+/* =========================
+TOP HEADER
+========================= */
 
-    .hero h1 {
-      font-size: 46px;
-      margin-bottom: 22px;
-      font-weight: 900;
-    }
+.top-header{
 
-    .hero p {
-      font-size: 21px;
-      line-height: 2;
-      opacity: 0.95;
-    }
+background:
+rgba(255,255,255,0.96);
 
-    /* =========================
-       CARDS
-    ========================== */
+padding:
+18px 15px 14px;
 
-    .cards-container {
-      max-width: 1150px;
-      margin: 55px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-    }
+position:sticky;
 
-    .card {
-      background: white;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 15px 40px rgba(30,50,120,0.10);
-      transition: 0.3s;
-      border: 1px solid #e8ebfa;
-    }
+top:0;
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 22px 50px rgba(30,50,120,0.18);
-    }
+z-index:1000;
 
-    .card-icon {
-      height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 95px;
-      background: linear-gradient(135deg, #e9edff, #f4eaff);
-    }
+box-shadow:
+0 5px 25px
+rgba(0,0,0,0.08);
 
-    .card-content {
-      padding: 30px;
-      text-align: center;
-    }
+backdrop-filter:
+blur(12px);
 
-    .card h2 {
-      font-size: 30px;
-      margin-bottom: 15px;
-      color: #172033;
-    }
+}
 
-    .card p {
-      color: #687086;
-      line-height: 2;
-      font-size: 16px;
-      min-height: 70px;
-      margin-bottom: 22px;
-    }
 
-    .card-button {
-      display: inline-block;
-      background: linear-gradient(135deg, #3155e7, #6548f3);
-      color: white;
-      padding: 13px 28px;
-      border-radius: 15px;
-      font-weight: bold;
-      transition: 0.25s;
-    }
+.site-title{
 
-    .card-button:hover {
-      transform: scale(1.04);
-      box-shadow: 0 10px 25px rgba(49,85,231,0.3);
-    }
+text-align:center;
 
-    /* =========================
-       CONTACT
-    ========================== */
+font-size:34px;
 
-    .contact-section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 45px 25px;
-      text-align: center;
-      background: linear-gradient(135deg, #172033, #29375c);
-      color: white;
-      border-radius: 30px;
-      box-shadow: 0 20px 50px rgba(20,30,70,0.2);
-    }
+font-weight:800;
 
-    .contact-section h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
+color:#3155e7;
 
-    .phone {
-      display: inline-block;
-      direction: ltr;
-      background: white;
-      color: #172033;
-      padding: 15px 28px;
-      border-radius: 15px;
-      font-size: 22px;
-      font-weight: bold;
-      margin-top: 15px;
-    }
+margin-bottom:15px;
 
-    /* =========================
-       FOOTER
-    ========================== */
+}
 
-    footer {
-      background: #111827;
-      color: #cbd5e1;
-      padding: 45px 20px 25px;
-      text-align: center;
-      margin-top: 70px;
-    }
 
-    .footer-name {
-      color: white;
-      font-size: 27px;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
+/* =========================
+HORIZONTAL MENU
+========================= */
 
-    .footer-phone {
-      direction: ltr;
-      display: inline-block;
-      margin: 12px 0 25px;
-      color: #93aaff;
-      font-size: 18px;
-      font-weight: bold;
-    }
+.nav-scroll{
 
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-bottom: 25px;
-    }
+display:flex;
 
-    .footer-links a {
-      transition: 0.2s;
-    }
+gap:12px;
 
-    .footer-links a:hover {
-      color: white;
-    }
+overflow-x:auto;
 
-    .copyright {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 20px;
-      font-size: 14px;
-    }
+padding:
+5px 5px 10px;
 
-    /* =========================
-       RESPONSIVE
-    ========================== */
+scrollbar-width:none;
 
-    @media (max-width: 750px) {
+-webkit-overflow-scrolling:touch;
 
-      .site-title {
-        font-size: 30px;
-      }
+scroll-snap-type:
+x proximity;
 
-      .nav-item {
-        min-width: 115px;
-        font-size: 14px;
-      }
+}
 
-      .hero {
-        min-height: 360px;
-        padding: 60px 20px;
-      }
 
-      .hero h1 {
-        font-size: 34px;
-      }
+.nav-scroll::-webkit-scrollbar{
 
-      .hero p {
-        font-size: 17px;
-      }
+display:none;
 
-      .cards-container {
-        grid-template-columns: 1fr;
-        margin-top: 35px;
-      }
+}
 
-      .card-icon {
-        height: 190px;
-      }
 
-      .card-content {
-        padding: 25px 20px;
-      }
+.nav-item{
 
-      .card h2 {
-        font-size: 27px;
-      }
+flex:
+0 0 auto;
 
-      .contact-section {
-        margin: 40px 20px;
-      }
-    }
+min-width:125px;
 
-  </style>
+padding:
+13px 17px;
+
+border-radius:18px;
+
+background:#f1f4ff;
+
+color:#172033;
+
+font-weight:700;
+
+text-align:center;
+
+transition:.25s;
+
+scroll-snap-align:center;
+
+border:
+1px solid #e2e7ff;
+
+}
+
+
+.nav-item:hover{
+
+background:#3155e7;
+
+color:white;
+
+transform:
+translateY(-2px);
+
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+
+min-height:420px;
+
+padding:
+80px 25px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+color:white;
+
+background:
+
+radial-gradient(
+circle at top left,
+rgba(255,255,255,.18),
+transparent 35%
+),
+
+linear-gradient(
+135deg,
+#3155e7,
+#7048f5
+);
+
+}
+
+
+.hero-content{
+
+max-width:850px;
+
+}
+
+
+.hero h1{
+
+font-size:46px;
+
+margin-bottom:22px;
+
+font-weight:900;
+
+}
+
+
+.hero p{
+
+font-size:21px;
+
+line-height:2;
+
+opacity:.95;
+
+}
+
+
+/* =========================
+CARDS
+========================= */
+
+.cards-container{
+
+max-width:1150px;
+
+margin:
+55px auto;
+
+padding:
+0 20px;
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:28px;
+
+}
+
+
+.card{
+
+background:white;
+
+border-radius:28px;
+
+overflow:hidden;
+
+box-shadow:
+0 15px 40px
+rgba(30,50,120,.10);
+
+transition:.3s;
+
+border:
+1px solid #e8ebfa;
+
+}
+
+
+.card:hover{
+
+transform:
+translateY(-8px);
+
+box-shadow:
+0 22px 50px
+rgba(30,50,120,.18);
+
+}
+
+
+.card-icon{
+
+height:220px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:95px;
+
+background:
+
+linear-gradient(
+135deg,
+#e9edff,
+#f4eaff
+);
+
+}
+
+
+.card-content{
+
+padding:30px;
+
+text-align:center;
+
+}
+
+
+.card h2{
+
+font-size:30px;
+
+margin-bottom:15px;
+
+color:#172033;
+
+}
+
+
+.card p{
+
+color:#687086;
+
+line-height:2;
+
+font-size:16px;
+
+min-height:70px;
+
+margin-bottom:22px;
+
+}
+
+
+.card-button{
+
+display:inline-block;
+
+background:
+
+linear-gradient(
+135deg,
+#3155e7,
+#6548f3
+);
+
+color:white;
+
+padding:
+13px 28px;
+
+border-radius:15px;
+
+font-weight:bold;
+
+transition:.25s;
+
+}
+
+
+.card-button:hover{
+
+transform:
+scale(1.04);
+
+box-shadow:
+0 10px 25px
+rgba(49,85,231,.3);
+
+}
+
+
+/* =========================
+CONTACT
+========================= */
+
+.contact-section{
+
+max-width:900px;
+
+margin:
+60px auto;
+
+padding:
+45px 25px;
+
+text-align:center;
+
+background:
+
+linear-gradient(
+135deg,
+#172033,
+#29375c
+);
+
+color:white;
+
+border-radius:30px;
+
+box-shadow:
+0 20px 50px
+rgba(20,30,70,.2);
+
+}
+
+
+.contact-section h2{
+
+font-size:32px;
+
+margin-bottom:20px;
+
+}
+
+
+.phone{
+
+display:inline-block;
+
+direction:ltr;
+
+background:white;
+
+color:#172033;
+
+padding:
+15px 28px;
+
+border-radius:15px;
+
+font-size:22px;
+
+font-weight:bold;
+
+margin-top:15px;
+
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+
+background:#111827;
+
+color:#cbd5e1;
+
+padding:
+45px 20px 25px;
+
+text-align:center;
+
+margin-top:70px;
+
+}
+
+
+.footer-name{
+
+color:white;
+
+font-size:27px;
+
+font-weight:800;
+
+margin-bottom:15px;
+
+}
+
+
+.footer-phone{
+
+direction:ltr;
+
+display:inline-block;
+
+margin:
+12px 0 25px;
+
+color:#93aaff;
+
+font-size:18px;
+
+font-weight:bold;
+
+}
+
+
+.footer-links{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:18px;
+
+margin-bottom:25px;
+
+}
+
+
+.footer-links a{
+
+transition:.2s;
+
+}
+
+
+.footer-links a:hover{
+
+color:white;
+
+}
+
+
+.copyright{
+
+border-top:
+1px solid
+rgba(255,255,255,.1);
+
+padding-top:20px;
+
+font-size:14px;
+
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:750px){
+
+.site-title{
+
+font-size:30px;
+
+}
+
+
+.nav-item{
+
+min-width:115px;
+
+font-size:14px;
+
+}
+
+
+.hero{
+
+min-height:360px;
+
+padding:
+60px 20px;
+
+}
+
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+
+.hero p{
+
+font-size:17px;
+
+}
+
+
+.cards-container{
+
+grid-template-columns:1fr;
+
+margin-top:35px;
+
+}
+
+
+.card-icon{
+
+height:190px;
+
+}
+
+
+.card-content{
+
+padding:
+25px 20px;
+
+}
+
+
+.card h2{
+
+font-size:27px;
+
+}
+
+
+.contact-section{
+
+margin:
+40px 20px;
+
+}
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
 
-  <header class="top-header">
+<!-- =========================
+HEADER
+========================= -->
 
-    <div class="site-title">
-      My City 984
-    </div>
 
-    <nav class="nav-scroll">
+<header class="top-header">
 
-      <a class="nav-item" href="music.html">
-        🎵 Music
-      </a>
 
-      <a class="nav-item" href="Websites.html">
-        🌐 Websites
-      </a>
+<div class="site-title">
 
-      <a class="nav-item" href="places.html">
-        📍 Places
-      </a>
+My City 984
 
-      <a class="nav-item" href="cafes.html">
-        ☕ Cafes
-      </a>
+</div>
 
-      <a class="nav-item" href="index.html">
-        🏠 Home
-      </a>
 
-      <a class="nav-item" href="community.html">
-        👥 Community
-      </a>
+<nav class="nav-scroll">
 
-      <a class="nav-item" href="news.html">
-        📰 News
-      </a>
 
-    </nav>
+<a
+class="nav-item"
+href="music.html">
 
-  </header>
+🎵 Music
 
+</a>
 
-  <!-- =========================
-       HERO
-  ========================== -->
 
-  <section class="hero">
+<a
+class="nav-item"
+href="Websites.html">
 
-    <div class="hero-content">
+🌐 Websites
 
-      <h1>
-        Welcome to My City 984
-      </h1>
+</a>
 
-      <p>
-        Discover the best music, websites, places, cafes,
-        communities and news all in one beautiful place.
-      </p>
 
-    </div>
+<a
+class="nav-item"
+href="places.html">
 
-  </section>
+📍 Places
 
+</a>
 
-  <!-- =========================
-       MAIN CARDS
-  ========================== -->
 
-  <main>
+<a
+class="nav-item"
+href="cafes.html">
 
-    <div class="cards-container">
+☕ Cafes
 
+</a>
 
-      <!-- MUSIC -->
 
-      <article class="card">
+<a
+class="nav-item"
+href="cafe-restaurant.html">
 
-        <div class="card-icon">
-          🎵
-        </div>
+🍽️ Cafe & Restaurant
 
-        <div class="card-content">
+</a>
 
-          <h2>
-            Music
-          </h2>
 
-          <p>
-            Discover music and enjoy your favourite songs
-            and artists.
-          </p>
+<a
+class="nav-item"
+href="index.html">
 
-          <a class="card-button" href="music.html">
-            Explore Music
-          </a>
+🏠 Home
 
-        </div>
+</a>
 
-      </article>
 
+<a
+class="nav-item"
+href="community.html">
 
-      <!-- WEBSITES -->
+👥 Community
 
-      <article class="card">
+</a>
 
-        <div class="card-icon">
-          🌐
-        </div>
 
-        <div class="card-content">
+<a
+class="nav-item"
+href="news.html">
 
-          <h2>
-            Websites
-          </h2>
+📰 News
 
-          <p>
-            Explore a collection of useful, interesting
-            and popular websites.
-          </p>
+</a>
 
-          <a class="card-button" href="Websites.html">
-            Explore Websites
-          </a>
 
-        </div>
+</nav>
 
-      </article>
 
+</header>
 
-      <!-- PLACES -->
 
-      <article class="card">
 
-        <div class="card-icon">
-          📍
-        </div>
+<!-- =========================
+HERO
+========================= -->
 
-        <div class="card-content">
 
-          <h2>
-            Places
-          </h2>
+<section class="hero">
 
-          <p>
-            Find interesting places and discover
-            new destinations.
-          </p>
 
-          <a class="card-button" href="places.html">
-            Explore Places
-          </a>
+<div class="hero-content">
 
-        </div>
 
-      </article>
+<h1>
 
+Welcome to My City 984
 
-      <!-- CAFES -->
+</h1>
 
-      <article class="card">
 
-        <div class="card-icon">
-          ☕
-        </div>
+<p>
 
-        <div class="card-content">
+Discover the best music,
+websites,
+places,
+cafes,
+restaurants,
+communities
+and news
+all in one beautiful place.
 
-          <h2>
-            Cafes
-          </h2>
+</p>
 
-          <p>
-            Discover beautiful cafes and find
-            great places to relax and enjoy.
-          </p>
 
-          <a class="card-button" href="cafes.html">
-            Explore Cafes
-          </a>
+</div>
 
-        </div>
 
-      </article>
+</section>
 
 
-      <!-- COMMUNITY -->
 
-      <article class="card">
+<!-- =========================
+MAIN CARDS
+========================= -->
 
-        <div class="card-icon">
-          👥
-        </div>
 
-        <div class="card-content">
+<main>
 
-          <h2>
-            Community
-          </h2>
 
-          <p>
-            Connect with people, communities
-            and interesting groups.
-          </p>
+<div class="cards-container">
 
-          <a class="card-button" href="community.html">
-            Join Community
-          </a>
 
-        </div>
 
-      </article>
+<!-- MUSIC -->
 
 
-      <!-- NEWS -->
+<article class="card">
 
-      <article class="card">
 
-        <div class="card-icon">
-          📰
-        </div>
+<div class="card-icon">
 
-        <div class="card-content">
+🎵
 
-          <h2>
-            News
-          </h2>
+</div>
 
-          <p>
-            Stay updated with the latest news
-            and interesting stories.
-          </p>
 
-          <a class="card-button" href="news.html">
-            Read News
-          </a>
+<div class="card-content">
 
-        </div>
 
-      </article>
+<h2>
 
+Music
 
-    </div>
+</h2>
 
 
-    <!-- =========================
-         CONTACT
-    ========================== -->
+<p>
 
-    <section class="contact-section">
+Discover music and enjoy
+your favourite songs
+and artists.
 
-      <h2>
-        Contact Arsin984
-      </h2>
+</p>
 
-      <p>
-        For contact and support, you can call this number:
-      </p>
 
-      <a
-        class="phone"
-        href="tel:09931936926"
-      >
-        📞 09931936926
-      </a>
+<a
+class="card-button"
+href="music.html">
 
-    </section>
+Explore Music
 
-  </main>
+</a>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+</div>
 
-  <footer>
 
-    <div class="footer-name">
-      Arsin984
-    </div>
+</article>
 
-    <div class="footer-links">
 
-      <a href="index.html">Home</a>
 
-      <a href="music.html">Music</a>
+<!-- WEBSITES -->
 
-      <a href="Websites.html">Websites</a>
 
-      <a href="places.html">Places</a>
+<article class="card">
 
-      <a href="cafes.html">Cafes</a>
 
-      <a href="community.html">Community</a>
+<div class="card-icon">
 
-      <a href="news.html">News</a>
+🌐
 
-    </div>
+</div>
 
-    <a
-      class="footer-phone"
-      href="tel:09931936926"
-    >
-      📞 09931936926
-    </a>
 
-    <div class="copyright">
-      © 2026 My City 984 — All Rights Reserved
-    </div>
+<div class="card-content">
 
-  </footer>
+
+<h2>
+
+Websites
+
+</h2>
+
+
+<p>
+
+Explore a collection
+of useful,
+interesting
+and popular websites.
+
+</p>
+
+
+<a
+class="card-button"
+href="Websites.html">
+
+Explore Websites
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- PLACES -->
+
+
+<article class="card">
+
+
+<div class="card-icon">
+
+📍
+
+</div>
+
+
+<div class="card-content">
+
+
+<h2>
+
+Places
+
+</h2>
+
+
+<p>
+
+Find interesting places
+and discover
+new destinations.
+
+</p>
+
+
+<a
+class="card-button"
+href="places.html">
+
+Explore Places
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- CAFES -->
+
+
+<article class="card">
+
+
+<div class="card-icon">
+
+☕
+
+</div>
+
+
+<div class="card-content">
+
+
+<h2>
+
+Cafes
+
+</h2>
+
+
+<p>
+
+Discover beautiful cafes
+and find great places
+to relax and enjoy.
+
+</p>
+
+
+<a
+class="card-button"
+href="cafes.html">
+
+Explore Cafes
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- CAFE AND RESTAURANT -->
+
+
+<article class="card">
+
+
+<div class="card-icon">
+
+🍽️
+
+</div>
+
+
+<div class="card-content">
+
+
+<h2>
+
+Cafe & Restaurant
+
+</h2>
+
+
+<p>
+
+Discover cafes,
+restaurants,
+menus,
+food,
+drinks
+and delicious places.
+
+</p>
+
+
+<a
+class="card-button"
+href="cafe-restaurant.html">
+
+Explore Cafe & Restaurant
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- COMMUNITY -->
+
+
+<article class="card">
+
+
+<div class="card-icon">
+
+👥
+
+</div>
+
+
+<div class="card-content">
+
+
+<h2>
+
+Community
+
+</h2>
+
+
+<p>
+
+Connect with people,
+communities
+and interesting groups.
+
+</p>
+
+
+<a
+class="card-button"
+href="community.html">
+
+Join Community
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- NEWS -->
+
+
+<article class="card">
+
+
+<div class="card-icon">
+
+📰
+
+</div>
+
+
+<div class="card-content">
+
+
+<h2>
+
+News
+
+</h2>
+
+
+<p>
+
+Stay updated with
+the latest news
+and interesting stories.
+
+</p>
+
+
+<a
+class="card-button"
+href="news.html">
+
+Read News
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+</div>
+
+
+
+<!-- =========================
+CONTACT
+========================= -->
+
+
+<section class="contact-section">
+
+
+<h2>
+
+Contact Arsin984
+
+</h2>
+
+
+<p>
+
+For contact and support,
+you can call this number:
+
+</p>
+
+
+<a
+class="phone"
+href="tel:09931936926">
+
+📞 09931936926
+
+</a>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+
+<footer>
+
+
+<div class="footer-name">
+
+Arsin984
+
+</div>
+
+
+<div class="footer-links">
+
+
+<a href="index.html">
+
+Home
+
+</a>
+
+
+<a href="music.html">
+
+Music
+
+</a>
+
+
+<a href="Websites.html">
+
+Websites
+
+</a>
+
+
+<a href="places.html">
+
+Places
+
+</a>
+
+
+<a href="cafes.html">
+
+Cafes
+
+</a>
+
+
+<a href="cafe-restaurant.html">
+
+Cafe & Restaurant
+
+</a>
+
+
+<a href="community.html">
+
+Community
+
+</a>
+
+
+<a href="news.html">
+
+News
+
+</a>
+
+
+</div>
+
+
+<a
+class="footer-phone"
+href="tel:09931936926">
+
+📞 09931936926
+
+</a>
+
+
+<div class="copyright">
+
+© 2026 My City 984
+— All Rights Reserved
+
+</div>
+
+
+</footer>
+
 
 
 </body>
+
 </html>
