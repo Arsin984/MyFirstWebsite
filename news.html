@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>News - My City 984</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: white;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    header h1 {
+      color: #3155ff;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #666;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 25px;
+      color: #3155ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .news-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .news-image {
+      height: 180px;
+      background: linear-gradient(135deg, #dfe5ff, #f1eaff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 70px;
+    }
+
+    .news-content {
+      padding: 25px;
+    }
+
+    .news-content h2 {
+      margin-bottom: 12px;
+      color: #172033;
+      line-height: 1.5;
+    }
+
+    .date {
+      color: #3155ff;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .news-content p {
+      color: #666;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #3155ff;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #203ed1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>News 📰</h1>
+    <p>آخرین اخبار و مطالب جذاب را دنبال کنید</p>
+  </header>
+
+  <div class="container">
+
+    <a href="index.html" class="back">← بازگشت به صفحه اصلی</a>
+
+    <div class="news-list">
+
+      <div class="news-card">
+        <div class="news-image">📰</div>
+
+        <div class="news-content">
+          <h2>جدیدترین اخبار شهر</h2>
+
+          <div class="date">
+            📅 امروز
+          </div>
+
+          <p>
+            در این بخش می‌توانید جدیدترین اخبار و اتفاقات مهم شهر را مشاهده کنید.
+          </p>
+
+          <a href="#" class="button">
+            ادامه مطلب
+          </a>
+        </div>
+      </div>
+
+
+      <div class="news-card">
+        <div class="news-image">🎉</div>
+
+        <div class="news-content">
+          <h2>رویدادهای جدید</h2>
+
+          <div class="date">
+            📅 این هفته
+          </div>
+
+          <p>
+            با رویدادها و برنامه‌های جذاب و جدیدی که در شهر برگزار می‌شوند آشنا شوید.
+          </p>
+
+          <a href="#" class="button">
+            ادامه مطلب
+          </a>
+        </div>
+      </div>
+
+
+      <div class="news-card">
+        <div class="news-image">🏙️</div>
+
+        <div class="news-content">
+          <h2>اخبار محلی</h2>
+
+          <div class="date">
+            📅 این ماه
+          </div>
+
+          <p>
+            آخرین خبرهای محلی و اتفاقات مهم اطراف خود را در این صفحه دنبال کنید.
+          </p>
+
+          <a href="#" class="button">
+            ادامه مطلب
+          </a>
+        </div>
+      </div>
+
+
+      <div class="news-card">
+        <div class="news-image">⭐</div>
+
+        <div class="news-content">
+          <h2>خبر ویژه</h2>
+
+          <div class="date">
+            📅 جدید
+          </div>
+
+          <p>
+            مهم‌ترین و جذاب‌ترین خبرهای ویژه را در این بخش مشاهده کنید.
+          </p>
+
+          <a href="#" class="button">
+            ادامه مطلب
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 My City 984
+  </footer>
+
+</body>
+</html>
