@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
 <title>arsin984 | My City 984</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -21,10 +23,14 @@ body{
     font-family:Arial, Tahoma, sans-serif;
     background:#f4f6fb;
     color:#172033;
+    overflow-x:hidden;
     transition:0.3s;
 }
 
-/* HEADER */
+/* =========================
+HEADER
+========================= */
+
 header{
     background:white;
     padding:18px 15px 12px;
@@ -42,11 +48,14 @@ header{
     margin-bottom:14px;
 }
 
-/* MENU */
+/* =========================
+HORIZONTAL MENU
+========================= */
+
 .menu-wrapper{
+    width:100%;
     overflow-x:auto;
     overflow-y:hidden;
-    white-space:nowrap;
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
 }
@@ -58,18 +67,20 @@ header{
 .menu{
     display:flex;
     gap:12px;
-    min-width:max-content;
-    justify-content:center;
+    width:max-content;
+    min-width:100%;
 }
 
 .menu a{
+    flex:0 0 auto;
     text-decoration:none;
     color:#172033;
-    font-size:17px;
+    background:#f3f5ff;
+    padding:12px 17px;
+    border-radius:25px;
+    font-size:16px;
     font-weight:bold;
-    padding:12px 16px;
-    border-radius:30px;
-    background:#f5f7ff;
+    white-space:nowrap;
     transition:0.3s;
 }
 
@@ -79,45 +90,62 @@ header{
     transform:translateY(-2px);
 }
 
-/* LANGUAGE BUTTON */
-.language-box{
+/* =========================
+HERO
+========================= */
+
+.hero{
+    background:
+    linear-gradient(
+        135deg,
+        #3155ff,
+        #743cff
+    );
+
+    color:white;
     text-align:center;
-    margin-top:12px;
+    padding:38px 15px 45px;
 }
 
-.language-btn{
+/* LANGUAGE BUTTON
+بالای Welcome */
+
+.language-button{
+    display:inline-block;
     border:none;
-    background:linear-gradient(135deg,#3155ff,#7b3cff);
-    color:white;
-    padding:10px 18px;
+    background:white;
+    color:#3155ff;
+    padding:10px 22px;
     border-radius:25px;
-    font-size:15px;
+    font-size:16px;
     font-weight:bold;
     cursor:pointer;
-    box-shadow:0 5px 15px rgba(49,85,255,0.25);
+    margin-bottom:18px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    transition:0.3s;
 }
 
-/* HERO */
-.hero{
-    background:linear-gradient(135deg,#3155ff,#793cff);
-    color:white;
-    text-align:center;
-    padding:45px 20px;
+.language-button:hover{
+    transform:scale(1.05);
 }
 
 .hero h1{
-    font-size:27px;
+    font-size:26px;
     line-height:1.3;
     white-space:nowrap;
 }
 
 .hero p{
-    font-size:18px;
-    margin-top:18px;
+    font-size:17px;
     line-height:2;
+    max-width:750px;
+    margin:18px auto 0;
 }
 
-/* CARDS */
+/* =========================
+CARDS
+========================= */
+
 .container{
     width:92%;
     max-width:1100px;
@@ -129,40 +157,52 @@ header{
     border-radius:28px;
     overflow:hidden;
     margin-bottom:30px;
-    box-shadow:0 10px 35px rgba(25,40,80,0.10);
+    box-shadow:
+    0 10px 35px
+    rgba(25,40,80,0.10);
+
     transition:0.3s;
 }
 
 .card:hover{
     transform:translateY(-5px);
-    box-shadow:0 15px 40px rgba(25,40,80,0.16);
+    box-shadow:
+    0 15px 40px
+    rgba(25,40,80,0.17);
 }
 
 .card-top{
-    height:220px;
-    background:linear-gradient(135deg,#e9eaff,#f7eaff);
+    height:210px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #e8eaff,
+        #f5eaff
+    );
+
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
 .card-icon{
-    font-size:100px;
+    font-size:90px;
 }
 
 .card-content{
-    padding:28px;
+    padding:27px;
     text-align:center;
 }
 
 .card-content h2{
-    font-size:30px;
-    margin-bottom:15px;
+    font-size:28px;
+    margin-bottom:14px;
 }
 
 .card-content p{
     color:#687084;
-    font-size:17px;
+    font-size:16px;
     line-height:2;
 }
 
@@ -170,11 +210,20 @@ header{
     display:inline-block;
     margin-top:20px;
     padding:13px 25px;
+
     border-radius:30px;
-    background:linear-gradient(135deg,#3155ff,#633dff);
+
+    background:
+    linear-gradient(
+        135deg,
+        #3155ff,
+        #633dff
+    );
+
     color:white;
     text-decoration:none;
     font-weight:bold;
+
     transition:0.3s;
 }
 
@@ -182,69 +231,107 @@ header{
     transform:scale(1.05);
 }
 
-/* CONTACT */
+/* =========================
+CONTACT
+========================= */
+
 .contact{
-    background:linear-gradient(135deg,#172033,#3155ff);
+    width:92%;
+    max-width:1100px;
+    margin:45px auto;
+
+    background:
+    linear-gradient(
+        135deg,
+        #172033,
+        #3155ff
+    );
+
     color:white;
     padding:35px 20px;
     text-align:center;
+
     border-radius:28px;
-    margin:40px auto;
-    max-width:1100px;
 }
 
 .contact h2{
-    font-size:27px;
-    margin-bottom:15px;
+    font-size:28px;
+    margin-bottom:14px;
+}
+
+.contact p{
+    line-height:1.8;
 }
 
 .phone{
     display:inline-block;
-    margin-top:15px;
+    margin-top:18px;
+
     background:white;
     color:#172033;
+
     padding:13px 25px;
     border-radius:30px;
+
     text-decoration:none;
     font-size:20px;
     font-weight:bold;
 }
 
-/* PAGINATION */
+/* =========================
+PAGINATION
+========================= */
+
 .pagination{
     display:flex;
     justify-content:center;
     gap:10px;
     flex-wrap:wrap;
-    margin:40px 0;
+    margin:40px 15px;
 }
 
 .pagination a{
     width:45px;
     height:45px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-decoration:none;
+
     color:#3155ff;
     background:white;
+
     border-radius:50%;
+
     font-weight:bold;
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+    box-shadow:
+    0 5px 15px
+    rgba(0,0,0,0.08);
+
+    transition:0.3s;
 }
 
-.pagination a.active,
-.pagination a:hover{
+.pagination a:hover,
+.pagination a.active{
     background:#3155ff;
     color:white;
 }
 
-/* FOOTER */
+/* =========================
+FOOTER
+========================= */
+
 footer{
     background:#172033;
     color:white;
+
     text-align:center;
-    padding:30px 15px;
+
+    padding:32px 15px;
+
     margin-top:50px;
 }
 
@@ -254,15 +341,19 @@ footer p{
 
 .footer-phone{
     display:inline-block;
+    margin-top:10px;
+
     color:white;
     text-decoration:none;
-    margin-top:10px;
 }
 
-/* PERSIAN MODE */
+/* =========================
+PERSIAN MODE
+========================= */
+
 body.persian{
     direction:rtl;
-    font-family:Tahoma,Arial,sans-serif;
+    font-family:Tahoma, Arial, sans-serif;
 }
 
 body.persian .menu-wrapper{
@@ -273,15 +364,14 @@ body.persian .hero h1{
     font-size:25px;
 }
 
-body.persian .hero p{
-    font-size:17px;
-}
+/* =========================
+MOBILE
+========================= */
 
-/* MOBILE */
 @media(max-width:600px){
 
     header{
-        padding:14px 10px;
+        padding:14px 10px 10px;
     }
 
     .logo{
@@ -289,368 +379,580 @@ body.persian .hero p{
     }
 
     .menu{
-        justify-content:flex-start;
+        min-width:max-content;
     }
 
     .menu a{
         font-size:15px;
-        padding:10px 13px;
+        padding:10px 14px;
     }
 
     .hero{
-        padding:35px 15px;
+        padding:30px 10px 40px;
     }
 
     .hero h1{
-        font-size:21px;
+        font-size:20px;
     }
 
     .hero p{
-        font-size:16px;
+        font-size:15px;
+    }
+
+    .language-button{
+        font-size:15px;
+        padding:9px 18px;
     }
 
     .card-top{
-        height:190px;
+        height:180px;
     }
 
     .card-icon{
-        font-size:80px;
+        font-size:75px;
     }
 
     .card-content h2{
-        font-size:26px;
+        font-size:25px;
     }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+HEADER
+========================= -->
+
 <header>
 
-    <div class="logo">
-        arsin984
-    </div>
+<div class="logo">
+    arsin984
+</div>
 
-    <div class="menu-wrapper">
-        <nav class="menu">
 
-            <a href="music.html">
-                🎵 Music
-            </a>
+<div class="menu-wrapper">
 
-            <a href="Websites.html">
-                🌐 Websites
-            </a>
+<nav class="menu">
 
-            <a href="places.html">
-                📍 Places
-            </a>
+<a href="music.html">
+🎵 Music
+</a>
 
-            <a href="home.html">
-                🏠 Home
-            </a>
+<a href="Websites.html">
+🌐 Websites
+</a>
 
-            <a href="community.html">
-                👥 Community
-            </a>
+<a href="places.html">
+📍 Places
+</a>
 
-            <a href="news.html">
-                📰 News
-            </a>
+<a href="cafe-restaurant.html">
+☕ Cafe & Restaurant
+</a>
 
-            <a href="cafe-restaurent.html">
-                ☕ Cafe & Restaurant
-            </a>
+<a href="community.html">
+👥 Community
+</a>
 
-        </nav>
-    </div>
+<a href="news.html">
+📰 News
+</a>
 
-    <!-- LANGUAGE BUTTON -->
-    <div class="language-box">
-        <button class="language-btn" onclick="toggleLanguage()">
-            🇮🇷 فارسی
-        </button>
-    </div>
+</nav>
+
+</div>
 
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+WELCOME
+========================= -->
+
 <section class="hero">
 
-    <h1 id="welcomeTitle">
-        Welcome to My City 984
-    </h1>
 
-    <p id="welcomeText">
-        Discover the best places, websites, music, news and communities you love.
-    </p>
+<!-- دکمه فارسی دقیقاً بالای Welcome -->
+
+<button
+class="language-button"
+id="languageButton"
+onclick="toggleLanguage()">
+
+🇮🇷 فارسی
+
+</button>
+
+
+<h1 id="welcomeTitle">
+
+Welcome to My City 984
+
+</h1>
+
+
+<p id="welcomeText">
+
+Discover the best places, websites, music, news and communities you love.
+
+</p>
+
 
 </section>
 
 
-<!-- MAIN CONTENT -->
+<!-- =========================
+CARDS
+========================= -->
+
 <main class="container">
 
 
-    <!-- MUSIC -->
-    <div class="card">
+<!-- MUSIC -->
 
-        <div class="card-top">
-            <div class="card-icon">🎵</div>
-        </div>
+<div class="card">
 
-        <div class="card-content">
+<div class="card-top">
+    <div class="card-icon">🎵</div>
+</div>
 
-            <h2>Music</h2>
+<div class="card-content">
 
-            <p>
-                Discover music and artists you love.
-            </p>
+<h2 data-en="Music">
+Music
+</h2>
 
-            <a class="card-btn" href="music.html">
-                Explore Music
-            </a>
+<p data-en="Discover music and artists you love.">
+Discover music and artists you love.
+</p>
 
-        </div>
+<a
+class="card-btn"
+href="music.html"
+data-en="Explore Music">
 
-    </div>
+Explore Music
 
+</a>
 
-    <!-- WEBSITES -->
-    <div class="card">
+</div>
 
-        <div class="card-top">
-            <div class="card-icon">🌐</div>
-        </div>
-
-        <div class="card-content">
-
-            <h2>Websites</h2>
-
-            <p>
-                Explore useful and interesting websites.
-            </p>
-
-            <a class="card-btn" href="Websites.html">
-                Explore Websites
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <!-- PLACES -->
-    <div class="card">
+<!-- WEBSITES -->
 
-        <div class="card-top">
-            <div class="card-icon">📍</div>
-        </div>
+<div class="card">
 
-        <div class="card-content">
+<div class="card-top">
+    <div class="card-icon">🌐</div>
+</div>
 
-            <h2>Places</h2>
+<div class="card-content">
 
-            <p>
-                Find amazing places and destinations.
-            </p>
+<h2 data-en="Websites">
+Websites
+</h2>
 
-            <a class="card-btn" href="places.html">
-                Explore Places
-            </a>
+<p data-en="Explore useful and interesting websites.">
+Explore useful and interesting websites.
+</p>
 
-        </div>
+<a
+class="card-btn"
+href="Websites.html"
+data-en="Explore Websites">
 
-    </div>
+Explore Websites
 
+</a>
 
-    <!-- HOME -->
-    <div class="card">
+</div>
 
-        <div class="card-top">
-            <div class="card-icon">🏠</div>
-        </div>
-
-        <div class="card-content">
-
-            <h2>Home</h2>
-
-            <p>
-                Return to the main home page.
-            </p>
-
-            <a class="card-btn" href="home.html">
-                Go Home
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <!-- COMMUNITY -->
-    <div class="card">
+<!-- PLACES -->
 
-        <div class="card-top">
-            <div class="card-icon">👥</div>
-        </div>
+<div class="card">
 
-        <div class="card-content">
+<div class="card-top">
+    <div class="card-icon">📍</div>
+</div>
 
-            <h2>Community</h2>
+<div class="card-content">
 
-            <p>
-                Connect with people and discover new communities.
-            </p>
+<h2 data-en="Places">
+Places
+</h2>
 
-            <a class="card-btn" href="community.html">
-                Join Community
-            </a>
+<p data-en="Find amazing places and destinations.">
+Find amazing places and destinations.
+</p>
 
-        </div>
+<a
+class="card-btn"
+href="places.html"
+data-en="Explore Places">
 
-    </div>
+Explore Places
 
+</a>
 
-    <!-- NEWS -->
-    <div class="card">
+</div>
 
-        <div class="card-top">
-            <div class="card-icon">📰</div>
-        </div>
-
-        <div class="card-content">
-
-            <h2>News</h2>
-
-            <p>
-                Read the latest news and updates.
-            </p>
-
-            <a class="card-btn" href="news.html">
-                Read News
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <!-- CAFE & RESTAURANT -->
-    <div class="card">
+<!-- CAFE AND RESTAURANT -->
 
-        <div class="card-top">
-            <div class="card-icon">☕🍽️</div>
-        </div>
+<div class="card">
 
-        <div class="card-content">
+<div class="card-top">
+    <div class="card-icon">☕🍽️</div>
+</div>
 
-            <h2>Cafe & Restaurant</h2>
+<div class="card-content">
 
-            <p>
-                Discover cafes and restaurants, menus, photos, videos and prices.
-            </p>
+<h2 data-en="Cafe & Restaurant">
+Cafe & Restaurant
+</h2>
 
-            <a class="card-btn" href="cafe-restaurent.html">
-                Explore Cafe & Restaurant
-            </a>
+<p data-en="Discover cafes and restaurants, menus, photos, videos and prices.">
+Discover cafes and restaurants, menus, photos, videos and prices.
+</p>
 
-        </div>
+<a
+class="card-btn"
+href="cafe-restaurant.html"
+data-en="Explore Cafe & Restaurant">
 
-    </div>
+Explore Cafe & Restaurant
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- COMMUNITY -->
+
+<div class="card">
+
+<div class="card-top">
+    <div class="card-icon">👥</div>
+</div>
+
+<div class="card-content">
+
+<h2 data-en="Community">
+Community
+</h2>
+
+<p data-en="Connect with people and discover new communities.">
+Connect with people and discover new communities.
+</p>
+
+<a
+class="card-btn"
+href="community.html"
+data-en="Join Community">
+
+Join Community
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- NEWS -->
+
+<div class="card">
+
+<div class="card-top">
+    <div class="card-icon">📰</div>
+</div>
+
+<div class="card-content">
+
+<h2 data-en="News">
+News
+</h2>
+
+<p data-en="Read the latest news and updates.">
+Read the latest news and updates.
+</p>
+
+<a
+class="card-btn"
+href="news.html"
+data-en="Read News">
+
+Read News
+
+</a>
+
+</div>
+
+</div>
 
 
 </main>
 
 
-<!-- CONTACT -->
+<!-- =========================
+CONTACT
+========================= -->
+
 <section class="contact">
 
-    <h2>Contact Us</h2>
+<h2 data-en="Contact Us">
+Contact Us
+</h2>
 
-    <p>
-        For more information, contact us by phone.
-    </p>
+<p data-en="For more information, contact us by phone.">
+For more information, contact us by phone.
+</p>
 
-    <a class="phone" href="tel:09931936926">
-        📞 09931936926
-    </a>
+<a
+class="phone"
+href="tel:09931936926">
+
+📞 09931936926
+
+</a>
 
 </section>
 
 
-<!-- PAGINATION -->
+<!-- =========================
+PAGINATION
+========================= -->
+
 <div class="pagination">
 
-    <a class="active" href="index.html">1</a>
+<a
+class="active"
+href="index.html">
+1
+</a>
 
-    <a href="music.html">2</a>
+<a href="music.html">
+2
+</a>
 
-    <a href="Websites.html">3</a>
+<a href="Websites.html">
+3
+</a>
 
-    <a href="places.html">4</a>
+<a href="places.html">
+4
+</a>
 
-    <a href="cafe-restaurent.html">5</a>
+<a href="cafe-restaurant.html">
+5
+</a>
 
 </div>
 
 
-<!-- FOOTER -->
+<!-- =========================
+FOOTER
+========================= -->
+
 <footer>
 
-    <p>
-        © 2026 arsin984 - My City 984
-    </p>
+<p data-en="© 2026 arsin984 - My City 984">
+© 2026 arsin984 - My City 984
+</p>
 
-    <a class="footer-phone" href="tel:09931936926">
-        📞 09931936926
-    </a>
+<a
+class="footer-phone"
+href="tel:09931936926">
+
+📞 09931936926
+
+</a>
 
 </footer>
 
+
+<!-- =========================
+LANGUAGE SCRIPT
+========================= -->
 
 <script>
 
 let isPersian = false;
 
+
+const translations = {
+
+"Music":
+"موسیقی",
+
+"Discover music and artists you love.":
+"موسیقی و هنرمندان مورد علاقه خود را پیدا کنید.",
+
+"Explore Music":
+"مشاهده موسیقی",
+
+
+"Websites":
+"وب‌سایت‌ها",
+
+"Explore useful and interesting websites.":
+"وب‌سایت‌های مفید و جالب را پیدا کنید.",
+
+"Explore Websites":
+"مشاهده وب‌سایت‌ها",
+
+
+"Places":
+"مکان‌ها",
+
+"Find amazing places and destinations.":
+"مکان‌ها و مقصدهای جذاب را پیدا کنید.",
+
+"Explore Places":
+"مشاهده مکان‌ها",
+
+
+"Cafe & Restaurant":
+"کافه و رستوران",
+
+"Discover cafes and restaurants, menus, photos, videos and prices.":
+"کافه‌ها و رستوران‌ها، منوها، عکس‌ها، ویدئوها و قیمت‌ها را پیدا کنید.",
+
+"Explore Cafe & Restaurant":
+"مشاهده کافه و رستوران",
+
+
+"Community":
+"انجمن",
+
+"Connect with people and discover new communities.":
+"با مردم ارتباط برقرار کنید و انجمن‌های جدید را پیدا کنید.",
+
+"Join Community":
+"ورود به انجمن",
+
+
+"News":
+"اخبار",
+
+"Read the latest news and updates.":
+"آخرین اخبار و به‌روزرسانی‌ها را بخوانید.",
+
+"Read News":
+"مشاهده اخبار",
+
+
+"Contact Us":
+"تماس با ما",
+
+"For more information, contact us by phone.":
+"برای اطلاعات بیشتر از طریق تلفن با ما تماس بگیرید."
+
+};
+
+
 function toggleLanguage(){
 
-    const title = document.getElementById("welcomeTitle");
-    const text = document.getElementById("welcomeText");
-    const button = document.querySelector(".language-btn");
+const button =
+document.getElementById("languageButton");
 
-    isPersian = !isPersian;
+const welcomeTitle =
+document.getElementById("welcomeTitle");
 
-    if(isPersian){
+const welcomeText =
+document.getElementById("welcomeText");
 
-        document.body.classList.add("persian");
 
-        title.innerText = "به My City 984 خوش آمدید";
+if(!isPersian){
 
-        text.innerText =
-        "بهترین مکان‌ها، وب‌سایت‌ها، موسیقی، اخبار و انجمن‌های مورد علاقه‌تان را پیدا کنید.";
+/* Persian */
 
-        button.innerText = "🇬🇧 English";
+document.body.classList.add("persian");
 
-    }else{
+document.documentElement.lang = "fa";
 
-        document.body.classList.remove("persian");
+welcomeTitle.innerText =
+"به My City 984 خوش آمدید";
 
-        title.innerText = "Welcome to My City 984";
+welcomeText.innerText =
+"بهترین مکان‌ها، وب‌سایت‌ها، موسیقی، اخبار و انجمن‌های مورد علاقه‌تان را پیدا کنید.";
 
-        text.innerText =
-        "Discover the best places, websites, music, news and communities you love.";
 
-        button.innerText = "🇮🇷 فارسی";
+document.querySelectorAll("[data-en]")
+.forEach(function(element){
 
-    }
+const english =
+element.getAttribute("data-en");
+
+if(translations[english]){
+
+element.innerText =
+translations[english];
+
+}
+
+});
+
+
+button.innerText =
+"🇬🇧 English";
+
+
+isPersian = true;
+
+
+}else{
+
+/* English */
+
+document.body.classList.remove("persian");
+
+document.documentElement.lang = "en";
+
+welcomeTitle.innerText =
+"Welcome to My City 984";
+
+welcomeText.innerText =
+"Discover the best places, websites, music, news and communities you love.";
+
+
+document.querySelectorAll("[data-en]")
+.forEach(function(element){
+
+element.innerText =
+element.getAttribute("data-en");
+
+});
+
+
+button.innerText =
+"🇮🇷 فارسی";
+
+
+isPersian = false;
+
+}
 
 }
 
 </script>
 
+
 </body>
+
 </html>
