@@ -1,1271 +1,560 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-My City 984 | Arsin984
-</title>
-
+<title>arsin984 | My City 984</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html{
-scroll-behavior:smooth;
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7ff;
+  color: #182033;
+  overflow-x: hidden;
 }
 
-body{
-
-font-family:
-Arial,
-Helvetica,
-sans-serif;
-
-background:#f5f7ff;
-
-color:#172033;
-
-overflow-x:hidden;
-
+/* Header */
+header {
+  background: white;
+  padding: 18px 15px 12px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
-a{
-text-decoration:none;
-color:inherit;
+.logo {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #3155e7;
+  margin-bottom: 15px;
 }
 
-
-/* =========================
-TOP HEADER
-========================= */
-
-.top-header{
-
-background:
-rgba(255,255,255,0.96);
-
-padding:
-18px 15px 14px;
-
-position:sticky;
-
-top:0;
-
-z-index:1000;
-
-box-shadow:
-0 5px 25px
-rgba(0,0,0,0.08);
-
-backdrop-filter:
-blur(12px);
-
+/* Horizontal Menu */
+.menu {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 5px 5px 10px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
-
-.site-title{
-
-text-align:center;
-
-font-size:34px;
-
-font-weight:800;
-
-color:#3155e7;
-
-margin-bottom:15px;
-
+.menu::-webkit-scrollbar {
+  display: none;
 }
 
-
-/* =========================
-HORIZONTAL MENU
-========================= */
-
-.nav-scroll{
-
-display:flex;
-
-gap:12px;
-
-overflow-x:auto;
-
-padding:
-5px 5px 10px;
-
-scrollbar-width:none;
-
--webkit-overflow-scrolling:touch;
-
-scroll-snap-type:
-x proximity;
-
+.menu a {
+  flex: 0 0 auto;
+  text-decoration: none;
+  color: #182033;
+  background: #f1f3ff;
+  padding: 12px 18px;
+  border-radius: 25px;
+  font-size: 17px;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: 0.3s;
 }
 
-
-.nav-scroll::-webkit-scrollbar{
-
-display:none;
-
+.menu a:hover {
+  background: #3155e7;
+  color: white;
+  transform: translateY(-2px);
 }
 
-
-.nav-item{
-
-flex:
-0 0 auto;
-
-min-width:125px;
-
-padding:
-13px 17px;
-
-border-radius:18px;
-
-background:#f1f4ff;
-
-color:#172033;
-
-font-weight:700;
-
-text-align:center;
-
-transition:.25s;
-
-scroll-snap-align:center;
-
-border:
-1px solid #e2e7ff;
-
+/* Welcome */
+.hero {
+  background: linear-gradient(135deg, #3155e7, #7b3ff2);
+  color: white;
+  text-align: center;
+  padding: 55px 18px;
 }
 
-
-.nav-item:hover{
-
-background:#3155e7;
-
-color:white;
-
-transform:
-translateY(-2px);
-
+.hero h1 {
+  font-size: clamp(22px, 6vw, 36px);
+  white-space: nowrap;
+  margin-bottom: 18px;
 }
 
-
-/* =========================
-HERO
-========================= */
-
-.hero{
-
-min-height:420px;
-
-padding:
-80px 25px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-color:white;
-
-background:
-
-radial-gradient(
-circle at top left,
-rgba(255,255,255,.18),
-transparent 35%
-),
-
-linear-gradient(
-135deg,
-#3155e7,
-#7048f5
-);
-
+.hero p {
+  font-size: 18px;
+  line-height: 2;
+  max-width: 700px;
+  margin: auto;
 }
 
-
-.hero-content{
-
-max-width:850px;
-
+/* Cards */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 18px;
 }
 
-
-.hero h1{
-
-font-size:46px;
-
-margin-bottom:22px;
-
-font-weight:900;
-
+.card {
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  margin: 25px 0;
+  box-shadow: 0 10px 30px rgba(36, 53, 120, 0.12);
+  transition: 0.3s;
 }
 
-
-.hero p{
-
-font-size:21px;
-
-line-height:2;
-
-opacity:.95;
-
+.card:hover {
+  transform: translateY(-5px);
 }
 
-
-/* =========================
-CARDS
-========================= */
-
-.cards-container{
-
-max-width:1150px;
-
-margin:
-55px auto;
-
-padding:
-0 20px;
-
-display:grid;
-
-grid-template-columns:
-repeat(2,1fr);
-
-gap:28px;
-
+.card-image {
+  height: 190px;
+  background: linear-gradient(135deg, #e4e8ff, #f0e7ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
 }
 
-
-.card{
-
-background:white;
-
-border-radius:28px;
-
-overflow:hidden;
-
-box-shadow:
-0 15px 40px
-rgba(30,50,120,.10);
-
-transition:.3s;
-
-border:
-1px solid #e8ebfa;
-
+.card-content {
+  padding: 25px;
+  text-align: center;
 }
 
-
-.card:hover{
-
-transform:
-translateY(-8px);
-
-box-shadow:
-0 22px 50px
-rgba(30,50,120,.18);
-
+.card h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
 }
 
-
-.card-icon{
-
-height:220px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:95px;
-
-background:
-
-linear-gradient(
-135deg,
-#e9edff,
-#f4eaff
-);
-
+.card p {
+  color: #687086;
+  line-height: 1.9;
+  font-size: 16px;
 }
 
-
-.card-content{
-
-padding:30px;
-
-text-align:center;
-
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 13px 25px;
+  background: #3155e7;
+  color: white;
+  text-decoration: none;
+  border-radius: 14px;
+  font-weight: bold;
 }
 
-
-.card h2{
-
-font-size:30px;
-
-margin-bottom:15px;
-
-color:#172033;
-
+/* Cafe & Restaurant special card */
+.cafe {
+  background: linear-gradient(135deg, #fff8ef, #fff);
 }
 
-
-.card p{
-
-color:#687086;
-
-line-height:2;
-
-font-size:16px;
-
-min-height:70px;
-
-margin-bottom:22px;
-
+.cafe .card-image {
+  background: linear-gradient(135deg, #ffe1b8, #fff1df);
 }
 
-
-.card-button{
-
-display:inline-block;
-
-background:
-
-linear-gradient(
-135deg,
-#3155e7,
-#6548f3
-);
-
-color:white;
-
-padding:
-13px 28px;
-
-border-radius:15px;
-
-font-weight:bold;
-
-transition:.25s;
-
+/* Footer */
+footer {
+  background: #151a2d;
+  color: white;
+  padding: 35px 20px;
+  text-align: center;
+  margin-top: 30px;
 }
 
-
-.card-button:hover{
-
-transform:
-scale(1.04);
-
-box-shadow:
-0 10px 25px
-rgba(49,85,231,.3);
-
+.footer-phone {
+  display: inline-block;
+  margin-top: 15px;
+  color: white;
+  text-decoration: none;
+  background: #3155e7;
+  padding: 12px 22px;
+  border-radius: 14px;
 }
 
-
-/* =========================
-CONTACT
-========================= */
-
-.contact-section{
-
-max-width:900px;
-
-margin:
-60px auto;
-
-padding:
-45px 25px;
-
-text-align:center;
-
-background:
-
-linear-gradient(
-135deg,
-#172033,
-#29375c
-);
-
-color:white;
-
-border-radius:30px;
-
-box-shadow:
-0 20px 50px
-rgba(20,30,70,.2);
-
+/* Bottom Pages */
+.bottom-pages {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 25px 15px;
 }
 
-
-.contact-section h2{
-
-font-size:32px;
-
-margin-bottom:20px;
-
+.bottom-pages a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #3155e7;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-
-.phone{
-
-display:inline-block;
-
-direction:ltr;
-
-background:white;
-
-color:#172033;
-
-padding:
-15px 28px;
-
-border-radius:15px;
-
-font-size:22px;
-
-font-weight:bold;
-
-margin-top:15px;
-
+.bottom-pages a.active {
+  background: #3155e7;
+  color: white;
 }
 
+/* Mobile */
+@media (max-width: 600px) {
 
-/* =========================
-FOOTER
-========================= */
+  header {
+    padding-top: 12px;
+  }
 
-footer{
+  .logo {
+    font-size: 25px;
+  }
 
-background:#111827;
+  .menu a {
+    font-size: 15px;
+    padding: 10px 15px;
+  }
 
-color:#cbd5e1;
+  .hero {
+    padding: 42px 12px;
+  }
 
-padding:
-45px 20px 25px;
+  .hero h1 {
+    font-size: 21px;
+  }
 
-text-align:center;
+  .hero p {
+    font-size: 16px;
+  }
 
-margin-top:70px;
-
+  .card-image {
+    height: 170px;
+  }
 }
-
-
-.footer-name{
-
-color:white;
-
-font-size:27px;
-
-font-weight:800;
-
-margin-bottom:15px;
-
-}
-
-
-.footer-phone{
-
-direction:ltr;
-
-display:inline-block;
-
-margin:
-12px 0 25px;
-
-color:#93aaff;
-
-font-size:18px;
-
-font-weight:bold;
-
-}
-
-
-.footer-links{
-
-display:flex;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:18px;
-
-margin-bottom:25px;
-
-}
-
-
-.footer-links a{
-
-transition:.2s;
-
-}
-
-
-.footer-links a:hover{
-
-color:white;
-
-}
-
-
-.copyright{
-
-border-top:
-1px solid
-rgba(255,255,255,.1);
-
-padding-top:20px;
-
-font-size:14px;
-
-}
-
-
-/* =========================
-MOBILE
-========================= */
-
-@media(max-width:750px){
-
-.site-title{
-
-font-size:30px;
-
-}
-
-
-.nav-item{
-
-min-width:115px;
-
-font-size:14px;
-
-}
-
-
-.hero{
-
-min-height:360px;
-
-padding:
-60px 20px;
-
-}
-
-
-.hero h1{
-
-font-size:34px;
-
-}
-
-
-.hero p{
-
-font-size:17px;
-
-}
-
-
-.cards-container{
-
-grid-template-columns:1fr;
-
-margin-top:35px;
-
-}
-
-
-.card-icon{
-
-height:190px;
-
-}
-
-
-.card-content{
-
-padding:
-25px 20px;
-
-}
-
-
-.card h2{
-
-font-size:27px;
-
-}
-
-
-.contact-section{
-
-margin:
-40px 20px;
-
-}
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
+<header>
 
-<!-- =========================
-HEADER
-========================= -->
+  <div class="logo">
+    arsin984
+  </div>
 
+  <nav class="menu">
 
-<header class="top-header">
+    <a href="music.html">🎵 Music</a>
 
+    <a href="Websites.html">🌐 Websites</a>
 
-<div class="site-title">
+    <a href="places.html">📍 Places</a>
 
-My City 984
+    <a href="cafe-restaurants.html">☕ Cafe & Restaurant</a>
 
-</div>
+    <a href="community.html">👥 Community</a>
 
+    <a href="news.html">📰 News</a>
 
-<nav class="nav-scroll">
-
-
-<a
-class="nav-item"
-href="music.html">
-
-🎵 Music
-
-</a>
-
-
-<a
-class="nav-item"
-href="Websites.html">
-
-🌐 Websites
-
-</a>
-
-
-<a
-class="nav-item"
-href="places.html">
-
-📍 Places
-
-</a>
-
-
-<a
-class="nav-item"
-href="cafes.html">
-
-☕ Cafes
-
-</a>
-
-
-<a
-class="nav-item"
-href="cafe-restaurant.html">
-
-🍽️ Cafe & Restaurant
-
-</a>
-
-
-<a
-class="nav-item"
-href="index.html">
-
-🏠 Home
-
-</a>
-
-
-<a
-class="nav-item"
-href="community.html">
-
-👥 Community
-
-</a>
-
-
-<a
-class="nav-item"
-href="news.html">
-
-📰 News
-
-</a>
-
-
-</nav>
-
+  </nav>
 
 </header>
 
 
-
-<!-- =========================
-HERO
-========================= -->
-
-
 <section class="hero">
 
+  <h1>
+    Welcome to My City 984
+  </h1>
 
-<div class="hero-content">
-
-
-<h1>
-
-Welcome to My City 984
-
-</h1>
-
-
-<p>
-
-Discover the best music,
-websites,
-places,
-cafes,
-restaurants,
-communities
-and news
-all in one beautiful place.
-
-</p>
-
-
-</div>
-
+  <p>
+    Discover the best music, websites, places, cafes, restaurants,
+    news and communities.
+  </p>
 
 </section>
 
 
+<main class="container">
 
-<!-- =========================
-MAIN CARDS
-========================= -->
 
+  <!-- Music -->
+  <section class="card">
 
-<main>
+    <div class="card-image">
+      🎵
+    </div>
 
+    <div class="card-content">
 
-<div class="cards-container">
+      <h2>Music</h2>
 
+      <p>
+        Discover music and artists you love.
+      </p>
 
+      <a class="btn" href="music.html">
+        Explore Music
+      </a>
 
-<!-- MUSIC -->
+    </div>
 
+  </section>
 
-<article class="card">
 
+  <!-- Websites -->
+  <section class="card">
 
-<div class="card-icon">
+    <div class="card-image">
+      🌐
+    </div>
 
-🎵
+    <div class="card-content">
 
-</div>
+      <h2>Websites</h2>
 
+      <p>
+        Find useful and interesting websites.
+      </p>
 
-<div class="card-content">
+      <a class="btn" href="Websites.html">
+        Explore Websites
+      </a>
 
+    </div>
 
-<h2>
+  </section>
 
-Music
 
-</h2>
+  <!-- Places -->
+  <section class="card">
 
+    <div class="card-image">
+      📍
+    </div>
 
-<p>
+    <div class="card-content">
 
-Discover music and enjoy
-your favourite songs
-and artists.
+      <h2>Places</h2>
 
-</p>
+      <p>
+        Discover interesting places around you.
+      </p>
 
+      <a class="btn" href="places.html">
+        Explore Places
+      </a>
 
-<a
-class="card-button"
-href="music.html">
+    </div>
 
-Explore Music
+  </section>
 
-</a>
 
+  <!-- Cafe & Restaurant -->
+  <section class="card cafe">
 
-</div>
+    <div class="card-image">
+      ☕🍽️
+    </div>
 
+    <div class="card-content">
 
-</article>
+      <h2>Cafe & Restaurant</h2>
 
+      <p>
+        Discover cafes and restaurants.
+        View photos, videos, menus and prices.
+      </p>
 
+      <a class="btn" href="cafe-restaurants.html">
+        Explore Cafes & Restaurants
+      </a>
 
-<!-- WEBSITES -->
+    </div>
 
+  </section>
 
-<article class="card">
 
+  <!-- Community -->
+  <section class="card">
 
-<div class="card-icon">
+    <div class="card-image">
+      👥
+    </div>
 
-🌐
+    <div class="card-content">
 
-</div>
+      <h2>Community</h2>
 
+      <p>
+        Connect with your community and discover new people.
+      </p>
 
-<div class="card-content">
+      <a class="btn" href="community.html">
+        Explore Community
+      </a>
 
+    </div>
 
-<h2>
+  </section>
 
-Websites
 
-</h2>
+  <!-- News -->
+  <section class="card">
 
+    <div class="card-image">
+      📰
+    </div>
 
-<p>
+    <div class="card-content">
 
-Explore a collection
-of useful,
-interesting
-and popular websites.
+      <h2>News</h2>
 
-</p>
+      <p>
+        Read the latest news and updates.
+      </p>
 
+      <a class="btn" href="news.html">
+        Explore News
+      </a>
 
-<a
-class="card-button"
-href="Websites.html">
+    </div>
 
-Explore Websites
-
-</a>
-
-
-</div>
-
-
-</article>
-
-
-
-<!-- PLACES -->
-
-
-<article class="card">
-
-
-<div class="card-icon">
-
-📍
-
-</div>
-
-
-<div class="card-content">
-
-
-<h2>
-
-Places
-
-</h2>
-
-
-<p>
-
-Find interesting places
-and discover
-new destinations.
-
-</p>
-
-
-<a
-class="card-button"
-href="places.html">
-
-Explore Places
-
-</a>
-
-
-</div>
-
-
-</article>
-
-
-
-<!-- CAFES -->
-
-
-<article class="card">
-
-
-<div class="card-icon">
-
-☕
-
-</div>
-
-
-<div class="card-content">
-
-
-<h2>
-
-Cafes
-
-</h2>
-
-
-<p>
-
-Discover beautiful cafes
-and find great places
-to relax and enjoy.
-
-</p>
-
-
-<a
-class="card-button"
-href="cafes.html">
-
-Explore Cafes
-
-</a>
-
-
-</div>
-
-
-</article>
-
-
-
-<!-- CAFE AND RESTAURANT -->
-
-
-<article class="card">
-
-
-<div class="card-icon">
-
-🍽️
-
-</div>
-
-
-<div class="card-content">
-
-
-<h2>
-
-Cafe & Restaurant
-
-</h2>
-
-
-<p>
-
-Discover cafes,
-restaurants,
-menus,
-food,
-drinks
-and delicious places.
-
-</p>
-
-
-<a
-class="card-button"
-href="cafe-restaurant.html">
-
-Explore Cafe & Restaurant
-
-</a>
-
-
-</div>
-
-
-</article>
-
-
-
-<!-- COMMUNITY -->
-
-
-<article class="card">
-
-
-<div class="card-icon">
-
-👥
-
-</div>
-
-
-<div class="card-content">
-
-
-<h2>
-
-Community
-
-</h2>
-
-
-<p>
-
-Connect with people,
-communities
-and interesting groups.
-
-</p>
-
-
-<a
-class="card-button"
-href="community.html">
-
-Join Community
-
-</a>
-
-
-</div>
-
-
-</article>
-
-
-
-<!-- NEWS -->
-
-
-<article class="card">
-
-
-<div class="card-icon">
-
-📰
-
-</div>
-
-
-<div class="card-content">
-
-
-<h2>
-
-News
-
-</h2>
-
-
-<p>
-
-Stay updated with
-the latest news
-and interesting stories.
-
-</p>
-
-
-<a
-class="card-button"
-href="news.html">
-
-Read News
-
-</a>
-
-
-</div>
-
-
-</article>
-
-
-
-</div>
-
-
-
-<!-- =========================
-CONTACT
-========================= -->
-
-
-<section class="contact-section">
-
-
-<h2>
-
-Contact Arsin984
-
-</h2>
-
-
-<p>
-
-For contact and support,
-you can call this number:
-
-</p>
-
-
-<a
-class="phone"
-href="tel:09931936926">
-
-📞 09931936926
-
-</a>
-
-
-</section>
+  </section>
 
 
 </main>
 
 
+<!-- Page Numbers -->
 
-<!-- =========================
-FOOTER
-========================= -->
+<div class="bottom-pages">
+
+  <a href="index.html" class="active">1</a>
+
+  <a href="music.html">2</a>
+
+  <a href="Websites.html">3</a>
+
+  <a href="places.html">4</a>
+
+  <a href="cafe-restaurants.html">5</a>
+
+  <a href="community.html">6</a>
+
+  <a href="news.html">7</a>
+
+</div>
 
 
 <footer>
 
+  <h3>arsin984</h3>
 
-<div class="footer-name">
+  <p>
+    My City 984
+  </p>
 
-Arsin984
+  <a
+    class="footer-phone"
+    href="tel:09931936926">
+    📞 09931936926
+  </a>
 
-</div>
-
-
-<div class="footer-links">
-
-
-<a href="index.html">
-
-Home
-
-</a>
-
-
-<a href="music.html">
-
-Music
-
-</a>
-
-
-<a href="Websites.html">
-
-Websites
-
-</a>
-
-
-<a href="places.html">
-
-Places
-
-</a>
-
-
-<a href="cafes.html">
-
-Cafes
-
-</a>
-
-
-<a href="cafe-restaurant.html">
-
-Cafe & Restaurant
-
-</a>
-
-
-<a href="community.html">
-
-Community
-
-</a>
-
-
-<a href="news.html">
-
-News
-
-</a>
-
-
-</div>
-
-
-<a
-class="footer-phone"
-href="tel:09931936926">
-
-📞 09931936926
-
-</a>
-
-
-<div class="copyright">
-
-© 2026 My City 984
-— All Rights Reserved
-
-</div>
-
+  <p style="margin-top:20px;">
+    © 2026 arsin984
+  </p>
 
 </footer>
 
 
+<!-- Simple Persian Translation -->
+
+<script>
+
+const translations = {
+
+  "Welcome to My City 984":
+  "به My City 984 خوش آمدید",
+
+  "Discover the best music, websites, places, cafes, restaurants, news and communities.":
+  "بهترین موسیقی، سایت‌ها، مکان‌ها، کافه‌ها، رستوران‌ها، اخبار و انجمن‌ها را پیدا کنید.",
+
+  "Music":
+  "موسیقی",
+
+  "Websites":
+  "وب‌سایت‌ها",
+
+  "Places":
+  "مکان‌ها",
+
+  "Cafe & Restaurant":
+  "کافه و رستوران",
+
+  "Community":
+  "انجمن",
+
+  "News":
+  "اخبار",
+
+  "Explore Music":
+  "مشاهده موسیقی",
+
+  "Explore Websites":
+  "مشاهده وب‌سایت‌ها",
+
+  "Explore Places":
+  "مشاهده مکان‌ها",
+
+  "Explore Cafes & Restaurants":
+  "مشاهده کافه و رستوران‌ها",
+
+  "Explore Community":
+  "مشاهده انجمن",
+
+  "Explore News":
+  "مشاهده اخبار"
+
+};
+
+let isPersian = false;
+
+function translatePage() {
+
+  const elements = document.querySelectorAll(
+    "h1, h2, h3, p, a"
+  );
+
+  elements.forEach(element => {
+
+    const text = element.textContent.trim();
+
+    if (translations[text]) {
+
+      if (!element.dataset.english) {
+        element.dataset.english = text;
+      }
+
+      element.textContent =
+        isPersian
+        ? translations[text]
+        : element.dataset.english;
+
+    }
+
+  });
+
+  isPersian = !isPersian;
+
+}
+
+</script>
 
 </body>
-
 </html>
