@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Cafe & Restaurant | Arsin984
+</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+
+font-family:
+Arial,
+Helvetica,
+sans-serif;
+
+background:#f7f4ef;
+
+color:#29231e;
+
+overflow-x:hidden;
+
+}
+
+
+/* =========================
+HEADER
+========================= */
+
+header{
+
+background:
+rgba(255,255,255,.96);
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+padding:
+18px 15px;
+
+box-shadow:
+0 5px 25px
+rgba(0,0,0,.1);
+
+backdrop-filter:
+blur(12px);
+
+}
+
+
+.logo{
+
+text-align:center;
+
+font-size:30px;
+
+font-weight:900;
+
+color:#8b4a2f;
+
+margin-bottom:15px;
+
+}
+
+
+.nav{
+
+display:flex;
+
+gap:10px;
+
+overflow-x:auto;
+
+scrollbar-width:none;
+
+-webkit-overflow-scrolling:touch;
+
+}
+
+
+.nav::-webkit-scrollbar{
+
+display:none;
+
+}
+
+
+.nav a{
+
+flex:0 0 auto;
+
+padding:
+11px 17px;
+
+border-radius:20px;
+
+background:#f4ebe5;
+
+color:#5a3020;
+
+font-weight:bold;
+
+white-space:nowrap;
+
+transition:.3s;
+
+}
+
+
+.nav a:hover{
+
+background:#8b4a2f;
+
+color:white;
+
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+
+padding:
+70px 20px;
+
+text-align:center;
+
+color:white;
+
+background:
+
+linear-gradient(
+135deg,
+#6f351f,
+#a9603c,
+#d28b58
+);
+
+}
+
+
+.hero h1{
+
+font-size:
+clamp(35px,7vw,60px);
+
+margin-bottom:20px;
+
+}
+
+
+.hero p{
+
+max-width:700px;
+
+margin:auto;
+
+font-size:19px;
+
+line-height:2;
+
+}
+
+
+/* =========================
+RESTAURANT CARDS
+========================= */
+
+.container{
+
+max-width:1150px;
+
+margin:
+55px auto;
+
+padding:
+0 20px;
+
+}
+
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+
+.section-title h2{
+
+font-size:34px;
+
+margin-bottom:12px;
+
+}
+
+
+.section-title p{
+
+color:#756c65;
+
+line-height:1.8;
+
+}
+
+
+/* =========================
+CARDS
+========================= */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:28px;
+
+}
+
+
+.card{
+
+background:white;
+
+border-radius:28px;
+
+overflow:hidden;
+
+box-shadow:
+0 12px 35px
+rgba(80,50,30,.12);
+
+transition:.35s;
+
+}
+
+
+.card:hover{
+
+transform:
+translateY(-8px);
+
+box-shadow:
+0 20px 45px
+rgba(80,50,30,.2);
+
+}
+
+
+/* عکس */
+
+.card-image{
+
+height:210px;
+
+background:
+
+linear-gradient(
+135deg,
+#ead7c8,
+#f7e8dc
+);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:80px;
+
+}
+
+
+/* محتوای کارت */
+
+.card-content{
+
+padding:25px;
+
+}
+
+
+.card h3{
+
+font-size:25px;
+
+margin-bottom:12px;
+
+color:#5c301f;
+
+}
+
+
+.card-description{
+
+color:#756c65;
+
+line-height:1.9;
+
+margin-bottom:18px;
+
+}
+
+
+/* قیمت */
+
+.price{
+
+display:inline-block;
+
+background:#fff1e6;
+
+color:#9a4e25;
+
+font-size:20px;
+
+font-weight:bold;
+
+padding:
+8px 15px;
+
+border-radius:12px;
+
+margin-bottom:18px;
+
+}
+
+
+/* =========================
+VIDEO
+========================= */
+
+.video-box{
+
+margin-top:15px;
+
+}
+
+
+.video-box video{
+
+width:100%;
+
+border-radius:15px;
+
+display:block;
+
+}
+
+
+.video-title{
+
+font-size:14px;
+
+color:#777;
+
+margin-bottom:8px;
+
+}
+
+
+/* =========================
+BUTTON
+========================= */
+
+.button{
+
+display:inline-block;
+
+background:
+
+linear-gradient(
+135deg,
+#8b4a2f,
+#a9603c
+);
+
+color:white;
+
+padding:
+12px 22px;
+
+border-radius:14px;
+
+font-weight:bold;
+
+margin-top:15px;
+
+transition:.3s;
+
+}
+
+
+.button:hover{
+
+transform:
+scale(1.04);
+
+box-shadow:
+0 8px 20px
+rgba(139,74,47,.3);
+
+}
+
+
+/* =========================
+CONTACT
+========================= */
+
+.contact{
+
+margin:
+60px auto;
+
+max-width:800px;
+
+padding:
+40px 25px;
+
+text-align:center;
+
+color:white;
+
+background:
+
+linear-gradient(
+135deg,
+#29231e,
+#49362d
+);
+
+border-radius:28px;
+
+}
+
+
+.contact h2{
+
+font-size:30px;
+
+margin-bottom:15px;
+
+}
+
+
+.phone{
+
+display:inline-block;
+
+direction:ltr;
+
+margin-top:20px;
+
+padding:
+14px 25px;
+
+background:white;
+
+color:#5c301f;
+
+border-radius:14px;
+
+font-size:20px;
+
+font-weight:bold;
+
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+
+background:#211b18;
+
+color:#ddd;
+
+text-align:center;
+
+padding:
+40px 20px;
+
+margin-top:60px;
+
+}
+
+
+footer h2{
+
+color:white;
+
+margin-bottom:15px;
+
+}
+
+
+footer p{
+
+color:#aaa;
+
+line-height:1.8;
+
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:600px){
+
+.logo{
+
+font-size:26px;
+
+}
+
+
+.hero{
+
+padding:
+55px 18px;
+
+}
+
+
+.hero p{
+
+font-size:16px;
+
+}
+
+
+.section-title h2{
+
+font-size:28px;
+
+}
+
+
+.card-image{
+
+height:180px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+HEADER
+========================= -->
+
+<header>
+
+
+<div class="logo">
+
+Arsin984
+
+</div>
+
+
+<nav class="nav">
+
+
+<a href="index.html">
+
+🏠 Home
+
+</a>
+
+
+<a href="music.html">
+
+🎵 Music
+
+</a>
+
+
+<a href="Websites.html">
+
+🌐 Websites
+
+</a>
+
+
+<a href="places.html">
+
+📍 Places
+
+</a>
+
+
+<a href="cafes.html">
+
+☕ Cafes
+
+</a>
+
+
+<a href="cafe-restaurant.html">
+
+🍽️ Cafe & Restaurant
+
+</a>
+
+
+<a href="community.html">
+
+👥 Community
+
+</a>
+
+
+<a href="news.html">
+
+📰 News
+
+</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+<!-- =========================
+HERO
+========================= -->
+
+<section class="hero">
+
+
+<h1>
+
+Cafe & Restaurant
+
+</h1>
+
+
+<p>
+
+Discover beautiful cafes,
+restaurants,
+delicious food,
+drinks
+and great places
+to enjoy.
+
+</p>
+
+
+</section>
+
+
+
+<!-- =========================
+MAIN
+========================= -->
+
+<main class="container">
+
+
+<div class="section-title">
+
+
+<h2>
+
+Featured Cafe & Restaurants
+
+</h2>
+
+
+<p>
+
+Explore our collection of
+cafes and restaurants.
+
+</p>
+
+
+</div>
+
+
+
+<div class="cards">
+
+
+
+<!-- =========================
+CARD 1
+========================= -->
+
+
+<article class="card">
+
+
+<div class="card-image">
+
+☕🍰
+
+</div>
+
+
+<div class="card-content">
+
+
+<h3>
+
+My Cafe
+
+</h3>
+
+
+<p class="card-description">
+
+A beautiful and relaxing cafe
+with delicious coffee,
+desserts and a friendly atmosphere.
+
+</p>
+
+
+<div class="price">
+
+£10
+
+</div>
+
+
+<div class="video-box">
+
+
+<div class="video-title">
+
+Cafe Video
+
+</div>
+
+
+<!--
+برای گذاشتن ویدئو:
+فایل ویدئو را در GitHub آپلود کن
+و نام فایل را اینجا بنویس.
+
+مثال:
+cafe-video.mp4
+-->
+
+
+<video controls>
+
+<source
+src="cafe-video.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+
+</div>
+
+
+<a
+href="tel:09931936926"
+class="button">
+
+📞 Contact
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- =========================
+CARD 2
+========================= -->
+
+
+<article class="card">
+
+
+<div class="card-image">
+
+🍔🍟
+
+</div>
+
+
+<div class="card-content">
+
+
+<h3>
+
+My Restaurant
+
+</h3>
+
+
+<p class="card-description">
+
+Enjoy delicious food,
+great service
+and a comfortable atmosphere.
+
+</p>
+
+
+<div class="price">
+
+£20
+
+</div>
+
+
+<div class="video-box">
+
+
+<div class="video-title">
+
+Restaurant Video
+
+</div>
+
+
+<video controls>
+
+<source
+src="restaurant-video.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+
+</div>
+
+
+<a
+href="tel:09931936926"
+class="button">
+
+📞 Contact
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- =========================
+CARD 3
+========================= -->
+
+
+<article class="card">
+
+
+<div class="card-image">
+
+🍕🥤
+
+</div>
+
+
+<div class="card-content">
+
+
+<h3>
+
+Food Place
+
+</h3>
+
+
+<p class="card-description">
+
+A great place to enjoy
+fresh food,
+drinks
+and good moments.
+
+</p>
+
+
+<div class="price">
+
+£15
+
+</div>
+
+
+<div class="video-box">
+
+
+<div class="video-title">
+
+Food Video
+
+</div>
+
+
+<video controls>
+
+<source
+src="food-video.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+
+</div>
+
+
+<a
+href="tel:09931936926"
+class="button">
+
+📞 Contact
+
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+</div>
+
+
+<!-- =========================
+CONTACT
+========================= -->
+
+
+<section class="contact">
+
+
+<h2>
+
+Contact Arsin984
+
+</h2>
+
+
+<p>
+
+For more information,
+reservations
+or advertising,
+contact us.
+
+</p>
+
+
+<a
+href="tel:09931936926"
+class="phone">
+
+📞 09931936926
+
+</a>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+
+<footer>
+
+
+<h2>
+
+Arsin984
+
+</h2>
+
+
+<p>
+
+Cafe & Restaurant
+
+</p>
+
+
+<p>
+
+© 2026 My City 984
+— All Rights Reserved
+
+</p>
+
+
+</footer>
+
+
+</body>
+
+</html>
