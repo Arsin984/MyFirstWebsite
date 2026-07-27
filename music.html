@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
 <title>Music - My City 984</title>
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -17,55 +19,105 @@ body {
     font-family: Arial, sans-serif;
     background: #f5f7fb;
     color: #172033;
-    min-height: 100vh;
 }
 
 /* Header */
+
 header {
-    background: linear-gradient(135deg, #172033, #30466f);
+    background: linear-gradient(135deg, #3155ff, #7b2cff);
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 40px 20px;
 }
 
 header h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
+    font-size: 35px;
+    margin-bottom: 12px;
 }
 
 header p {
-    color: #dbe4ff;
+    font-size: 17px;
 }
 
-/* Back Button */
-.back-btn {
-    display: inline-block;
-    margin: 20px;
-    padding: 12px 20px;
-    background: #172033;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-}
+/* Container */
 
-/* Main */
 .container {
     width: 92%;
     max-width: 1100px;
-    margin: 20px auto 50px;
+    margin: 30px auto 60px;
 }
 
-/* Music Cards */
+/* Back */
+
+.back {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #3155ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Search */
+
+.search-box {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 17px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #3155ff;
+}
+
+/* Filters */
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.filter-btn {
+    border: none;
+    background: #eef1ff;
+    color: #3155ff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #3155ff;
+    color: white;
+}
+
+/* Music Grid */
+
 .music-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
-/* Card */
+/* Music Card */
+
 .music-card {
     background: white;
-    border-radius: 18px;
+    border-radius: 22px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     transition: 0.3s;
@@ -73,108 +125,148 @@ header p {
 
 .music-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.14);
 }
 
-/* Music Image */
 .music-image {
-    height: 180px;
-    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    height: 210px;
+    background: linear-gradient(135deg, #e5e7ff, #f1e7ff);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 70px;
-    color: white;
+    font-size: 80px;
 }
 
-/* Card Content */
 .music-content {
-    padding: 20px;
+    padding: 22px;
 }
 
 .music-content h2 {
-    font-size: 22px;
     margin-bottom: 8px;
 }
 
-.music-content p {
-    color: #687386;
+.artist {
+    color: #3155ff;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #666;
     line-height: 1.8;
     margin-bottom: 15px;
 }
 
-/* Audio */
 audio {
     width: 100%;
-    margin-bottom: 15px;
 }
 
-/* Play Button */
-.play-btn {
-    display: block;
-    width: 100%;
-    padding: 13px;
-    border: none;
-    border-radius: 10px;
-    background: #172033;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+/* No Result */
 
-.play-btn:hover {
-    background: #30466f;
+.no-result {
+    display: none;
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    color: #777;
 }
 
 /* Footer */
+
 footer {
     background: #172033;
     color: white;
     text-align: center;
-    padding: 25px;
-    margin-top: 50px;
+    padding: 30px;
 }
 
 /* Mobile */
+
 @media (max-width: 600px) {
 
     header h1 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .music-grid {
         grid-template-columns: 1fr;
     }
 
-    .music-image {
-        height: 160px;
-    }
 }
+
 </style>
 
 </head>
 
 <body>
 
-<!-- Header -->
+
 <header>
-    <h1>🎵 دنیای موسیقی</h1>
-    <p>آهنگ مورد علاقه‌ات را پیدا کن و گوش بده</p>
+
+    <h1>Music 🎵</h1>
+
+    <p>
+        آهنگ مورد علاقه خود را پیدا و گوش کنید
+    </p>
+
 </header>
 
-<!-- Back -->
-<a href="index.html" class="back-btn">
-    ← بازگشت به صفحه اصلی
-</a>
 
-<!-- Main -->
 <div class="container">
 
-    <div class="music-grid">
 
-        <!-- Music Card 1 -->
-        <div class="music-card">
+    <a href="index.html" class="back">
+        ← بازگشت به صفحه اصلی
+    </a>
+
+
+    <!-- Search & Filters -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔎 جست‌وجوی نام آهنگ یا خواننده..."
+        >
+
+        <div class="filters">
+
+            <button class="filter-btn active" data-genre="all">
+                همه
+            </button>
+
+            <button class="filter-btn" data-genre="pop">
+                پاپ
+            </button>
+
+            <button class="filter-btn" data-genre="rock">
+                راک
+            </button>
+
+            <button class="filter-btn" data-genre="rap">
+                رپ
+            </button>
+
+            <button class="filter-btn" data-genre="traditional">
+                سنتی
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Music Cards -->
+
+    <div class="music-grid" id="musicGrid">
+
+
+        <!-- Song 1 -->
+
+        <div class="music-card"
+             data-title="آهنگ نمونه اول"
+             data-artist="خواننده اول"
+             data-genre="pop">
 
             <div class="music-image">
                 🎵
@@ -182,107 +274,89 @@ footer {
 
             <div class="music-content">
 
-                <h2>آهنگ شماره یک</h2>
+                <h2>
+                    آهنگ نمونه اول
+                </h2>
 
-                <p>
-                    اینجا توضیحات آهنگ و نام خواننده را بنویس.
+                <div class="artist">
+                    خواننده اول
+                </div>
+
+                <p class="description">
+                    توضیحات آهنگ را اینجا بنویسید.
                 </p>
 
                 <audio controls>
-                    <source src="music1.mp3" type="audio/mpeg">
-                    مرورگر شما از پخش آهنگ پشتیبانی نمی‌کند.
+                    <source src="music/song1.mp3" type="audio/mpeg">
                 </audio>
-
-                <button class="play-btn">
-                    ▶ پخش آهنگ
-                </button>
 
             </div>
 
         </div>
 
 
-        <!-- Music Card 2 -->
-        <div class="music-card">
+        <!-- Song 2 -->
+
+        <div class="music-card"
+             data-title="آهنگ نمونه دوم"
+             data-artist="خواننده دوم"
+             data-genre="rock">
 
             <div class="music-image">
-                🎧
+                🎸
             </div>
 
             <div class="music-content">
 
-                <h2>آهنگ شماره دو</h2>
+                <h2>
+                    آهنگ نمونه دوم
+                </h2>
 
-                <p>
-                    اینجا توضیحات آهنگ و نام خواننده را بنویس.
+                <div class="artist">
+                    خواننده دوم
+                </div>
+
+                <p class="description">
+                    توضیحات آهنگ دوم را اینجا بنویسید.
                 </p>
 
                 <audio controls>
-                    <source src="music2.mp3" type="audio/mpeg">
-                    مرورگر شما از پخش آهنگ پشتیبانی نمی‌کند.
+                    <source src="music/song2.mp3" type="audio/mpeg">
                 </audio>
-
-                <button class="play-btn">
-                    ▶ پخش آهنگ
-                </button>
 
             </div>
 
         </div>
 
 
-        <!-- Music Card 3 -->
-        <div class="music-card">
+        <!-- Song 3 -->
+
+        <div class="music-card"
+             data-title="آهنگ نمونه سوم"
+             data-artist="خواننده سوم"
+             data-genre="rap">
 
             <div class="music-image">
-                🎶
+                🎤
             </div>
 
             <div class="music-content">
 
-                <h2>آهنگ شماره سه</h2>
+                <h2>
+                    آهنگ نمونه سوم
+                </h2>
 
-                <p>
-                    اینجا توضیحات آهنگ و نام خواننده را بنویس.
+                <div class="artist">
+                    خواننده سوم
+                </div>
+
+                <p class="description">
+                    توضیحات آهنگ سوم را اینجا بنویسید.
                 </p>
 
                 <audio controls>
-                    <source src="music3.mp3" type="audio/mpeg">
-                    مرورگر شما از پخش آهنگ پشتیبانی نمی‌کند.
+                    <source src="music/song3.mp3" type="audio/mpeg">
                 </audio>
-
-                <button class="play-btn">
-                    ▶ پخش آهنگ
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- Music Card 4 -->
-        <div class="music-card">
-
-            <div class="music-image">
-                🎼
-            </div>
-
-            <div class="music-content">
-
-                <h2>آهنگ شماره چهار</h2>
-
-                <p>
-                    اینجا توضیحات آهنگ و نام خواننده را بنویس.
-                </p>
-
-                <audio controls>
-                    <source src="music4.mp3" type="audio/mpeg">
-                    مرورگر شما از پخش آهنگ پشتیبانی نمی‌کند.
-                </audio>
-
-                <button class="play-btn">
-                    ▶ پخش آهنگ
-                </button>
 
             </div>
 
@@ -291,66 +365,41 @@ footer {
 
     </div>
 
+
+    <div class="no-result" id="noResult">
+        آهنگی با این مشخصات پیدا نشد.
+    </div>
+
+
 </div>
 
 
-<!-- Footer -->
 <footer>
-    <p>© 2026 My City 984 - Music</p>
+
+    © 2026 My City 984
+
 </footer>
 
 
 <script>
 
-/* Play Buttons */
+const searchInput = document.getElementById("searchInput");
 
-const playButtons = document.querySelectorAll(".play-btn");
+const filterButtons = document.querySelectorAll(".filter-btn");
 
-playButtons.forEach(function(button) {
+const musicCards = document.querySelectorAll(".music-card");
 
-    button.addEventListener("click", function() {
+const noResult = document.getElementById("noResult");
 
-        const audio = this.parentElement.querySelector("audio");
-
-        if (audio.paused) {
-
-            // Stop all other songs
-            document.querySelectorAll("audio").forEach(function(otherAudio) {
-                otherAudio.pause();
-            });
-
-            audio.play();
-
-            this.innerHTML = "⏸ توقف آهنگ";
-
-        } else {
-
-            audio.pause();
-
-            this.innerHTML = "▶ پخش آهنگ";
-
-        }
-
-    });
-
-});
+let selectedGenre = "all";
 
 
-/* Reset Button Text */
+function filterMusic() {
 
-document.querySelectorAll("audio").forEach(function(audio) {
+    const searchText =
+        searchInput.value.toLowerCase().trim();
 
-    audio.addEventListener("ended", function() {
+    let visibleCount = 0;
 
-        const button = this.parentElement.querySelector(".play-btn");
 
-        button.innerHTML = "▶ پخش آهنگ";
-
-    });
-
-});
-
-</script>
-
-</body>
-</html>
+    musicCards
