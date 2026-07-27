@@ -1,405 +1,622 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Music - My City 984</title>
+<title>Music | My City 984</title>
 
 <style>
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
-    color: #172033;
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #111;
+    color: white;
 }
 
 /* Header */
-
 header {
-    background: linear-gradient(135deg, #3155ff, #7b2cff);
-    color: white;
+    padding: 20px;
     text-align: center;
-    padding: 40px 20px;
+    background: linear-gradient(135deg, #111, #222);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 header h1 {
-    font-size: 35px;
-    margin-bottom: 12px;
+    margin: 0 0 15px;
+    font-size: 28px;
 }
-
-header p {
-    font-size: 17px;
-}
-
-/* Container */
-
-.container {
-    width: 92%;
-    max-width: 1100px;
-    margin: 30px auto 60px;
-}
-
-/* Back */
-
-.back {
-    display: inline-block;
-    margin-bottom: 25px;
-    color: #3155ff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Search */
 
 .search-box {
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    font-size: 17px;
+    width: 90%;
+    max-width: 500px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
     outline: none;
 }
 
-.search-box input:focus {
-    border-color: #3155ff;
-}
-
-/* Filters */
-
+/* Filter */
 .filters {
     display: flex;
+    justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top: 15px;
+    padding: 15px;
 }
 
-.filter-btn {
+.filters button {
     border: none;
-    background: #eef1ff;
-    color: #3155ff;
     padding: 10px 18px;
-    border-radius: 10px;
+    border-radius: 25px;
     cursor: pointer;
-    font-weight: bold;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-    background: #3155ff;
+    background: #333;
     color: white;
 }
 
-/* Music Grid */
-
-.music-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+.filters button.active {
+    background: #00c896;
 }
 
-/* Music Card */
+/* Stories */
+.stories {
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    overflow-x: auto;
+    direction: rtl;
+}
 
-.music-card {
-    background: white;
-    border-radius: 22px;
+.story {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 120px;
+}
+
+.story-circle {
+    width: 105px;
+    height: 105px;
+    margin: auto;
+    border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    border: 4px solid #00c896;
+    background: #222;
+    position: relative;
+    cursor: pointer;
 }
 
-.music-card:hover {
-    transform: translateY(-5px);
+.story-circle video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.music-image {
-    height: 210px;
-    background: linear-gradient(135deg, #e5e7ff, #f1e7ff);
+.story-circle .play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    background: rgba(0,0,0,0.25);
+}
+
+.story-name {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* Add music */
+.add-story {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    border: 4px dashed #00c896;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 80px;
+    font-size: 45px;
+    color: #00c896;
+    cursor: pointer;
 }
 
-.music-content {
-    padding: 22px;
+/* Music list */
+.music-list {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
 }
 
-.music-content h2 {
-    margin-bottom: 8px;
-}
-
-.artist {
-    color: #3155ff;
-    margin-bottom: 10px;
-}
-
-.description {
-    color: #666;
-    line-height: 1.8;
+.music-card {
+    background: #1e1e1e;
     margin-bottom: 15px;
+    padding: 18px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.music-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.music-info {
+    flex: 1;
+}
+
+.music-info h3 {
+    margin: 0 0 7px;
+}
+
+.music-info p {
+    margin: 0;
+    color: #aaa;
+    font-size: 13px;
 }
 
 audio {
     width: 100%;
+    margin-top: 10px;
 }
 
-/* No Result */
-
-.no-result {
+/* Modal */
+.modal {
     display: none;
-    text-align: center;
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    color: #777;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-/* Footer */
+.modal-box {
+    background: #222;
+    width: 100%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 25px;
+}
 
-footer {
-    background: #172033;
+.modal-box h2 {
+    margin-top: 0;
+}
+
+.modal-box input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+}
+
+.modal-box button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 13px;
+    border: none;
+    border-radius: 25px;
+    background: #00c896;
     color: white;
-    text-align: center;
-    padding: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.close {
+    background: #444 !important;
 }
 
 /* Mobile */
-
-@media (max-width: 600px) {
+@media(max-width:600px) {
 
     header h1 {
-        font-size: 28px;
+        font-size: 23px;
     }
 
-    .music-grid {
-        grid-template-columns: 1fr;
+    .stories {
+        gap: 15px;
+        padding: 20px 15px;
     }
 
+    .story {
+        width: 95px;
+    }
+
+    .story-circle,
+    .add-story {
+        width: 85px;
+        height: 85px;
+    }
+
+    .music-card {
+        flex-direction: column;
+        text-align: center;
+    }
 }
-
 </style>
-
 </head>
 
 <body>
 
-
 <header>
+    <h1>🎵 Music</h1>
 
-    <h1>Music 🎵</h1>
-
-    <p>
-        آهنگ مورد علاقه خود را پیدا و گوش کنید
-    </p>
-
+    <input
+        type="text"
+        id="search"
+        class="search-box"
+        placeholder="جستجوی آهنگ یا خواننده..."
+        oninput="searchMusic()"
+    >
 </header>
 
+<div class="filters">
+    <button class="active" onclick="filterMusic('all', this)">همه</button>
+    <button onclick="filterMusic('iranian', this)">ایرانی</button>
+    <button onclick="filterMusic('foreign', this)">خارجی</button>
+    <button onclick="filterMusic('new', this)">جدیدترین</button>
+</div>
 
-<div class="container">
+<!-- Story Music -->
+<div class="stories" id="stories">
 
+    <!-- Add Music -->
+    <div class="story">
+        <div class="add-story" onclick="openModal()">
+            +
+        </div>
+        <div class="story-name">
+            افزودن آهنگ
+        </div>
+    </div>
 
-    <a href="index.html" class="back">
-        ← بازگشت به صفحه اصلی
-    </a>
+    <!-- Music Story Example -->
+    <div class="story" data-name="آهنگ نمونه">
 
+        <div class="story-circle" onclick="playStory(this)">
 
-    <!-- Search & Filters -->
+            <video muted loop playsinline>
+                <source src="music-video.mp4" type="video/mp4">
+            </video>
 
-    <div class="search-box">
+            <div class="play">
+                ▶
+            </div>
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="🔎 جست‌وجوی نام آهنگ یا خواننده..."
-        >
+        </div>
 
-        <div class="filters">
-
-            <button class="filter-btn active" data-genre="all">
-                همه
-            </button>
-
-            <button class="filter-btn" data-genre="pop">
-                پاپ
-            </button>
-
-            <button class="filter-btn" data-genre="rock">
-                راک
-            </button>
-
-            <button class="filter-btn" data-genre="rap">
-                رپ
-            </button>
-
-            <button class="filter-btn" data-genre="traditional">
-                سنتی
-            </button>
-
+        <div class="story-name">
+            آهنگ نمونه
         </div>
 
     </div>
-
-
-    <!-- Music Cards -->
-
-    <div class="music-grid" id="musicGrid">
-
-
-        <!-- Song 1 -->
-
-        <div class="music-card"
-             data-title="آهنگ نمونه اول"
-             data-artist="خواننده اول"
-             data-genre="pop">
-
-            <div class="music-image">
-                🎵
-            </div>
-
-            <div class="music-content">
-
-                <h2>
-                    آهنگ نمونه اول
-                </h2>
-
-                <div class="artist">
-                    خواننده اول
-                </div>
-
-                <p class="description">
-                    توضیحات آهنگ را اینجا بنویسید.
-                </p>
-
-                <audio controls>
-                    <source src="music/song1.mp3" type="audio/mpeg">
-                </audio>
-
-            </div>
-
-        </div>
-
-
-        <!-- Song 2 -->
-
-        <div class="music-card"
-             data-title="آهنگ نمونه دوم"
-             data-artist="خواننده دوم"
-             data-genre="rock">
-
-            <div class="music-image">
-                🎸
-            </div>
-
-            <div class="music-content">
-
-                <h2>
-                    آهنگ نمونه دوم
-                </h2>
-
-                <div class="artist">
-                    خواننده دوم
-                </div>
-
-                <p class="description">
-                    توضیحات آهنگ دوم را اینجا بنویسید.
-                </p>
-
-                <audio controls>
-                    <source src="music/song2.mp3" type="audio/mpeg">
-                </audio>
-
-            </div>
-
-        </div>
-
-
-        <!-- Song 3 -->
-
-        <div class="music-card"
-             data-title="آهنگ نمونه سوم"
-             data-artist="خواننده سوم"
-             data-genre="rap">
-
-            <div class="music-image">
-                🎤
-            </div>
-
-            <div class="music-content">
-
-                <h2>
-                    آهنگ نمونه سوم
-                </h2>
-
-                <div class="artist">
-                    خواننده سوم
-                </div>
-
-                <p class="description">
-                    توضیحات آهنگ سوم را اینجا بنویسید.
-                </p>
-
-                <audio controls>
-                    <source src="music/song3.mp3" type="audio/mpeg">
-                </audio>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="no-result" id="noResult">
-        آهنگی با این مشخصات پیدا نشد.
-    </div>
-
 
 </div>
 
+<!-- Music List -->
+<section class="music-list" id="musicList">
 
-<footer>
+    <div
+        class="music-card"
+        data-name="آهنگ نمونه"
+        data-category="iranian"
+    >
 
-    © 2026 My City 984
+        <img src="cover.jpg" alt="cover">
 
-</footer>
+        <div class="music-info">
 
+            <h3>آهنگ نمونه</h3>
+
+            <p>خواننده نمونه</p>
+
+            <audio controls>
+                <source src="music.mp3" type="audio/mpeg">
+            </audio>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Add Music Modal -->
+<div class="modal" id="musicModal">
+
+    <div class="modal-box">
+
+        <h2>🎵 افزودن آهنگ</h2>
+
+        <input
+            type="text"
+            id="songName"
+            placeholder="نام آهنگ"
+        >
+
+        <input
+            type="text"
+            id="artistName"
+            placeholder="نام خواننده"
+        >
+
+        <label>فایل آهنگ:</label>
+        <input
+            type="file"
+            id="audioFile"
+            accept="audio/*"
+        >
+
+        <label>ویدیوی کوتاه:</label>
+        <input
+            type="file"
+            id="videoFile"
+            accept="video/*"
+        >
+
+        <button onclick="addMusic()">
+            افزودن آهنگ
+        </button>
+
+        <button
+            class="close"
+            onclick="closeModal()"
+        >
+            بستن
+        </button>
+
+    </div>
+
+</div>
 
 <script>
 
-const searchInput = document.getElementById("searchInput");
+let currentFilter = "all";
 
-const filterButtons = document.querySelectorAll(".filter-btn");
+/* Open Modal */
+function openModal() {
+    document.getElementById("musicModal").style.display = "flex";
+}
 
-const musicCards = document.querySelectorAll(".music-card");
+/* Close Modal */
+function closeModal() {
+    document.getElementById("musicModal").style.display = "none";
+}
 
-const noResult = document.getElementById("noResult");
+/* Play Story */
+function playStory(element) {
 
-let selectedGenre = "all";
+    const video = element.querySelector("video");
+    const play = element.querySelector(".play");
+
+    if (video.paused) {
+        video.play();
+        play.style.display = "none";
+    } else {
+        video.pause();
+        play.style.display = "flex";
+    }
+}
+
+/* Add Music */
+function addMusic() {
+
+    const songName =
+        document.getElementById("songName").value;
+
+    const artistName =
+        document.getElementById("artistName").value;
+
+    const audioFile =
+        document.getElementById("audioFile").files[0];
+
+    const videoFile =
+        document.getElementById("videoFile").files[0];
+
+    if (!songName || !artistName || !audioFile) {
+        alert("لطفاً نام آهنگ، خواننده و فایل آهنگ را انتخاب کنید.");
+        return;
+    }
+
+    const audioURL =
+        URL.createObjectURL(audioFile);
+
+    const videoURL =
+        videoFile
+        ? URL.createObjectURL(videoFile)
+        : "";
+
+    /* Create Music Card */
+
+    const card =
+        document.createElement("div");
+
+    card.className = "music-card";
+
+    card.dataset.name =
+        songName;
+
+    card.dataset.category =
+        "new";
+
+    card.innerHTML = `
+
+        <img
+            src="cover.jpg"
+            alt="cover"
+        >
+
+        <div class="music-info">
+
+            <h3>${songName}</h3>
+
+            <p>${artistName}</p>
+
+            <audio controls>
+
+                <source
+                    src="${audioURL}"
+                    type="${audioFile.type}"
+                >
+
+            </audio>
+
+        </div>
+
+    `;
+
+    document
+        .getElementById("musicList")
+        .prepend(card);
 
 
-function filterMusic() {
+    /* Create Story */
 
-    const searchText =
-        searchInput.value.toLowerCase().trim();
+    if (videoURL) {
 
-    let visibleCount = 0;
+        const story =
+            document.createElement("div");
+
+        story.className =
+            "story";
+
+        story.dataset.name =
+            songName;
+
+        story.innerHTML = `
+
+            <div
+                class="story-circle"
+                onclick="playStory(this)"
+            >
+
+                <video
+                    muted
+                    loop
+                    playsinline
+                >
+
+                    <source
+                        src="${videoURL}"
+                        type="${videoFile.type}"
+                    >
+
+                </video>
+
+                <div class="play">
+                    ▶
+                </div>
+
+            </div>
+
+            <div class="story-name">
+                ${songName}
+            </div>
+
+        `;
+
+        document
+            .getElementById("stories")
+            .appendChild(story);
+
+    }
+
+    closeModal();
+
+    alert("آهنگ با موفقیت اضافه شد.");
+
+}
 
 
-    musicCards
+/* Search */
+function searchMusic() {
+
+    const search =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document
+        .querySelectorAll(".music-card");
+
+    cards.forEach(card => {
+
+        const name =
+            card.dataset.name
+            .toLowerCase();
+
+        if (name.includes(search)) {
+
+            card.style.display =
+                "flex";
+
+        } else {
+
+            card.style.display =
+                "none";
+
+        }
+
+    });
+
+}
+
+
+/* Filter */
+function filterMusic(category, button) {
+
+    currentFilter =
+        category;
+
+    document
+        .querySelectorAll(".filters button")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+    button.classList.add("active");
+
+    const cards =
+        document
+        .querySelectorAll(".music-card");
+
+    cards.forEach(card => {
+
+        if (
+            category === "all" ||
+            card.dataset.category === category
+        ) {
+
+            card.style.display =
+                "flex";
+
+        } else {
+
+            card.style.display =
+                "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
