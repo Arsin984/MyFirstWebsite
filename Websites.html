@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My City 984</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+/* Header */
+
+header {
+    background: linear-gradient(135deg, #00b894, #0984e3);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* Navigation */
+
+nav {
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 18px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+nav a {
+    color: #172033;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Container */
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 45px auto;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-image {
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e6e6ff, #f4eaff);
+    font-size: 90px;
+}
+
+.card-content {
+    padding: 30px;
+    text-align: center;
+}
+
+.card-content h2 {
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.card-content p {
+    font-size: 17px;
+    color: #687080;
+    line-height: 2;
+    margin-bottom: 25px;
+}
+
+/* Button */
+
+.button {
+    display: inline-block;
+    background: #3155ff;
+    color: white;
+    text-decoration: none;
+    padding: 15px 28px;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #1d3fe0;
+    transform: scale(1.04);
+}
+
+/* Footer */
+
+footer {
+    margin-top: 60px;
+    background: #172033;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer p {
+    color: #cbd0dc;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 20px;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    nav a {
+        white-space: nowrap;
+        font-size: 17px;
+    }
+
+    .card-content h2 {
+        font-size: 26px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header>
+
+    <h1>My City 984</h1>
+
+    <p>
+        Discover the best places, websites, music and cafes
+    </p>
+
+</header>
+
+
+<!-- Navigation -->
+
+<nav>
+
+    <a href="#places">📰 Places</a>
+
+    <a href="#websites">🌐 Websites</a>
+
+    <a href="#music">🎵 Music</a>
+
+    <a href="#cafes">☕ Cafes</a>
+
+</nav>
+
+
+<!-- Main -->
+
+<div class="container">
+
+<div class="cards">
+
+
+<!-- Music Card -->
+
+<div class="card" id="music">
+
+    <div class="card-image">
+        🎵
+    </div>
+
+    <div class="card-content">
+
+        <h2>Music</h2>
+
+        <p>
+            آهنگ‌ها و محتوای موسیقی مورد علاقه خود را پیدا کنید
+            و از گوش دادن به موسیقی لذت ببرید.
+        </p>
+
+        <a href="music.html" class="button">
+            Explore Music
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- Websites Card -->
+
+<div class="card" id="websites">
+
+    <div class="card-image">
+        🌐
+    </div>
+
+    <div class="card-content">
+
+        <h2>Websites</h2>
+
+        <p>
+            مجموعه‌ای از سایت‌های مفید و جذاب را مشاهده کنید
+            و وب‌سایت‌های مورد علاقه خود را پیدا کنید.
+        </p>
+
+        <a href="#" class="button">
+            Explore Websites
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- Places Card -->
+
+<div class="card" id="places">
+
+    <div class="card-image">
+        📍
+    </div>
+
+    <div class="card-content">
+
+        <h2>Places</h2>
+
+        <p>
+            مکان‌های جذاب و دیدنی شهر را پیدا کنید
+            و با بهترین نقاط آشنا شوید.
+        </p>
+
+        <a href="#" class="button">
+            Explore Places
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- Cafes Card -->
+
+<div class="card" id="cafes">
+
+    <div class="card-image">
+        ☕
+    </div>
+
+    <div class="card-content">
+
+        <h2>Cafes</h2>
+
+        <p>
+            بهترین کافه‌ها را پیدا کنید،
+            با محیط آن‌ها آشنا شوید و کافه مورد علاقه خود را انتخاب کنید.
+        </p>
+
+        <a href="cafes.html" class="button">
+            Explore Cafes
+        </a>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 My City 984
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
