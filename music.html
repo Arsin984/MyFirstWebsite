@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Music - My City 984</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+header {
+    background: linear-gradient(135deg, #3155ff, #7b2cff);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 17px;
+}
+
+.back {
+    display: inline-block;
+    margin: 25px 20px;
+    color: #3155ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.music-container {
+    max-width: 900px;
+    margin: 20px auto 70px;
+    padding: 20px;
+}
+
+.music-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.music-title h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.music-title p {
+    color: #657085;
+}
+
+.song {
+    background: white;
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.song-content {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.cover {
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #dfe5ff, #f1e5ff);
+    flex-shrink: 0;
+}
+
+.song-info {
+    flex: 1;
+}
+
+.song-info h3 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.artist {
+    color: #3155ff;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #657085;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+audio {
+    width: 100%;
+}
+
+footer {
+    background: #10172d;
+    color: #aeb7ce;
+    text-align: center;
+    padding: 30px 20px;
+    line-height: 2;
+}
+
+footer strong {
+    color: white;
+}
+
+.phone {
+    margin-bottom: 10px;
+}
+
+.phone a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 650px) {
+    .song-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cover {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+    }
+
+    .song-info {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎵 Music</h1>
+    <p>Discover and listen to music on My City 984</p>
+</header>
+
+<a class="back" href="index.html">
+    ← بازگشت به صفحه اصلی
+</a>
+
+<div class="music-container">
+
+    <div class="music-title">
+        <h2>آهنگ‌های منتخب</h2>
+        <p>
+            در این بخش می‌توانید آهنگ‌های مورد علاقه خود را گوش دهید.
+        </p>
+    </div>
+
+
+    <!-- آهنگ اول -->
+
+    <div class="song">
+
+        <div class="song-content">
+
+            <!-- عکس کاور -->
+            <img
+                class="cover"
+                src="cover1.jpg"
+                alt="کاور آهنگ"
+            >
+
+            <div class="song-info">
+
+                <h3>نام آهنگ اول</h3>
+
+                <div class="artist">
+                    🎤 نام خواننده
+                </div>
+
+                <p class="description">
+                    اینجا توضیحات مربوط به آهنگ را بنویسید.
+                    مثلاً درباره آهنگ، خواننده یا سبک موسیقی توضیح دهید.
+                </p>
+
+                <!-- فایل صوتی آهنگ -->
+                <audio controls>
+                    <source src="song1.mp3" type="audio/mpeg">
+                    مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+                </audio>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- آهنگ دوم -->
+
+    <div class="song">
+
+        <div class="song-content">
+
+            <img
+                class="cover"
+                src="cover2.jpg"
+                alt="کاور آهنگ"
+            >
+
+            <div class="song-info">
+
+                <h3>نام آهنگ دوم</h3>
+
+                <div class="artist">
+                    🎤 نام خواننده
+                </div>
+
+                <p class="description">
+                    توضیحات آهنگ دوم را اینجا بنویسید.
+                </p>
+
+                <audio controls>
+                    <source src="song2.mp3" type="audio/mpeg">
+                    مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+                </audio>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--
+    برای اضافه کردن آهنگ جدید،
+    یکی از بخش‌های song را کپی کنید
+    و اطلاعات آهنگ جدید را داخل آن قرار دهید.
+    -->
+
+
+</div>
+
+<footer>
+
+    <div class="phone">
+        📞 تماس با ما:
+        <a href="tel:09XXXXXXXXX">
+            09XXXXXXXXX
+        </a>
+    </div>
+
+    <div>
+        © 2026 <strong>My City 984</strong> — All Rights Reserved
+    </div>
+
+</footer>
+
+</body>
+</html>
