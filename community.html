@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Community - My City 984</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+header {
+    background: linear-gradient(135deg, #3155ff, #7b2cff);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 17px;
+}
+
+.container {
+    width: 92%;
+    max-width: 1000px;
+    margin: 30px auto 60px;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #3155ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.intro {
+    background: white;
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.intro h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    color: #687080;
+    line-height: 2;
+}
+
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 22px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #687080;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    background: #3155ff;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #203ed1;
+}
+
+footer {
+    background: #172033;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .community-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Community 👥</h1>
+
+    <p>
+        به جامعه My City 984 خوش آمدید
+    </p>
+
+</header>
+
+
+<div class="container">
+
+    <a href="index.html" class="back">
+        ← بازگشت به صفحه اصلی
+    </a>
+
+
+    <div class="intro">
+
+        <h2>
+            جامعه My City 984
+        </h2>
+
+        <p>
+            این بخش برای ارتباط کاربران، معرفی ایده‌ها،
+            پیشنهاد مکان‌های جدید و به اشتراک گذاشتن مطالب جذاب ساخته شده است.
+        </p>
+
+    </div>
+
+
+    <div class="community-grid">
+
+
+        <div class="card">
+
+            <div class="icon">
+                💡
+            </div>
+
+            <h3>
+                پیشنهاد ایده
+            </h3>
+
+            <p>
+                ایده‌ها و پیشنهادهای خود را برای بهتر شدن سایت
+                با ما به اشتراک بگذارید.
+            </p>
+
+            <a href="#" class="button">
+                ارسال پیشنهاد
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                📍
+            </div>
+
+            <h3>
+                معرفی مکان
+            </h3>
+
+            <p>
+                یک مکان جذاب، کافه یا جای دیدنی را به دیگران معرفی کنید.
+            </p>
+
+            <a href="#" class="button">
+                معرفی مکان
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎵
+            </div>
+
+            <h3>
+                معرفی موسیقی
+            </h3>
+
+            <p>
+                آهنگ‌ها و هنرمندان مورد علاقه خود را با جامعه به اشتراک بگذارید.
+            </p>
+
+            <a href="#" class="button">
+                معرفی آهنگ
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                📰
+            </div>
+
+            <h3>
+                ارسال خبر
+            </h3>
+
+            <p>
+                اخبار و اتفاقات جالب شهر را با دیگر کاربران به اشتراک بگذارید.
+            </p>
+
+            <a href="#" class="button">
+                ارسال خبر
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    © 2026 My City 984
+
+</footer>
+
+
+</body>
+
+</html>
