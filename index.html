@@ -1,1 +1,2841 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="My City 984 - A modern digital platform for music, videos, cafes, restaurants, websites, places, communities and news.">
+
+<meta name="theme-color" content="#0b1020">
+
+<title>arsin984 | My City 984</title>
+
+
+<style>
+
+/* =====================================================
+RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+    Arial,
+    Tahoma,
+    sans-serif;
+
+    min-height:100vh;
+
+    color:#172033;
+
+    overflow-x:hidden;
+
+    background:
+
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(99,102,241,.18),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 90% 20%,
+        rgba(236,72,153,.14),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #eef2ff,
+        #f8fafc,
+        #eef2ff
+    );
+
+    transition:
+    background .5s,
+    color .5s;
+
+}
+
+
+/* =====================================================
+DARK MODE
+===================================================== */
+
+body.dark{
+
+    color:#f8fafc;
+
+    background:
+
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(79,70,229,.25),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 90% 90%,
+        rgba(236,72,153,.15),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #060914,
+        #101827,
+        #060914
+    );
+
+}
+
+body.dark header{
+
+    background:
+    rgba(7,12,25,.78);
+
+    border-color:
+    rgba(255,255,255,.1);
+
+}
+
+body.dark .menu a{
+
+    color:white;
+
+    background:
+    rgba(255,255,255,.07);
+
+}
+
+body.dark .glass{
+
+    background:
+    rgba(255,255,255,.06);
+
+    border-color:
+    rgba(255,255,255,.1);
+
+}
+
+body.dark .search-box{
+
+    background:
+    rgba(255,255,255,.07);
+
+}
+
+body.dark input{
+
+    color:white;
+
+}
+
+body.dark input::placeholder{
+
+    color:#aab4c7;
+
+}
+
+body.dark .card-text{
+
+    color:#b8c1d4;
+
+}
+
+body.dark .feature{
+
+    background:
+    rgba(255,255,255,.05);
+
+}
+
+
+/* =====================================================
+HEADER
+===================================================== */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:9999;
+
+    padding:
+    18px 15px 14px;
+
+    background:
+    rgba(255,255,255,.72);
+
+    backdrop-filter:
+    blur(22px);
+
+    -webkit-backdrop-filter:
+    blur(22px);
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.6);
+
+    box-shadow:
+    0 10px 35px
+    rgba(15,23,42,.08);
+
+}
+
+
+/* =====================================================
+LOGO
+===================================================== */
+
+.logo{
+
+    text-align:center;
+
+    font-size:
+    clamp(28px,5vw,40px);
+
+    font-weight:
+    900;
+
+    letter-spacing:
+    1px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #3155ff,
+        #743cff,
+        #ec4899
+    );
+
+    -webkit-background-clip:
+    text;
+
+    -webkit-text-fill-color:
+    transparent;
+
+    margin-bottom:
+    16px;
+
+}
+
+
+/* =====================================================
+HEADER BUTTONS
+===================================================== */
+
+.header-tools{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:15px;
+
+}
+
+.tool-btn{
+
+    border:
+    1px solid
+    rgba(255,255,255,.65);
+
+    cursor:pointer;
+
+    padding:
+    10px 18px;
+
+    border-radius:
+    30px;
+
+    font-weight:bold;
+
+    color:#3155ff;
+
+    background:
+    rgba(255,255,255,.48);
+
+    backdrop-filter:
+    blur(18px);
+
+    -webkit-backdrop-filter:
+    blur(18px);
+
+    box-shadow:
+
+    0 8px 25px
+    rgba(15,23,42,.08),
+
+    inset 0 1px 0
+    rgba(255,255,255,.8);
+
+    transition:
+    .3s;
+
+}
+
+.tool-btn:hover{
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+
+    0 12px 30px
+    rgba(49,85,255,.18),
+
+    inset 0 1px 0
+    rgba(255,255,255,.9);
+
+}
+
+
+/* =====================================================
+MENU
+===================================================== */
+
+.menu-wrapper{
+
+    width:100%;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+
+}
+
+.menu-wrapper::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.menu{
+
+    display:flex;
+
+    gap:11px;
+
+    width:max-content;
+
+    min-width:100%;
+
+    justify-content:center;
+
+}
+
+.menu a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#172033;
+
+    background:
+    rgba(255,255,255,.7);
+
+    border:
+    1px solid
+    rgba(255,255,255,.7);
+
+    padding:
+    11px 17px;
+
+    border-radius:
+    30px;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    transition:
+    .3s;
+
+}
+
+.menu a:hover{
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #3155ff,
+        #743cff
+    );
+
+    transform:
+    translateY(-3px);
+
+}
+
+
+/* =====================================================
+HERO
+===================================================== */
+
+.hero{
+
+    position:relative;
+
+    text-align:center;
+
+    color:white;
+
+    padding:
+    70px 15px 85px;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(255,255,255,.2),
+        transparent 25%
+    ),
+
+    radial-gradient(
+        circle at 85% 80%,
+        rgba(255,255,255,.18),
+        transparent 25%
+    ),
+
+    linear-gradient(
+        135deg,
+        #3155ff,
+        #743cff,
+        #ec4899
+    );
+
+}
+
+.hero h1{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:
+    clamp(25px,5vw,46px);
+
+    margin:
+    18px auto;
+
+}
+
+.hero p{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:
+    800px;
+
+    margin:auto;
+
+    line-height:
+    2;
+
+    font-size:
+    17px;
+
+    opacity:.95;
+
+}
+
+
+/* =====================================================
+GLASS LANGUAGE BUTTON
+===================================================== */
+
+.language-button{
+
+    position:relative;
+
+    z-index:5;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.65);
+
+    cursor:pointer;
+
+    padding:
+    12px 26px;
+
+    min-width:
+    145px;
+
+    border-radius:
+    30px;
+
+    color:white;
+
+    background:
+    rgba(255,255,255,.16);
+
+    backdrop-filter:
+    blur(20px);
+
+    -webkit-backdrop-filter:
+    blur(20px);
+
+    box-shadow:
+
+    0 12px 35px
+    rgba(0,0,0,.15),
+
+    inset 0 1px 0
+    rgba(255,255,255,.5),
+
+    inset 0 -1px 0
+    rgba(255,255,255,.08);
+
+    font-weight:bold;
+
+    font-size:16px;
+
+    transition:
+    transform .3s,
+    background .3s,
+    box-shadow .3s;
+
+}
+
+.language-button:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.04);
+
+    background:
+    rgba(255,255,255,.26);
+
+    box-shadow:
+
+    0 18px 45px
+    rgba(0,0,0,.22),
+
+    inset 0 1px 0
+    rgba(255,255,255,.7);
+
+}
+
+.language-button:active{
+
+    transform:
+    scale(.97);
+
+}
+
+
+/* =====================================================
+SEARCH
+===================================================== */
+
+.search-area{
+
+    width:
+    92%;
+
+    max-width:
+    900px;
+
+    margin:
+    -32px auto
+    35px;
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    padding:8px;
+
+    border-radius:
+    35px;
+
+    background:
+    rgba(255,255,255,.78);
+
+    backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.7);
+
+    box-shadow:
+    0 15px 45px
+    rgba(15,23,42,.15);
+
+}
+
+.search-box input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    padding:
+    14px 18px;
+
+    font-size:16px;
+
+}
+
+.search-box button{
+
+    border:none;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-weight:bold;
+
+    padding:
+    13px 25px;
+
+    border-radius:
+    28px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #3155ff,
+        #743cff
+    );
+
+}
+
+
+/* =====================================================
+SECTION TITLE
+===================================================== */
+
+.section-title{
+
+    width:
+    92%;
+
+    max-width:
+    1200px;
+
+    margin:
+    0 auto 25px;
+
+    text-align:center;
+
+}
+
+.section-title h2{
+
+    font-size:
+    clamp(26px,4vw,36px);
+
+    margin-bottom:
+    10px;
+
+}
+
+.section-title p{
+
+    color:#687084;
+
+    line-height:
+    1.8;
+
+}
+
+
+/* =====================================================
+FILTER
+===================================================== */
+
+.filter-area{
+
+    width:
+    92%;
+
+    max-width:
+    1100px;
+
+    margin:
+    0 auto 35px;
+
+    padding:
+    22px;
+
+    border-radius:
+    28px;
+
+    background:
+    rgba(255,255,255,.62);
+
+    backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.7);
+
+    box-shadow:
+    0 10px 35px
+    rgba(15,23,42,.07);
+
+}
+
+.filter-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.filter-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:
+    10px 18px;
+
+    border-radius:
+    25px;
+
+    color:#3155ff;
+
+    background:
+    rgba(49,85,255,.10);
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #3155ff,
+        #743cff
+    );
+
+    transform:
+    translateY(-2px);
+
+}
+
+
+/* =====================================================
+CARDS
+===================================================== */
+
+.cards{
+
+    width:
+    92%;
+
+    max-width:
+    1200px;
+
+    margin:
+    0 auto 70px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+
+/* =====================================================
+GLASS CARD
+===================================================== */
+
+.glass{
+
+    overflow:hidden;
+
+    border-radius:
+    30px;
+
+    background:
+    rgba(255,255,255,.62);
+
+    backdrop-filter:
+    blur(24px);
+
+    -webkit-backdrop-filter:
+    blur(24px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.75);
+
+    box-shadow:
+
+    0 15px 45px
+    rgba(15,23,42,.09),
+
+    inset 0 1px 0
+    rgba(255,255,255,.8);
+
+    transition:
+    .4s;
+
+}
+
+.glass:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+
+    0 25px 65px
+    rgba(15,23,42,.17);
+
+}
+
+
+/* =====================================================
+CARD TOP
+===================================================== */
+
+.card-top{
+
+    height:
+    210px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.icon{
+
+    width:
+    110px;
+
+    height:
+    110px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:
+    32px;
+
+    font-size:
+    60px;
+
+    background:
+    rgba(255,255,255,.22);
+
+    backdrop-filter:
+    blur(15px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.5);
+
+    box-shadow:
+    0 20px 40px
+    rgba(0,0,0,.16);
+
+    transition:
+    .4s;
+
+}
+
+.glass:hover .icon{
+
+    transform:
+    scale(1.1)
+    rotate(-4deg);
+
+}
+
+
+/* =====================================================
+CARD COLORS
+===================================================== */
+
+.blue{
+
+    background:
+    linear-gradient(
+        135deg,
+        #00c6ff,
+        #0072ff
+    );
+
+}
+
+.purple{
+
+    background:
+    linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+}
+
+.green{
+
+    background:
+    linear-gradient(
+        135deg,
+        #11998e,
+        #38ef7d
+    );
+
+}
+
+.orange{
+
+    background:
+    linear-gradient(
+        135deg,
+        #f6d365,
+        #fda085
+    );
+
+}
+
+.red{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff416c,
+        #ff4b2b
+    );
+
+}
+
+.pink{
+
+    background:
+    linear-gradient(
+        135deg,
+        #8e2de2,
+        #ec4899
+    );
+
+}
+
+
+/* =====================================================
+CARD CONTENT
+===================================================== */
+
+.card-body{
+
+    padding:
+    28px;
+
+    text-align:center;
+
+}
+
+.card-body h3{
+
+    font-size:
+    27px;
+
+    margin-bottom:
+    12px;
+
+}
+
+.card-text{
+
+    color:
+    #687084;
+
+    line-height:
+    1.9;
+
+    font-size:
+    15px;
+
+}
+
+.card-btn{
+
+    display:inline-block;
+
+    margin-top:
+    20px;
+
+    padding:
+    13px 26px;
+
+    border-radius:
+    30px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #3155ff,
+        #743cff
+    );
+
+    box-shadow:
+    0 10px 25px
+    rgba(49,85,255,.22);
+
+    transition:
+    .3s;
+
+}
+
+.card-btn:hover{
+
+    transform:
+    scale(1.05);
+
+}
+
+
+/* =====================================================
+FEATURES
+===================================================== */
+
+.features{
+
+    width:
+    92%;
+
+    max-width:
+    1100px;
+
+    margin:
+    0 auto 70px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.feature{
+
+    padding:
+    28px 20px;
+
+    text-align:center;
+
+    border-radius:
+    25px;
+
+    background:
+    rgba(255,255,255,.55);
+
+    backdrop-filter:
+    blur(18px);
+
+    border:
+    1px solid
+    rgba(255,255,255,.7);
+
+    box-shadow:
+    0 10px 30px
+    rgba(15,23,42,.06);
+
+}
+
+.feature-icon{
+
+    font-size:
+    42px;
+
+    margin-bottom:
+    12px;
+
+}
+
+.feature h3{
+
+    margin-bottom:
+    10px;
+
+}
+
+.feature p{
+
+    color:#687084;
+
+    line-height:
+    1.8;
+
+    font-size:
+    14px;
+
+}
+
+
+/* =====================================================
+STATS
+===================================================== */
+
+.stats{
+
+    width:
+    92%;
+
+    max-width:
+    1100px;
+
+    margin:
+    0 auto 70px;
+
+    padding:
+    35px 20px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+    text-align:center;
+
+    color:white;
+
+    border-radius:
+    30px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #172033,
+        #3155ff,
+        #743cff
+    );
+
+    box-shadow:
+    0 20px 50px
+    rgba(49,85,255,.2);
+
+}
+
+.stat h3{
+
+    font-size:
+    32px;
+
+    margin-bottom:
+    7px;
+
+}
+
+.stat p{
+
+    opacity:
+    .85;
+
+}
+
+
+/* =====================================================
+CONTACT
+===================================================== */
+
+.contact{
+
+    width:
+    92%;
+
+    max-width:
+    1100px;
+
+    margin:
+    0 auto 60px;
+
+    padding:
+    45px 20px;
+
+    text-align:center;
+
+    color:white;
+
+    border-radius:
+    32px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #101827,
+        #3155ff
+    );
+
+}
+
+.contact h2{
+
+    font-size:
+    30px;
+
+    margin-bottom:
+    12px;
+
+}
+
+.contact p{
+
+    line-height:
+    1.9;
+
+}
+
+.phone{
+
+    display:inline-block;
+
+    margin-top:
+    20px;
+
+    padding:
+    14px 28px;
+
+    border-radius:
+    30px;
+
+    color:#172033;
+
+    background:white;
+
+    text-decoration:none;
+
+    font-size:
+    19px;
+
+    font-weight:bold;
+
+}
+
+
+/* =====================================================
+PAGINATION
+===================================================== */
+
+.pagination{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:
+    30px 15px 60px;
+
+}
+
+.pagination a{
+
+    width:
+    46px;
+
+    height:
+    46px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:
+    50%;
+
+    text-decoration:none;
+
+    color:#3155ff;
+
+    background:
+    rgba(255,255,255,.75);
+
+    box-shadow:
+    0 8px 20px
+    rgba(15,23,42,.08);
+
+}
+
+.pagination a.active,
+.pagination a:hover{
+
+    color:white;
+
+    background:
+    #3155ff;
+
+}
+
+
+/* =====================================================
+FOOTER
+===================================================== */
+
+footer{
+
+    padding:
+    40px 15px;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+    #0b1020;
+
+}
+
+.footer-phone{
+
+    display:inline-block;
+
+    margin-top:
+    12px;
+
+    color:white;
+
+    text-decoration:none;
+
+}
+
+
+/* =====================================================
+PERSIAN
+===================================================== */
+
+body.persian{
+
+    direction:rtl;
+
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
+}
+
+body.persian .search-box{
+
+    direction:rtl;
+
+}
+
+body.persian .menu-wrapper{
+
+    direction:rtl;
+
+}
+
+
+/* =====================================================
+MOBILE
+===================================================== */
+
+@media(max-width:800px){
+
+    .cards{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+    .features{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+    .stats{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .menu{
+
+        justify-content:
+        flex-start;
+
+        min-width:
+        max-content;
+
+    }
+
+}
+
+@media(max-width:550px){
+
+    .hero{
+
+        padding:
+        50px 12px
+        65px;
+
+    }
+
+    .search-box{
+
+        border-radius:
+        25px;
+
+    }
+
+    .search-box button{
+
+        padding:
+        0 18px;
+
+    }
+
+    .stats{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+HEADER
+===================================================== -->
+
+<header>
+
+
+<div class="logo">
+
+arsin984
+
+</div>
+
+
+<div class="header-tools">
+
+
+<button
+class="tool-btn"
+onclick="toggleDarkMode()"
+id="themeButton">
+
+🌙 Dark / Light
+
+</button>
+
+
+<button
+class="tool-btn"
+onclick="showAccount()">
+
+👤 Account
+
+</button>
+
+
+</div>
+
+
+<div class="menu-wrapper">
+
+
+<nav class="menu">
+
+
+<a href="music.html">
+🎵 Music
+</a>
+
+
+<a href="Websites.html">
+🌐 Websites
+</a>
+
+
+<a href="places.html">
+📍 Places
+</a>
+
+
+<a href="cafe-restaurant.html">
+☕🍽️ Cafe & Restaurant
+</a>
+
+
+<a href="cafes.html">
+☕ Cafes
+</a>
+
+
+<a href="video-hub.html">
+🎬 Video Hub
+</a>
+
+
+<a href="community.html">
+👥 Community
+</a>
+
+
+<a href="news.html">
+📰 News
+</a>
+
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<section class="hero">
+
+
+<!-- GLASS LANGUAGE BUTTON -->
+
+<button
+class="language-button"
+id="languageButton"
+onclick="toggleLanguage()">
+
+🇮🇷 فارسی
+
+</button>
+
+
+<h1 id="welcomeTitle">
+
+Welcome to My City 984
+
+</h1>
+
+
+<p id="welcomeText">
+
+Discover music, videos, cafes,
+restaurants, websites, places,
+communities and news in one place.
+
+</p>
+
+
+</section>
+
+
+<!-- =====================================================
+SEARCH
+===================================================== -->
+
+<section class="search-area">
+
+
+<div class="search-box">
+
+
+<input
+id="searchInput"
+type="search"
+placeholder="Search My City 984..."
+oninput="searchCards">
+
+
+<button
+onclick="searchCards()">
+
+🔎 Search
+
+</button>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+SECTION TITLE
+===================================================== -->
+
+<section class="section-title">
+
+
+<h2 data-en="Explore My City 984">
+
+Explore My City 984
+
+</h2>
+
+
+<p data-en="Choose a category and discover something new.">
+
+Choose a category and discover something new.
+
+</p>
+
+
+</section>
+
+
+<!-- =====================================================
+FILTER
+===================================================== -->
+
+<section class="filter-area">
+
+
+<div class="filter-buttons">
+
+
+<button
+class="filter-btn active"
+onclick="filterCards('all',this)"
+data-en="All">
+
+All
+
+</button>
+
+
+<button
+class="filter-btn"
+onclick="filterCards('music',this)"
+data-en="🎵 Music">
+
+🎵 Music
+
+</button>
+
+
+<button
+class="filter-btn"
+onclick="filterCards('place',this)"
+data-en="📍 Places">
+
+📍 Places
+
+</button>
+
+
+<button
+class="filter-btn"
+onclick="filterCards('cafe',this)"
+data-en="☕ Cafes">
+
+☕ Cafes
+
+</button>
+
+
+<button
+class="filter-btn"
+onclick="filterCards('video',this)"
+data-en="🎬 Videos">
+
+🎬 Videos
+
+</button>
+
+
+<button
+class="filter-btn"
+onclick="filterCards('community',this)"
+data-en="👥 Community">
+
+👥 Community
+
+</button>
+
+
+<button
+class="filter-btn"
+onclick="filterCards('news',this)"
+data-en="📰 News">
+
+📰 News
+
+</button>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+CARDS
+===================================================== -->
+
+<main class="cards">
+
+
+<!-- MUSIC -->
+
+<article
+class="glass"
+data-category="music">
+
+<div class="card-top blue">
+
+<div class="icon">
+🎵
+</div>
+
+</div>
+
+<div class="card-body">
+
+<h3 data-en="Music">
+Music
+</h3>
+
+<p
+class="card-text"
+data-en="Discover music and artists you love.">
+
+Discover music and artists you love.
+
+</p>
+
+<a
+href="music.html"
+class="card-btn"
+data-en="Explore Music">
+
+Explore Music
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- WEBSITES -->
+
+<article
+class="glass"
+data-category="all">
+
+<div class="card-top purple">
+
+<div class="icon">
+🌐
+</div>
+
+</div>
+
+<div class="card-body">
+
+<h3 data-en="Websites">
+Websites
+</h3>
+
+<p
+class="card-text"
+data-en="Explore useful and interesting websites.">
+
+Explore useful and interesting websites.
+
+</p>
+
+<a
+href="Websites.html"
+class="card-btn"
+data-en="Explore Websites">
+
+Explore Websites
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- PLACES -->
+
+<article
+class="glass"
+data-category="place">
+
+<div class="card-top green">
+
+<div class="icon">
+📍
+</div>
+
+</div>
+
+<div class="card-body">
+
+<h3 data-en="Places">
+Places
+</h3>
+
+<p
+class="card-text"
+data-en="Find amazing places and destinations.">
+
+Find amazing places and destinations.
+
+</p>
+
+<a
+href="places.html"
+class="card-btn"
+data-en="Explore Places">
+
+Explore Places
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- CAFE RESTAURANT -->
+
+<article
+class="glass"
+data-category="cafe">
+
+<div class="card-top orange">
+
+<div class="icon">
+☕🍽️
+</div>
+
+</div>
+
+<div class="card-body">
+
+<h3 data-en="Cafe & Restaurant">
+
+Cafe & Restaurant
+
+</h3>
+
+<p
+class="card-text"
+data-en="Discover cafes and restaurants, menus, photos, videos and prices.">
+
+Discover cafes and restaurants,
+menus, photos, videos and prices.
+
+</p>
+
+<a
+href="cafe-restaurant.html"
+class="card-btn"
+data-en="Explore Cafe & Restaurant">
+
+Explore Cafe & Restaurant
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- CAFE -->
+
+<article
+class="glass"
+data-category="cafe">
+
+<div class="card-top orange">
+
+<div class="icon">
+☕
+</div>
+
+</div>
+
+<div class="card-body">
+
+<h3 data-en="Cafes">
+Cafes
+</h3>
+
+<p
+class="card-text"
+data-en="Discover beautiful cafes and explore their atmosphere and information.">
+
+Discover beautiful cafes
+and explore their atmosphere
+and information.
+
+</p>
+
+<a
+href="cafes.html"
+class="card-btn"
+data-en="Explore Cafes">
+
+Explore Cafes
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- VIDEO HUB -->
+
+<article
+class="glass"
+data-category="video">
+
+<div class="card-top red">
+
+<div class="icon">
+🎬
+</div>
+
+</div>
+
+<div class="card-body">
+
+<h3 data-en="Video Hub">
+Video Hub
+</h3>
+
+<p
+class="card-text"
+data-en="Watch videos, tutorials, explanations and other video content.">
+
+Watch videos, tutorials,
+explanations and other video content.
+
+</p>
+
+<a
+href="video-hub.html"
+class="card-btn"
+data-en="Open Video Hub">
+
+Open Video Hub
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- COMMUNITY -->
+
+<article
+class="glass"
+data-category="community">
+
+<div class="card-top pink">
+
+<div class="icon">
+👥
+</div>
+
+</div>
+
+<div class="card-body">
+
+<h3 data-en="Community">
+Community
+</h3>
+
+<p
+class="card-text"
+data-en="Connect with people and discover new communities.">
+
+Connect with people
+and discover new communities.
+
+</p>
+
+<a
+href="community.html"
+class="card-btn"
+data-en="Join Community">
+
+Join Community
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- NEWS -->
+
+<article
+class="glass"
+data-category="news">
+
+<div class="card-top green">
+
+<div class="icon">
+📰
+</div>
+
+</div>
+
+<div class="card-body">
+
+<h3 data-en="News">
+News
+</h3>
+
+<p
+class="card-text"
+data-en="Read the latest news and updates.">
+
+Read the latest news and updates.
+
+</p>
+
+<a
+href="news.html"
+class="card-btn"
+data-en="Read News">
+
+Read News
+
+</a>
+
+</div>
+
+</article>
+
+
+</main>
+
+
+<!-- =====================================================
+FEATURES
+===================================================== -->
+
+<section class="section-title">
+
+<h2 data-en="Why My City 984?">
+Why My City 984?
+</h2>
+
+</section>
+
+
+<section class="features">
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🔎
+</div>
+
+<h3 data-en="Smart Search">
+Smart Search
+</h3>
+
+<p
+data-en="Find the content you need faster with the search system.">
+
+Find the content you need faster
+with the search system.
+
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🌐
+</div>
+
+<h3 data-en="All In One Place">
+All In One Place
+</h3>
+
+<p
+data-en="Music, videos, cafes, restaurants, places, news and communities in one platform.">
+
+Music, videos, cafes, restaurants,
+places, news and communities
+in one platform.
+
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+📱
+</div>
+
+<h3 data-en="Mobile Friendly">
+Mobile Friendly
+</h3>
+
+<p
+data-en="Designed to work beautifully on phones, tablets and computers.">
+
+Designed to work beautifully
+on phones, tablets and computers.
+
+</p>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+STATS
+===================================================== -->
+
+<section class="stats">
+
+
+<div class="stat">
+
+<h3>8+</h3>
+
+<p data-en="Main Categories">
+Main Categories
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>100%</h3>
+
+<p data-en="Growing">
+Growing
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>24/7</h3>
+
+<p data-en="Access">
+Access
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>984</h3>
+
+<p data-en="My City">
+My City
+</p>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+CONTACT
+===================================================== -->
+
+<section class="contact">
+
+<h2 data-en="Contact Us">
+Contact Us
+</h2>
+
+<p data-en="For more information, contact us by phone.">
+
+For more information,
+contact us by phone.
+
+</p>
+
+<a
+href="tel:09931936926"
+class="phone">
+
+📞 09931936926
+
+</a>
+
+</section>
+
+
+<!-- =====================================================
+PAGINATION
+===================================================== -->
+
+<div class="pagination">
+
+
+<a
+class="active"
+href="index.html">
+1
+</a>
+
+
+<a href="music.html">
+2
+</a>
+
+
+<a href="Websites.html">
+3
+</a>
+
+
+<a href="places.html">
+4
+</a>
+
+
+<a href="cafe-restaurant.html">
+5
+</a>
+
+
+<a href="cafes.html">
+6
+</a>
+
+
+<a href="video-hub.html">
+7
+</a>
+
+
+<a href="community.html">
+8
+</a>
+
+
+<a href="news.html">
+9
+</a>
+
+
+</div>
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer>
+
+<p data-en="© 2026 arsin984 - My City 984">
+
+© 2026 arsin984 - My City 984
+
+</p>
+
+<a
+href="tel:09931936926"
+class="footer-phone">
+
+📞 09931936926
+
+</a>
+
+</footer>
+
+
+<!-- =====================================================
+JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+TRANSLATIONS
+===================================================== */
+
+const translations = {
+
+"Explore My City 984":
+"در My City 984 جست‌وجو کنید",
+
+"Choose a category and discover something new.":
+"یک دسته‌بندی را انتخاب کنید و چیزهای جدید پیدا کنید.",
+
+"All":
+"همه",
+
+"🎵 Music":
+"🎵 موسیقی",
+
+"📍 Places":
+"📍 مکان‌ها",
+
+"☕ Cafes":
+"☕ کافه‌ها",
+
+"🎬 Videos":
+"🎬 ویدیوها",
+
+"👥 Community":
+"👥 انجمن",
+
+"📰 News":
+"📰 اخبار",
+
+"Music":
+"موسیقی",
+
+"Discover music and artists you love.":
+"موسیقی و هنرمندان مورد علاقه خود را پیدا کنید.",
+
+"Explore Music":
+"مشاهده موسیقی",
+
+"Websites":
+"وب‌سایت‌ها",
+
+"Explore useful and interesting websites.":
+"وب‌سایت‌های مفید و جالب را پیدا کنید.",
+
+"Explore Websites":
+"مشاهده وب‌سایت‌ها",
+
+"Places":
+"مکان‌ها",
+
+"Find amazing places and destinations.":
+"مکان‌ها و مقصدهای جذاب را پیدا کنید.",
+
+"Explore Places":
+"مشاهده مکان‌ها",
+
+"Cafe & Restaurant":
+"کافه و رستوران",
+
+"Discover cafes and restaurants, menus, photos, videos and prices.":
+"کافه‌ها و رستوران‌ها، منوها، عکس‌ها، ویدیوها و قیمت‌ها را پیدا کنید.",
+
+"Explore Cafe & Restaurant":
+"مشاهده کافه و رستوران",
+
+"Cafes":
+"کافه‌ها",
+
+"Discover beautiful cafes and explore their atmosphere and information.":
+"کافه‌های زیبا را پیدا کنید و با فضای آن‌ها و اطلاعاتشان آشنا شوید.",
+
+"Explore Cafes":
+"مشاهده کافه‌ها",
+
+"Video Hub":
+"مرکز ویدیو",
+
+"Watch videos, tutorials, explanations and other video content.":
+"ویدیوها، آموزش‌ها، توضیحات و محتوای ویدیویی را تماشا کنید.",
+
+"Open Video Hub":
+"ورود به مرکز ویدیو",
+
+"Community":
+"انجمن",
+
+"Connect with people and discover new communities.":
+"با مردم ارتباط برقرار کنید و انجمن‌های جدید را پیدا کنید.",
+
+"Join Community":
+"ورود به انجمن",
+
+"News":
+"اخبار",
+
+"Read the latest news and updates.":
+"آخرین اخبار و به‌روزرسانی‌ها را بخوانید.",
+
+"Why My City 984?":
+"چرا My City 984؟",
+
+"Smart Search":
+"جست‌وجوی هوشمند",
+
+"Find the content you need faster with the search system.":
+"با سیستم جست‌وجو سریع‌تر محتوای مورد نیاز خود را پیدا کنید.",
+
+"All In One Place":
+"همه‌چیز در یک مکان",
+
+"Music, videos, cafes, restaurants, places, news and communities in one platform.":
+"موسیقی، ویدیو، کافه، رستوران، مکان‌ها، اخبار و انجمن‌ها در یک پلتفرم.",
+
+"Mobile Friendly":
+"سازگار با موبایل",
+
+"Designed to work beautifully on phones, tablets and computers.":
+"برای نمایش زیبا در موبایل، تبلت و کامپیوتر طراحی شده است.",
+
+"Main Categories":
+"دسته‌بندی اصلی",
+
+"Growing":
+"در حال توسعه",
+
+"Access":
+"دسترسی",
+
+"My City":
+"شهر من",
+
+"Contact Us":
+"تماس با ما",
+
+"For more information, contact us by phone.":
+"برای اطلاعات بیشتر از طریق تلفن با ما تماس بگیرید."
+
+};
+
+
+/* =====================================================
+LANGUAGE
+===================================================== */
+
+let isPersian = false;
+
+
+function toggleLanguage(){
+
+
+const button =
+document.getElementById(
+"languageButton"
+);
+
+
+const title =
+document.getElementById(
+"welcomeTitle"
+);
+
+
+const text =
+document.getElementById(
+"welcomeText"
+);
+
+
+const input =
+document.getElementById(
+"searchInput"
+);
+
+
+if(!isPersian){
+
+
+document.body.classList.add(
+"persian"
+);
+
+
+document.documentElement.lang =
+"fa";
+
+document.documentElement.dir =
+"rtl";
+
+
+title.innerText =
+"به My City 984 خوش آمدید";
+
+
+text.innerText =
+"موسیقی، ویدیوها، کافه‌ها، رستوران‌ها، وب‌سایت‌ها، مکان‌ها، انجمن‌ها و اخبار را در یک مکان پیدا کنید.";
+
+
+document
+.querySelectorAll("[data-en]")
+.forEach(function(element){
+
+
+const english =
+element.getAttribute(
+"data-en"
+);
+
+
+if(
+translations[english]
+){
+
+element.innerText =
+translations[english];
+
+}
+
+});
+
+
+input.placeholder =
+"در My City 984 جست‌وجو کنید...";
+
+
+button.innerText =
+"🇬🇧 English";
+
+
+isPersian =
+true;
+
+
+}else{
+
+
+document.body.classList.remove(
+"persian"
+);
+
+
+document.documentElement.lang =
+"en";
+
+document.documentElement.dir =
+"ltr";
+
+
+title.innerText =
+"Welcome to My City 984";
+
+
+text.innerText =
+"Discover music, videos, cafes, restaurants, websites, places, communities and news in one place.";
+
+
+document
+.querySelectorAll("[data-en]")
+.forEach(function(element){
+
+element.innerText =
+element.getAttribute(
+"data-en"
+);
+
+});
+
+
+input.placeholder =
+"Search My City 984...";
+
+
+button.innerText =
+"🇮🇷 فارسی";
+
+
+isPersian =
+false;
+
+}
+
+}
+
+
+/* =====================================================
+DARK MODE
+===================================================== */
+
+function toggleDarkMode(){
+
+document.body.classList.toggle(
+"dark"
+);
+
+}
+
+
+/* =====================================================
+ACCOUNT
+===================================================== */
+
+function showAccount(){
+
+alert(
+
+isPersian
+
+?
+
+"سیستم حساب کاربری در نسخه بعدی به سایت متصل می‌شود."
+
+:
+
+"Account system will be connected in a future update."
+
+);
+
+}
+
+
+/* =====================================================
+SEARCH
+===================================================== */
+
+function searchCards(){
+
+
+const query =
+
+document
+.getElementById(
+"searchInput"
+)
+.value
+.toLowerCase()
+.trim();
+
+
+const cards =
+
+document
+.querySelectorAll(
+".glass"
+);
+
+
+cards.forEach(function(card){
+
+
+const content =
+
+card
+.innerText
+.toLowerCase();
+
+
+if(
+content.includes(query)
+){
+
+card.style.display =
+"block";
+
+}else{
+
+card.style.display =
+"none";
+
+}
+
+});
+
+
+}
+
+
+/* =====================================================
+FILTER
+===================================================== */
+
+function filterCards(
+category,
+button
+){
+
+
+const cards =
+
+document
+.querySelectorAll(
+".glass"
+);
+
+
+const buttons =
+
+document
+.querySelectorAll(
+".filter-btn"
+);
+
+
+buttons.forEach(function(btn){
+
+btn.classList.remove(
+"active"
+);
+
+});
+
+
+button.classList.add(
+"active"
+);
+
+
+cards.forEach(function(card){
+
+
+const cardCategory =
+
+card.getAttribute(
+"data-category"
+);
+
+
+if(
+
+category === "all"
+
+||
+
+cardCategory === category
+
+){
+
+card.style.display =
+"block";
+
+}else{
+
+card.style.display =
+"none";
+
+}
+
+});
+
+
+}
+
+</script>
+
+
+</body>
+
+  </html>
