@@ -925,3 +925,387 @@ Apple Music
 </div>
 
 </section>
+<!-- ================= WEBSITES ================= -->
+
+<section class="section hidden">
+
+<div class="section-title">
+
+<h2>Websites</h2>
+
+<p>Explore useful websites</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<img src="https://picsum.photos/400/400?5">
+
+<h3>Creative Tools</h3>
+
+<p>Design and productivity websites</p>
+
+<a href="websites.html" class="btn-primary">
+
+Open
+
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://picsum.photos/400/400?6">
+
+<h3>AI Tools</h3>
+
+<p>Discover powerful AI services</p>
+
+<a href="websites.html" class="btn-primary">
+
+Explore
+
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://picsum.photos/400/400?7">
+
+<h3>Learning</h3>
+
+<p>Educational platforms</p>
+
+<a href="websites.html" class="btn-primary">
+
+Visit
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+<!-- ================= PLACES ================= -->
+
+
+<section class="section hidden">
+
+
+<div class="section-title">
+
+<h2>Places</h2>
+
+<p>Find amazing locations</p>
+
+</div>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<img src="https://picsum.photos/400/400?8">
+
+<h3>Restaurants</h3>
+
+<p>Best cafes and restaurants</p>
+
+<a href="places.html" class="btn-primary">
+
+Discover
+
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://picsum.photos/400/400?9">
+
+<h3>Travel</h3>
+
+<p>Beautiful places around the world</p>
+
+<a href="places.html" class="btn-primary">
+
+Explore
+
+</a>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- ================= STATS ================= -->
+
+
+<section class="stats hidden">
+
+
+<div class="stat">
+
+<h2>2M+</h2>
+
+<p>Listeners</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>10K+</h2>
+
+<p>Music Cards</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>500+</h2>
+
+<p>Websites</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2>100+</h2>
+
+<p>Places</p>
+
+</div>
+
+
+</section>
+  <!-- ================= COMMUNITY ================= -->
+
+<section class="section hidden">
+
+
+<div class="section-title">
+
+<h2>Community</h2>
+
+<p>Join the arsin984 community</p>
+
+</div>
+
+
+
+<div class="community-box">
+
+
+<h2>
+
+Connect With People
+
+</h2>
+
+
+<p>
+
+Share music, discover new ideas and build your own experience.
+
+</p>
+
+
+<a href="community.html" class="btn-primary">
+
+Join Community
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+
+<footer>
+
+
+<div class="footer-content">
+
+
+<div>
+
+<h2>
+
+arsin984
+
+</h2>
+
+<p>
+
+Music • Websites • Places • Community
+
+</p>
+
+</div>
+
+
+
+<div class="footer-links">
+
+
+<a href="index.html">
+
+Home
+
+</a>
+
+
+<a href="music.html">
+
+Music
+
+</a>
+
+
+<a href="websites.html">
+
+Websites
+
+</a>
+
+
+<a href="places.html">
+
+Places
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="copyright">
+
+© 2026 arsin984. All rights reserved.
+
+</div>
+
+
+</footer>
+
+
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+
+<script>
+
+
+// Scroll Animation
+
+const hiddenElements = document.querySelectorAll(".hidden");
+
+
+const observer = new IntersectionObserver((entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+
+});
+
+
+});
+
+
+
+hiddenElements.forEach((el)=>observer.observe(el));
+
+
+
+
+// Music Buttons
+
+
+const buttons = document.querySelectorAll(".play-btn");
+
+
+buttons.forEach(button=>{
+
+
+button.addEventListener("click",()=>{
+
+
+if(button.innerHTML.includes("▶")){
+
+
+button.innerHTML="⏸ Playing";
+
+
+}else{
+
+
+button.innerHTML="▶ Play";
+
+
+}
+
+
+});
+
+
+});
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
