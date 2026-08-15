@@ -1,159 +1,810 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>arsin984 | Admin</title>
+  <title>arsin984 | پنل مدیریت</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
-    <style>
-        .admin-page{
-            min-height:100vh;
-            padding:120px 8% 60px;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .admin-panel{
-            max-width:1100px;
-            margin:auto;
-            background:#101827;
-            border:1px solid rgba(255,255,255,.08);
-            border-radius:28px;
-            padding:35px;
-        }
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
 
-        .admin-header{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            gap:20px;
-            margin-bottom:35px;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        .admin-header h1{
-            font-size:34px;
-        }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Vazirmatn", sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, #173d80 0, transparent 35%),
+        radial-gradient(circle at 90% 20%, #3b176b 0, transparent 35%),
+        radial-gradient(circle at 50% 100%, #064b55 0, transparent 40%),
+        #050914;
+      color: white;
+    }
 
-        .admin-header p{
-            color:#94a3b8;
-            margin-top:8px;
-        }
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+    }
 
-        .admin-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:20px;
-        }
+    .admin-page {
+      min-height: 100vh;
+      padding: 30px 16px 70px;
+    }
 
-        .admin-card{
-            padding:28px;
-            border-radius:20px;
-            background:#0b1220;
-            border:1px solid rgba(255,255,255,.06);
-        }
+    .admin-container {
+      width: min(1100px, 100%);
+      margin: auto;
+    }
 
-        .admin-card i{
-            font-size:30px;
-            color:#60a5fa;
-            margin-bottom:18px;
-        }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px;
+      margin-bottom: 25px;
+      background: rgba(15, 24, 43, .88);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+    }
 
-        .admin-card h2{
-            font-size:21px;
-            margin-bottom:8px;
-        }
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(24px, 5vw, 38px);
+      font-weight: 900;
+    }
 
-        .admin-card p{
-            color:#94a3b8;
-            line-height:1.7;
-        }
+    .brand p {
+      margin: 7px 0 0;
+      color: #8f9bb2;
+    }
 
-        .admin-btn{
-            display:inline-block;
-            margin-top:18px;
-            padding:12px 20px;
-            border-radius:12px;
-            background:#2563eb;
-            color:#fff;
-            text-decoration:none;
-            font-weight:700;
-        }
-    </style>
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 14px;
+      background: #2463ee;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .panel {
+      background: rgba(13, 22, 40, .9);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 26px;
+      padding: 25px;
+      margin-bottom: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.18);
+    }
+
+    .panel-title {
+      margin-bottom: 22px;
+    }
+
+    .panel-title h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .panel-title p {
+      color: #8f9bb2;
+      margin: 7px 0 0;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .category {
+      padding: 22px;
+      background: #0a1222;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 20px;
+      transition: .25s;
+    }
+
+    .category:hover {
+      transform: translateY(-3px);
+      border-color: rgba(55,115,255,.5);
+    }
+
+    .category-icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .category h3 {
+      margin: 0 0 7px;
+      font-size: 20px;
+    }
+
+    .category p {
+      color: #8995aa;
+      margin: 0 0 18px;
+      line-height: 1.8;
+    }
+
+    .manage-btn {
+      border: 0;
+      cursor: pointer;
+      padding: 12px 22px;
+      border-radius: 13px;
+      background: #2463ee;
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .manage-btn:hover {
+      background: #3674ff;
+    }
+
+    .upload-box {
+      border: 2px dashed #273b61;
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      background: #091224;
+    }
+
+    .upload-box .upload-icon {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .upload-box h3 {
+      margin: 0 0 8px;
+    }
+
+    .upload-box p {
+      color: #8995aa;
+      margin: 0 0 20px;
+    }
+
+    .file-input {
+      width: 100%;
+      padding: 15px;
+      color: #b9c3d5;
+      background: #101b30;
+      border: 1px solid #243554;
+      border-radius: 14px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      color: #d9dfeb;
+      font-weight: 600;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      border: 1px solid #253756;
+      outline: none;
+      background: #091224;
+      color: white;
+      border-radius: 13px;
+      padding: 14px;
+      font-size: 15px;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: #2870ff;
+    }
+
+    .save-btn {
+      width: 100%;
+      margin-top: 18px;
+      padding: 15px;
+      border: 0;
+      border-radius: 14px;
+      background: #2463ee;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .save-btn:hover {
+      background: #3674ff;
+    }
+
+    .items {
+      display: grid;
+      gap: 12px;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 16px;
+      border-radius: 16px;
+      background: #091224;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    .item-info strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .item-info span {
+      color: #8793a8;
+      font-size: 13px;
+    }
+
+    .delete-btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 9px 13px;
+      background: #8e2430;
+      color: white;
+      cursor: pointer;
+    }
+
+    .empty {
+      padding: 25px;
+      text-align: center;
+      color: #78869d;
+    }
+
+    .status {
+      display: none;
+      padding: 14px;
+      border-radius: 13px;
+      margin-top: 15px;
+      background: rgba(31, 133, 78, .15);
+      border: 1px solid rgba(65, 190, 120, .25);
+      color: #78e0a7;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .admin-page {
+        padding: 18px 10px 50px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .category-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .panel {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      .category {
+        padding: 18px;
+      }
+
+      .item {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .delete-btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="background">
-    <div class="blur blur1"></div>
-    <div class="blur blur2"></div>
-    <div class="blur blur3"></div>
+<div class="admin-page">
+
+  <main class="admin-container">
+
+    <header class="topbar">
+
+      <div class="brand">
+        <h1>پنل مدیریت arsin984</h1>
+        <p>مدیریت و بارگذاری محتوای سایت</p>
+      </div>
+
+      <a class="back-btn" href="index.html">
+        ← بازگشت به سایت
+      </a>
+
+    </header>
+
+
+    <section class="panel">
+
+      <div class="panel-title">
+        <h2>مدیریت محتوا</h2>
+        <p>بخش موردنظر را انتخاب کن.</p>
+      </div>
+
+      <div class="category-grid">
+
+        <div class="category">
+          <div class="category-icon">🎵</div>
+          <h3>موسیقی</h3>
+          <p>اضافه کردن آهنگ و اطلاعات آهنگ‌ها</p>
+          <button class="manage-btn" data-section="music">
+            مدیریت
+          </button>
+        </div>
+
+        <div class="category">
+          <div class="category-icon">🖼️</div>
+          <h3>تصاویر</h3>
+          <p>بارگذاری و مدیریت تصاویر</p>
+          <button class="manage-btn" data-section="images">
+            مدیریت
+          </button>
+        </div>
+
+        <div class="category">
+          <div class="category-icon">🎬</div>
+          <h3>ویدیو</h3>
+          <p>مدیریت ویدیوهای سایت</p>
+          <button class="manage-btn" data-section="videos">
+            مدیریت
+          </button>
+        </div>
+
+        <div class="category">
+          <div class="category-icon">📰</div>
+          <h3>اخبار</h3>
+          <p>اضافه کردن و ویرایش اخبار</p>
+          <button class="manage-btn" data-section="news">
+            مدیریت
+          </button>
+        </div>
+
+        <div class="category">
+          <div class="category-icon">📍</div>
+          <h3>مکان‌ها</h3>
+          <p>مدیریت مکان‌ها و کافه‌ها</p>
+          <button class="manage-btn" data-section="places">
+            مدیریت
+          </button>
+        </div>
+
+        <div class="category">
+          <div class="category-icon">🌐</div>
+          <h3>وب‌سایت‌ها</h3>
+          <p>مدیریت لینک‌ها و سایت‌های معرفی‌شده</p>
+          <button class="manage-btn" data-section="websites">
+            مدیریت
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="panel" id="manager">
+
+      <div class="panel-title">
+        <h2 id="managerTitle">انتخاب بخش</h2>
+        <p id="managerDescription">
+          برای شروع یکی از بخش‌های بالا را انتخاب کن.
+        </p>
+      </div>
+
+      <form id="contentForm">
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="title">عنوان</label>
+            <input
+              id="title"
+              type="text"
+              placeholder="عنوان محتوا"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="category">دسته‌بندی</label>
+
+            <select id="category">
+
+              <option value="general">
+                عمومی
+              </option>
+
+              <option value="music">
+                موسیقی
+              </option>
+
+              <option value="news">
+                اخبار
+              </option>
+
+              <option value="video">
+                ویدیو
+              </option>
+
+              <option value="place">
+                مکان
+              </option>
+
+              <option value="website">
+                وب‌سایت
+              </option>
+
+            </select>
+
+          </div>
+
+          <div class="field full">
+
+            <label for="description">
+              توضیحات
+            </label>
+
+            <textarea
+              id="description"
+              placeholder="توضیحات محتوا..."
+            ></textarea>
+
+          </div>
+
+          <div class="field full">
+
+            <label for="file">
+              فایل
+            </label>
+
+            <input
+              class="file-input"
+              id="file"
+              type="file"
+            >
+
+          </div>
+
+        </div>
+
+        <button class="save-btn" type="submit">
+          ذخیره محتوا
+        </button>
+
+      </form>
+
+      <div class="status" id="status">
+        محتوا با موفقیت در لیست مدیریت ذخیره شد.
+      </div>
+
+    </section>
+
+
+    <section class="panel">
+
+      <div class="panel-title">
+
+        <h2>محتواهای ذخیره‌شده</h2>
+
+        <p>
+          مواردی که از این پنل اضافه می‌کنی اینجا نمایش داده می‌شوند.
+        </p>
+
+      </div>
+
+      <div class="items" id="items">
+
+        <div class="empty">
+          هنوز محتوایی اضافه نشده است.
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
 </div>
 
-<main class="admin-page">
 
-    <div class="admin-panel">
+<script>
 
-        <div class="admin-header">
-            <div>
-                <h1>پنل مدیریت arsin984</h1>
-                <p>مدیریت و بارگذاری محتوای سایت</p>
-            </div>
+  let currentSection = "general";
 
-            <a href="index.html" class="admin-btn">
-                بازگشت به سایت
-            </a>
+  const sectionInfo = {
+
+    music: {
+      title: "مدیریت موسیقی",
+      description: "آهنگ‌ها و اطلاعات موسیقی را مدیریت کن."
+    },
+
+    images: {
+      title: "مدیریت تصاویر",
+      description: "تصاویر موردنظر سایت را اضافه و مدیریت کن."
+    },
+
+    videos: {
+      title: "مدیریت ویدیو",
+      description: "ویدیوهای سایت را مدیریت کن."
+    },
+
+    news: {
+      title: "مدیریت اخبار",
+      description: "اخبار جدید را اضافه یا مدیریت کن."
+    },
+
+    places: {
+      title: "مدیریت مکان‌ها",
+      description: "مکان‌ها و کافه‌ها را مدیریت کن."
+    },
+
+    websites: {
+      title: "مدیریت وب‌سایت‌ها",
+      description: "لینک‌ها و سایت‌های معرفی‌شده را مدیریت کن."
+    }
+
+  };
+
+
+  const managerTitle =
+    document.getElementById("managerTitle");
+
+  const managerDescription =
+    document.getElementById("managerDescription");
+
+  const contentForm =
+    document.getElementById("contentForm");
+
+  const status =
+    document.getElementById("status");
+
+  const items =
+    document.getElementById("items");
+
+
+  document.querySelectorAll(".manage-btn")
+    .forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        currentSection =
+          button.dataset.section;
+
+        const info =
+          sectionInfo[currentSection];
+
+        managerTitle.textContent =
+          info.title;
+
+        managerDescription.textContent =
+          info.description;
+
+        document
+          .getElementById("manager")
+          .scrollIntoView({
+            behavior: "smooth"
+          });
+
+      });
+
+    });
+
+
+  function getItems() {
+
+    return JSON.parse(
+      localStorage.getItem("arsin984_admin_items")
+      || "[]"
+    );
+
+  }
+
+
+  function saveItems(data) {
+
+    localStorage.setItem(
+      "arsin984_admin_items",
+      JSON.stringify(data)
+    );
+
+  }
+
+
+  function renderItems() {
+
+    const data = getItems();
+
+    if (!data.length) {
+
+      items.innerHTML = `
+        <div class="empty">
+          هنوز محتوایی اضافه نشده است.
         </div>
+      `;
 
-        <div class="admin-grid">
+      return;
 
-            <div class="admin-card">
-                <i class="fa-solid fa-music"></i>
-                <h2>موسیقی</h2>
-                <p>مدیریت و بارگذاری آهنگ‌ها</p>
-                <a href="#" class="admin-btn">مدیریت</a>
+    }
+
+
+    items.innerHTML = data
+      .map((item, index) => {
+
+        return `
+
+          <div class="item">
+
+            <div class="item-info">
+
+              <strong>
+                ${escapeHTML(item.title)}
+              </strong>
+
+              <span>
+                ${escapeHTML(item.section)}
+                •
+                ${escapeHTML(item.category)}
+              </span>
+
             </div>
 
-            <div class="admin-card">
-                <i class="fa-solid fa-image"></i>
-                <h2>تصاویر</h2>
-                <p>بارگذاری و مدیریت تصاویر</p>
-                <a href="#" class="admin-btn">مدیریت</a>
-            </div>
+            <button
+              class="delete-btn"
+              onclick="deleteItem(${index})"
+            >
+              حذف
+            </button>
 
-            <div class="admin-card">
-                <i class="fa-solid fa-video"></i>
-                <h2>ویدیو</h2>
-                <p>مدیریت ویدیوهای سایت</p>
-                <a href="#" class="admin-btn">مدیریت</a>
-            </div>
+          </div>
 
-            <div class="admin-card">
-                <i class="fa-solid fa-newspaper"></i>
-                <h2>اخبار</h2>
-                <p>اضافه‌کردن و ویرایش اخبار</p>
-                <a href="#" class="admin-btn">مدیریت</a>
-            </div>
+        `;
 
-            <div class="admin-card">
-                <i class="fa-solid fa-location-dot"></i>
-                <h2>مکان‌ها</h2>
-                <p>مدیریت مکان‌ها و کافه‌ها</p>
-                <a href="#" class="admin-btn">مدیریت</a>
-            </div>
+      })
+      .join("");
 
-            <div class="admin-card">
-                <i class="fa-solid fa-globe"></i>
-                <h2>وب‌سایت‌ها</h2>
-                <p>مدیریت لینک‌ها و سایت‌های معرفی‌شده</p>
-                <a href="#" class="admin-btn">مدیریت</a>
-            </div>
+  }
 
-        </div>
 
-    </div>
+  function deleteItem(index) {
 
-</main>
+    const data = getItems();
+
+    data.splice(index, 1);
+
+    saveItems(data);
+
+    renderItems();
+
+  }
+
+
+  function escapeHTML(text) {
+
+    return String(text)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  }
+
+
+  contentForm.addEventListener(
+    "submit",
+    event => {
+
+      event.preventDefault();
+
+      const title =
+        document.getElementById("title").value;
+
+      const description =
+        document.getElementById("description").value;
+
+      const category =
+        document.getElementById("category").value;
+
+      const file =
+        document.getElementById("file").files[0];
+
+
+      const data = getItems();
+
+
+      data.unshift({
+
+        title,
+
+        description,
+
+        category,
+
+        section: currentSection,
+
+        fileName: file
+          ? file.name
+          : "",
+
+        createdAt:
+          new Date().toISOString()
+
+      });
+
+
+      saveItems(data);
+
+      renderItems();
+
+      contentForm.reset();
+
+
+      status.style.display = "block";
+
+      setTimeout(() => {
+
+        status.style.display = "none";
+
+      }, 2500);
+
+    }
+  );
+
+
+  renderItems();
+
+</script>
 
 </body>
 </html>
